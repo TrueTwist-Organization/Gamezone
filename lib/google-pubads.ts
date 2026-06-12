@@ -1,28 +1,28 @@
 export const GPT_SRC = "https://securepubads.g.doubleclick.net/tag/js/gpt.js";
 export const BANNER_AD_UNIT = "/6355419/Travel/Europe/France/Paris";
-export const ANCHOR_AD_UNIT = "/6355419/Travel";
+export const STICKY_ANCHOR_AD_UNIT = "/6355419/Travel/Europe";
 export const BANNER_SLOT_ID = "demo-ad-container";
+export const STICKY_ANCHOR_SLOT_ID = "bottom-anchor-ad";
 
 type GoogletagSlot = {
   addService: (service: unknown) => unknown;
   getSlotElementId: () => string;
+  defineSizeMapping: (mapping: unknown) => GoogletagSlot;
 };
 
 type GoogletagApi = {
   cmd: Array<() => void>;
-  enums: {
-    OutOfPageFormat: {
-      BOTTOM_ANCHOR: string | number;
-    };
+  sizeMapping: () => {
+    addSize: (
+      viewport: number[],
+      sizes: number[][] | number[],
+    ) => ReturnType<GoogletagApi["sizeMapping"]>;
+    build: () => unknown;
   };
   defineSlot: (
     adUnitPath: string,
-    size: number[],
+    size: number[][] | number[],
     divId: string,
-  ) => GoogletagSlot | null;
-  defineOutOfPageSlot: (
-    adUnitPath: string,
-    format: string | number,
   ) => GoogletagSlot | null;
   pubads: () => {
     addEventListener: (
@@ -42,7 +42,7 @@ declare global {
 }
 
 let servicesEnabled = false;
-let anchorQueued = false;
+let stickyQueued = false;
 let bannerQueued = false;
 
 function getGoogletag() {
@@ -60,29 +60,69 @@ function enableServicesOnce(googletag: GoogletagApi) {
   googletag.enableServices();
 }
 
-export function queueBottomAnchorAd() {
-  if (anchorQueued) {
+function hideSlotWhenEmpty(slotId: string, event: { slot: GoogletagSlot; isEmpty: boolean }) {
+  if (event.slot.getSlotElementId() !== slotId) {
     return;
   }
 
-  anchorQueued = true;
+  const container = document.getElementById(slotId);
+  if (!container) {
+    return;
+  }
+
+  if (slotId === STICKY_ANCHOR_SLOT_ID) {
+    const bar = container.closest(".sticky-anchor-bar");
+    bar?.classList.toggle("sticky-anchor-bar--empty", event.isEmpty);
+    document.documentElement.classList.toggle("has-bottom-anchor-ad", !event.isEmpty);
+    return;
+  }
+
+  container.classList.toggle("demo-ad-container--empty", event.isEmpty);
+}
+
+export function queueStickyBottomAd() {
+  if (stickyQueued || !document.getElementById(STICKY_ANCHOR_SLOT_ID)) {
+    return;
+  }
+
+  stickyQueued = true;
   const googletagQueue = getGoogletag();
 
   googletagQueue.cmd.push(() => {
     const googletag = window.googletag as GoogletagApi;
-    const anchorSlot = googletag.defineOutOfPageSlot(
-      ANCHOR_AD_UNIT,
-      googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR,
+    const stickySlot = googletag.defineSlot(
+      STICKY_ANCHOR_AD_UNIT,
+      [
+        [320, 50],
+        [728, 90],
+      ],
+      STICKY_ANCHOR_SLOT_ID,
     );
 
-    if (anchorSlot) {
-      anchorSlot.addService(googletag.pubads());
-      document.documentElement.classList.add("has-bottom-anchor-ad");
+    if (!stickySlot) {
+      return;
     }
+
+    const mapping = googletag
+      .sizeMapping()
+      .addSize([1024, 0], [[728, 90]])
+      .addSize([0, 0], [[320, 50]])
+      .build();
+
+    stickySlot.defineSizeMapping(mapping).addService(googletag.pubads());
+
+    googletag.pubads().addEventListener("slotRenderEnded", (event) => {
+      hideSlotWhenEmpty(STICKY_ANCHOR_SLOT_ID, event);
+    });
 
     if (!document.getElementById(BANNER_SLOT_ID)) {
       enableServicesOnce(googletag);
     }
+  });
+
+  googletagQueue.cmd.push(() => {
+    const googletag = window.googletag as GoogletagApi;
+    googletag.display(STICKY_ANCHOR_SLOT_ID);
   });
 }
 
@@ -105,12 +145,7 @@ export function queueBannerAd() {
     bannerSlot.addService(googletag.pubads());
 
     googletag.pubads().addEventListener("slotRenderEnded", (event) => {
-      if (event.slot.getSlotElementId() !== BANNER_SLOT_ID) {
-        return;
-      }
-
-      const container = document.getElementById(BANNER_SLOT_ID);
-      container?.classList.toggle("demo-ad-container--empty", event.isEmpty);
+      hideSlotWhenEmpty(BANNER_SLOT_ID, event);
     });
 
     enableServicesOnce(googletag);
@@ -123,6 +158,6 @@ export function queueBannerAd() {
 }
 
 export function queueGooglePubAds() {
-  queueBottomAnchorAd();
+  queueStickyBottomAd();
   queueBannerAd();
 }

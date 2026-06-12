@@ -13,7 +13,9 @@ export function GooglePubAds() {
     }
 
     initialized.current = true;
-    queueGooglePubAds();
+    window.setTimeout(() => {
+      queueGooglePubAds();
+    }, 100);
   };
 
   return (

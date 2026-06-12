@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Slackey } from "next/font/google";
 import { GooglePubAds } from "@/components/google-pubads";
+import { StickyAnchorAd } from "@/components/sticky-anchor-ad";
 import { siteConfig, sitePageTitle } from "@/lib/site";
 import "./globals.css";
 
@@ -25,6 +26,7 @@ export default function RootLayout({
       <body className="min-h-screen antialiased">
         <GooglePubAds />
         {children}
+        <StickyAnchorAd />
       </body>
     </html>
   );
