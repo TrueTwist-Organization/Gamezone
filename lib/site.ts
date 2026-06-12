@@ -1,12 +1,14 @@
-export const siteConfig = {
+import type { SiteBranding } from "@/lib/site-settings.types";
+
+export const fallbackSiteConfig: SiteBranding = {
   name: "GameZone",
   tagline: "Free Online Games",
   description:
     "Play free online games — puzzle, arcade, hypercasual, and more on GameZone.",
   copyrightYear: 2026,
-} as const;
+};
 
-export function sitePageTitle(page?: string): string {
-  if (!page) return `${siteConfig.tagline} | ${siteConfig.name}`;
-  return `${page} | ${siteConfig.name}`;
+export function sitePageTitle(site: SiteBranding, page?: string): string {
+  if (!page) return `${site.tagline} | ${site.name}`;
+  return `${page} | ${site.name}`;
 }

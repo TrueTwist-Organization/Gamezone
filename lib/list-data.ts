@@ -1,22 +1,23 @@
-import listData from "./list-data.json";
+import listDataJson from "./list-data.json";
 import type { ListGameItem } from "./types";
 
+export const listData = listDataJson;
 export const LIST_BATCH_SIZE = 24;
 
 export type ListCategorySlug = "puzzle" | "hypercasual" | "girls" | "arcade";
 
-const categoryMap = listData.categoryMap as Record<ListCategorySlug, string>;
+const categoryMap = listDataJson.categoryMap as Record<ListCategorySlug, string>;
 
 export function getGamesForList(category?: string | null): ListGameItem[] {
   if (!category) {
-    return listData.all as ListGameItem[];
+    return listDataJson.all as ListGameItem[];
   }
 
   const mapped = categoryMap[category as ListCategorySlug];
   if (!mapped) {
-    return listData.all as ListGameItem[];
+    return listDataJson.all as ListGameItem[];
   }
 
-  const byCategory = listData.byCategory as Record<string, ListGameItem[]>;
+  const byCategory = listDataJson.byCategory as Record<string, ListGameItem[]>;
   return byCategory[mapped] ?? [];
 }

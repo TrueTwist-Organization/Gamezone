@@ -1,0 +1,52 @@
+{
+  "site": {
+    "name": "GameZone",
+    "tagline": "Free Online Games",
+    "description": "Play free online games — puzzle, arcade, hypercasual, and more on GameZone.",
+    "copyrightYear": 2026
+  },
+  "ads": {
+    "gptNetworkCode": "",
+    "globalHeadScripts": "",
+    "globalBodyScripts": "",
+    "headerBanner": {
+      "enabled": true,
+      "provider": "gpt",
+      "slotId": "demo-ad-container",
+      "label": "Header Banner",
+      "gptUnitPath": "/6355419/Travel/Europe/France/Paris",
+      "sizes": [[300, 250]],
+      "adsenseClient": "",
+      "adsenseSlot": "",
+      "customHtml": ""
+    },
+    "bottomAnchor": {
+      "enabled": true,
+      "provider": "gpt",
+      "slotId": "bottom-anchor-ad",
+      "label": "Bottom Sticky Banner",
+      "gptUnitPath": "/6355419/Travel/Europe",
+      "sizes": [[320, 50], [728, 90]],
+      "mobileSizes": [[320, 50]],
+      "desktopSizes": [[728, 90]],
+      "adsenseClient": "",
+      "adsenseSlot": "",
+      "customHtml": ""
+    },
+    "gameInterstitial": {
+      "enabled": true,
+      "provider": "gpt",
+      "slotId": "game-interstitial-ad",
+      "label": "Pre-Play Interstitial (on Play Now)",
+      "gptUnitPath": "/6355419/Travel/Europe/France/Paris",
+      "sizes": [[300, 250], [320, 480], [336, 280]],
+      "adsenseClient": "",
+      "adsenseSlot": "",
+      "customHtml": ""
+    }
+  },
+  "homepage": {
+    "heroGameId": "29221"
+  },
+  "updatedAt": "2026-06-12T00:00:00.000Z"
+}

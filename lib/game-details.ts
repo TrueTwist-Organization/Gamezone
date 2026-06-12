@@ -66,7 +66,9 @@ export function getGameDetail(id: string): GameDetail | undefined {
 }
 
 export function getAllGameIds(): string[] {
-  return Object.keys(gamesCache);
+  const fromCache = Object.keys(gamesCache as Record<string, CachedGame>);
+  const fromList = listData.all.map((game) => game.id);
+  return [...new Set([...fromCache, ...fromList])];
 }
 
 export function getGameFromIndex(id: string): GameDetail | undefined {

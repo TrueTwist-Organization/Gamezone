@@ -5,5 +5,9 @@ export function getGameImageSource(id: string): string | undefined {
 }
 
 export function getGamePlaySource(id: string): string | undefined {
-  return getGameDetail(id)?.playUrl;
+  const playUrl = getGameDetail(id)?.playUrl;
+  if (!playUrl) {
+    return undefined;
+  }
+  return playUrl.endsWith("/") ? playUrl : `${playUrl}/`;
 }

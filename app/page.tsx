@@ -5,10 +5,11 @@ import { ScrollToTop, SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { TrendingNow } from "@/components/trending-now";
 import { siteData } from "@/lib/games";
+import { getHomepageHero } from "@/lib/homepage";
 import { toPublicGameCard } from "@/lib/public-game";
 
-export default function Home() {
-  const hero = toPublicGameCard(siteData.hero);
+export default async function Home() {
+  const hero = await getHomepageHero();
   const popular = siteData.popular.map((game) => toPublicGameCard(game));
   const hotPicks = siteData.hotPicks.map((game) => toPublicGameCard(game));
   const funRanks = siteData.funRanks.map((rank) => ({

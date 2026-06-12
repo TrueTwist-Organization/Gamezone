@@ -34,11 +34,10 @@ export function toPublicGameDetail(game: GameDetail): PublicGameDetail {
 
 export function toPublicGameCard(game: { id?: string; title: string; image: string; href: string }) {
   const id = resolveGameId(game);
-  const href = game.href.endsWith("/") ? game.href : `${game.href}/`;
   return {
     id,
     title: game.title,
-    href,
+    href: gamePagePath(id),
     image: gameImagePath(id),
   };
 }

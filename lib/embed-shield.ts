@@ -1,10 +1,12 @@
+const gameCdn = "https://html5.gamemonetize.com";
+
 export const embedContentSecurityPolicy = [
-  "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' 'unsafe-eval' blob:",
-  "worker-src 'self' blob:",
-  "connect-src 'self' blob: data:",
-  "img-src 'self' data: blob:",
-  "media-src 'self' blob: data:",
+  `default-src 'self' ${gameCdn}`,
+  `script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: ${gameCdn}`,
+  `worker-src 'self' blob: ${gameCdn}`,
+  `connect-src 'self' blob: data: ${gameCdn}`,
+  `img-src 'self' data: blob: ${gameCdn}`,
+  `media-src 'self' blob: data: ${gameCdn}`,
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "font-src 'self' https://fonts.gstatic.com data:",
   "frame-src 'none'",
@@ -104,9 +106,6 @@ export const embedAdBlockerScript = `<script>
 (function () {
   var sdkStub = "${gamemonetizeSdkStubPath}";
   var blocked = /doubleclick|googlesyndication|googletagmanager|google-analytics|imasdk|adservice|adsystem|adnxs|taboola|outbrain|pubads|gampad|goog_\\d+/i;
-  var gamemonetizeBlock =
-    /gamemonetize|api\\.gamemonetize\\.com|html5\\.gamemonetize/i;
-
   function normalizeScriptUrl(value) {
     if (typeof value !== "string") return value;
     if (/api\\.gamemonetize\\.com\\/sdk\\.js/i.test(value)) return sdkStub;
@@ -116,9 +115,11 @@ export const embedAdBlockerScript = `<script>
 
   function isBlocked(value) {
     if (typeof value !== "string") return false;
+    if (/html5\\.gamemonetize\\.com/i.test(value)) return false;
     if (/api\\.gamemonetize\\.com\\/sdk\\.js/i.test(value)) return false;
     if (value.indexOf("//api.gamemonetize.com/sdk.js") !== -1) return false;
-    return blocked.test(value) || gamemonetizeBlock.test(value);
+    if (/api\\.gamemonetize\\.com/i.test(value)) return true;
+    return blocked.test(value);
   }
 
   function patchSetter(proto, prop) {
@@ -152,10 +153,14 @@ export const gamemonetizeSdkStubSource = `(function () {
 })();`;
 
 const adUrlPattern =
-  /https?:\/\/(?:api\.gamemonetize\.com|imasdk\.googleapis\.com|pagead2\.googlesyndication\.com|www\.googletagmanager\.com|www\.google-analytics\.com|(?:www\.)?gamemonetize\.com|pubads\.g\.doubleclick\.net)[^"'\\s]*/gi;
+  /https?:\/\/(?:api\.gamemonetize\.com|imasdk\.googleapis\.com|pagead2\.googlesyndication\.com|www\.googletagmanager\.com|www\.google-analytics\.com|pubads\.g\.doubleclick\.net)[^"'\\s]*/gi;
 
 export function sanitizeEmbeddedJavaScript(source: string): string {
-  if (!/gamemonetize|imasdk|doubleclick|googlesyndication/i.test(source)) {
+  if (source.length > 100_000) {
+    return source;
+  }
+
+  if (!/api\.gamemonetize|imasdk|doubleclick|googlesyndication/i.test(source)) {
     return source;
   }
 

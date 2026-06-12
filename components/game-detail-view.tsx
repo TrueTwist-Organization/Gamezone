@@ -2,7 +2,7 @@
 
 import { GameImage } from "@/components/game-image";
 import Link from "next/link";
-import { useState } from "react";
+import { useGamePlay } from "@/components/game-play-provider";
 import { ScrollToTop, SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import type { PublicGameDetail } from "@/lib/public-game";
@@ -13,13 +13,14 @@ type GameDetailViewProps = {
 };
 
 export function GameDetailView({ game }: GameDetailViewProps) {
-  const [playing, setPlaying] = useState(false);
+  const { openGame } = useGamePlay();
 
   return (
     <div className="min-h-screen bg-white text-gray-900">
       <SiteHeader
-        hero={{ title: game.title, image: game.image, href: game.href }}
+        hero={{ id: game.id, title: game.title, image: game.image, href: game.href }}
         heroBadge="NOW"
+        heroRefresh
       />
 
       <main id="main" role="main">
@@ -33,7 +34,11 @@ export function GameDetailView({ game }: GameDetailViewProps) {
                   <div>Category: {game.category}</div>
                   <div>Score: {game.score}</div>
                 </div>
-                <button type="button" className="btn-play" onClick={() => setPlaying(true)}>
+                <button
+                  type="button"
+                  className="btn-play"
+                  onClick={() => openGame({ id: game.id, title: game.title })}
+                >
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d="M8 5v14l11-7z" />
                   </svg>
@@ -48,21 +53,6 @@ export function GameDetailView({ game }: GameDetailViewProps) {
                 ))}
               </div>
             </div>
-
-            {playing ? (
-              <div className="overflow-hidden rounded-xl bg-black shadow">
-                <iframe
-                  src={game.embedPath}
-                  title={game.title}
-                  className="mx-auto w-full max-w-[420px] min-h-[640px] border-0"
-                  allow="autoplay; fullscreen"
-                  allowFullScreen
-                  onLoad={(event) => {
-                    event.currentTarget.focus();
-                  }}
-                />
-              </div>
-            ) : null}
 
             <div className="flex flex-col gap-4">
               <div className="rounded-xl bg-white px-4 py-4 shadow">

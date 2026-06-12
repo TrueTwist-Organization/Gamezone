@@ -1,10 +1,25 @@
 "use client";
 
-import { useState } from "react";
-import { STICKY_ANCHOR_SLOT_ID } from "@/lib/google-pubads";
+import { useEffect, useState } from "react";
+import { AdSlot } from "@/components/ad-slot";
+import { queueGooglePubAds } from "@/lib/google-pubads";
+import type { AdsSettings } from "@/lib/site-settings.types";
 
-export function StickyAnchorAd() {
+type StickyAnchorAdProps = {
+  ads: AdsSettings;
+};
+
+export function StickyAnchorAd({ ads }: StickyAnchorAdProps) {
   const [collapsed, setCollapsed] = useState(false);
+  const slot = ads.bottomAnchor;
+
+  useEffect(() => {
+    queueGooglePubAds(ads);
+  }, [ads]);
+
+  if (!slot.enabled || slot.provider === "disabled") {
+    return null;
+  }
 
   if (collapsed) {
     return (
@@ -29,7 +44,7 @@ export function StickyAnchorAd() {
       >
         <span aria-hidden="true">▼</span>
       </button>
-      <div id={STICKY_ANCHOR_SLOT_ID} className="sticky-anchor-slot" />
+      <AdSlot slot={slot} className="sticky-anchor-slot" />
     </aside>
   );
 }

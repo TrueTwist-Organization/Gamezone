@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import { Slackey } from "next/font/google";
-import { GooglePubAds } from "@/components/google-pubads";
+import { GamePlayProvider } from "@/components/game-play-provider";
+import { SiteAds } from "@/components/site-ads";
+import { SiteSettingsProvider } from "@/components/site-settings-provider";
 import { StickyAnchorAd } from "@/components/sticky-anchor-ad";
-import { siteConfig, sitePageTitle } from "@/lib/site";
+import { getSiteSettings } from "@/lib/settings-store";
+import { sitePageTitle } from "@/lib/site";
 import "./globals.css";
 
 const slackey = Slackey({
@@ -11,22 +14,31 @@ const slackey = Slackey({
   variable: "--font-slackey",
 });
 
-export const metadata: Metadata = {
-  title: sitePageTitle(),
-  description: siteConfig.description,
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const settings = await getSiteSettings();
+  return {
+    title: sitePageTitle(settings.site),
+    description: settings.site.description,
+  };
+}
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const settings = await getSiteSettings();
+
   return (
     <html lang="en" className={`${slackey.variable} h-full`}>
       <body className="min-h-screen antialiased">
-        <GooglePubAds />
-        {children}
-        <StickyAnchorAd />
+        <SiteSettingsProvider settings={settings}>
+          <GamePlayProvider>
+            <SiteAds ads={settings.ads} />
+            {children}
+            <StickyAnchorAd ads={settings.ads} />
+          </GamePlayProvider>
+        </SiteSettingsProvider>
       </body>
     </html>
   );
