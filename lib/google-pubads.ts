@@ -42,22 +42,11 @@ declare global {
 }
 
 let servicesEnabled = false;
-let stickyQueued = false;
-let bannerQueued = false;
+let adsInitialized = false;
 
 function getGoogletag() {
   window.googletag = window.googletag ?? { cmd: [] };
   return window.googletag;
-}
-
-function enableServicesOnce(googletag: GoogletagApi) {
-  if (servicesEnabled) {
-    return;
-  }
-
-  servicesEnabled = true;
-  googletag.pubads().enableSingleRequest();
-  googletag.enableServices();
 }
 
 function hideSlotWhenEmpty(slotId: string, event: { slot: GoogletagSlot; isEmpty: boolean }) {
@@ -71,93 +60,79 @@ function hideSlotWhenEmpty(slotId: string, event: { slot: GoogletagSlot; isEmpty
   }
 
   if (slotId === STICKY_ANCHOR_SLOT_ID) {
-    const bar = container.closest(".sticky-anchor-bar");
-    bar?.classList.toggle("sticky-anchor-bar--empty", event.isEmpty);
     document.documentElement.classList.toggle("has-bottom-anchor-ad", !event.isEmpty);
+    container.classList.toggle("sticky-anchor-slot--empty", event.isEmpty);
     return;
   }
 
   container.classList.toggle("demo-ad-container--empty", event.isEmpty);
 }
 
-export function queueStickyBottomAd() {
-  if (stickyQueued || !document.getElementById(STICKY_ANCHOR_SLOT_ID)) {
+export function queueGooglePubAds() {
+  if (adsInitialized) {
     return;
   }
 
-  stickyQueued = true;
+  adsInitialized = true;
   const googletagQueue = getGoogletag();
 
   googletagQueue.cmd.push(() => {
     const googletag = window.googletag as GoogletagApi;
-    const stickySlot = googletag.defineSlot(
-      STICKY_ANCHOR_AD_UNIT,
-      [
-        [320, 50],
-        [728, 90],
-      ],
-      STICKY_ANCHOR_SLOT_ID,
-    );
+    const pubads = googletag.pubads();
 
-    if (!stickySlot) {
-      return;
+    if (document.getElementById(STICKY_ANCHOR_SLOT_ID)) {
+      const stickySlot = googletag.defineSlot(
+        STICKY_ANCHOR_AD_UNIT,
+        [
+          [320, 50],
+          [728, 90],
+        ],
+        STICKY_ANCHOR_SLOT_ID,
+      );
+
+      if (stickySlot) {
+        const mapping = googletag
+          .sizeMapping()
+          .addSize([1024, 0], [[728, 90]])
+          .addSize([0, 0], [[320, 50]])
+          .build();
+
+        stickySlot.defineSizeMapping(mapping).addService(pubads);
+      }
     }
 
-    const mapping = googletag
-      .sizeMapping()
-      .addSize([1024, 0], [[728, 90]])
-      .addSize([0, 0], [[320, 50]])
-      .build();
+    if (document.getElementById(BANNER_SLOT_ID)) {
+      googletag.defineSlot(BANNER_AD_UNIT, [300, 250], BANNER_SLOT_ID)?.addService(pubads);
+    }
 
-    stickySlot.defineSizeMapping(mapping).addService(googletag.pubads());
-
-    googletag.pubads().addEventListener("slotRenderEnded", (event) => {
-      hideSlotWhenEmpty(STICKY_ANCHOR_SLOT_ID, event);
+    pubads.addEventListener("slotRenderEnded", (event) => {
+      hideSlotWhenEmpty(event.slot.getSlotElementId(), event);
     });
 
-    if (!document.getElementById(BANNER_SLOT_ID)) {
-      enableServicesOnce(googletag);
+    if (!servicesEnabled) {
+      servicesEnabled = true;
+      pubads.enableSingleRequest();
+      googletag.enableServices();
     }
   });
 
   googletagQueue.cmd.push(() => {
     const googletag = window.googletag as GoogletagApi;
-    googletag.display(STICKY_ANCHOR_SLOT_ID);
+
+    if (document.getElementById(STICKY_ANCHOR_SLOT_ID)) {
+      googletag.display(STICKY_ANCHOR_SLOT_ID);
+    }
+
+    if (document.getElementById(BANNER_SLOT_ID)) {
+      googletag.display(BANNER_SLOT_ID);
+    }
   });
 }
 
 export function queueBannerAd() {
-  if (bannerQueued || !document.getElementById(BANNER_SLOT_ID)) {
-    return;
-  }
-
-  bannerQueued = true;
-  const googletagQueue = getGoogletag();
-
-  googletagQueue.cmd.push(() => {
-    const googletag = window.googletag as GoogletagApi;
-    const bannerSlot = googletag.defineSlot(BANNER_AD_UNIT, [300, 250], BANNER_SLOT_ID);
-
-    if (!bannerSlot) {
-      return;
-    }
-
-    bannerSlot.addService(googletag.pubads());
-
-    googletag.pubads().addEventListener("slotRenderEnded", (event) => {
-      hideSlotWhenEmpty(BANNER_SLOT_ID, event);
-    });
-
-    enableServicesOnce(googletag);
-  });
-
-  googletagQueue.cmd.push(() => {
-    const googletag = window.googletag as GoogletagApi;
-    googletag.display(BANNER_SLOT_ID);
-  });
+  queueGooglePubAds();
 }
 
-export function queueGooglePubAds() {
-  queueStickyBottomAd();
-  queueBannerAd();
+export function queueStickyBottomAd() {
+  queueGooglePubAds();
 }
