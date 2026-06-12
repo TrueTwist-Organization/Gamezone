@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Slackey } from "next/font/google";
+import { GooglePubAds } from "@/components/google-pubads";
 import { siteConfig, sitePageTitle } from "@/lib/site";
 import "./globals.css";
 
@@ -21,7 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${slackey.variable} h-full`}>
-      <body className="min-h-screen antialiased">{children}</body>
+      <body className="min-h-screen antialiased">
+        <GooglePubAds />
+        {children}
+      </body>
     </html>
   );
 }

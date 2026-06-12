@@ -316,6 +316,10 @@
   display: none;
 }
 
+.has-bottom-anchor-ad {
+  scroll-padding-bottom: 5.5rem;
+}
+
 .header-hero-center {
   display: flex;
   justify-content: center;
