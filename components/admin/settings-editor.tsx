@@ -149,7 +149,13 @@ export function SettingsEditor({ initialSettings, mode, gameOptions = [] }: Sett
         throw new Error(data.error ?? "Failed to save settings.");
       }
       setSettings(data.settings);
-      setStatus(`Saved successfully (${data.storage === "blob" ? "Vercel Blob" : "local file"}).`);
+      const storageLabel =
+        data.storage === "blob"
+          ? "Vercel Blob"
+          : data.storage === "redis"
+            ? "Upstash Redis"
+            : "local file";
+      setStatus(`Saved successfully (${storageLabel}).`);
     } catch (error) {
       setStatus(error instanceof Error ? error.message : "Failed to save settings.");
     } finally {

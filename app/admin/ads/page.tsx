@@ -28,6 +28,11 @@ export default async function AdminAdsPage() {
             <strong>Pre-play interstitial:</strong> shows immediately when the player clicks Play Now, before the game
             starts
           </li>
+          <li>
+            <strong>Vercel saves:</strong> connect <strong>Blob</strong> (Storage tab) or add{" "}
+            <strong>Upstash Redis</strong> (Marketplace) to this project, then redeploy. Without that, Save shows a
+            read-only filesystem error.
+          </li>
         </ul>
       </div>
       <SettingsEditor initialSettings={settings} mode="ads" />
