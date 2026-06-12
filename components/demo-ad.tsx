@@ -1,10 +1,11 @@
 "use client";
 
 import Script from "next/script";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 const AD_SLOT_ID = "demo-ad-container";
 const GPT_SRC = "https://securepubads.g.doubleclick.net/tag/js/gpt.js";
+const DEMO_AD_UNIT = "/6355419/Travel/Europe/France/Paris";
 
 type GoogletagApi = {
   cmd: Array<() => void>;
@@ -13,7 +14,12 @@ type GoogletagApi = {
     size: number[],
     divId: string,
   ) => { addService: (service: unknown) => unknown };
-  pubads: () => unknown;
+  pubads: () => {
+    addEventListener: (
+      event: string,
+      handler: (event: { slot: { getSlotElementId: () => string }; isEmpty: boolean }) => void,
+    ) => void;
+  };
   enableServices: () => void;
   display: (divId: string) => void;
 };
@@ -24,17 +30,32 @@ declare global {
   }
 }
 
-function initDemoAd(initialized: { current: boolean }) {
-  if (initialized.current) {
-    return;
-  }
-
-  initialized.current = true;
+function queueDemoAd() {
   window.googletag = window.googletag ?? { cmd: [] };
   window.googletag.cmd.push(() => {
     const googletag = window.googletag as GoogletagApi;
-    googletag.defineSlot("/6355419/Travel", [300, 250], AD_SLOT_ID)?.addService(googletag.pubads());
+    googletag
+      .defineSlot(DEMO_AD_UNIT, [300, 250], AD_SLOT_ID)
+      ?.addService(googletag.pubads());
+
+    googletag.pubads().addEventListener("slotRenderEnded", (event) => {
+      if (event.slot.getSlotElementId() !== AD_SLOT_ID) {
+        return;
+      }
+
+      const container = document.getElementById(AD_SLOT_ID);
+      if (!container) {
+        return;
+      }
+
+      container.classList.toggle("demo-ad-container--empty", event.isEmpty);
+    });
+
     googletag.enableServices();
+  });
+
+  window.googletag.cmd.push(() => {
+    const googletag = window.googletag as GoogletagApi;
     googletag.display(AD_SLOT_ID);
   });
 }
@@ -42,16 +63,22 @@ function initDemoAd(initialized: { current: boolean }) {
 export function DemoAd() {
   const initialized = useRef(false);
 
-  useEffect(() => {
-    initDemoAd(initialized);
-  }, []);
+  const loadAd = () => {
+    if (initialized.current) {
+      return;
+    }
+
+    initialized.current = true;
+    queueDemoAd();
+  };
 
   return (
     <>
       <Script
         src={GPT_SRC}
         strategy="afterInteractive"
-        onLoad={() => initDemoAd(initialized)}
+        crossOrigin="anonymous"
+        onLoad={loadAd}
       />
       <div id={AD_SLOT_ID} className="demo-ad-container" />
     </>

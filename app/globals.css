@@ -307,10 +307,13 @@
 
 .demo-ad-container {
   width: 300px;
-  height: 250px;
+  min-height: 250px;
   overflow: hidden;
   border-radius: 0.5rem;
-  background: #fff;
+}
+
+.demo-ad-container--empty {
+  display: none;
 }
 
 .header-hero-center {
