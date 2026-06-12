@@ -6,7 +6,7 @@ import { useEffect, useRef } from "react";
 const AD_SLOT_ID = "demo-ad-container";
 const GPT_SRC = "https://securepubads.g.doubleclick.net/tag/js/gpt.js";
 
-type Googletag = {
+type GoogletagApi = {
   cmd: Array<() => void>;
   defineSlot: (
     adUnitPath: string,
@@ -20,7 +20,7 @@ type Googletag = {
 
 declare global {
   interface Window {
-    googletag?: Googletag;
+    googletag?: Partial<GoogletagApi> & Pick<GoogletagApi, "cmd">;
   }
 }
 
@@ -30,13 +30,12 @@ function initDemoAd(initialized: { current: boolean }) {
   }
 
   initialized.current = true;
-  window.googletag = window.googletag || { cmd: [] };
+  window.googletag = window.googletag ?? { cmd: [] };
   window.googletag.cmd.push(() => {
-    window.googletag!.defineSlot("/6355419/Travel", [300, 250], AD_SLOT_ID)?.addService(
-      window.googletag!.pubads(),
-    );
-    window.googletag!.enableServices();
-    window.googletag!.display(AD_SLOT_ID);
+    const googletag = window.googletag as GoogletagApi;
+    googletag.defineSlot("/6355419/Travel", [300, 250], AD_SLOT_ID)?.addService(googletag.pubads());
+    googletag.enableServices();
+    googletag.display(AD_SLOT_ID);
   });
 }
 
