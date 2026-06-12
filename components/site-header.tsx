@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { DemoAd } from "@/components/demo-ad";
 import { GameImage } from "@/components/game-image";
 import { mobileNavLinks, navLinks } from "@/lib/games";
 import { siteAssets } from "@/lib/public-paths";
@@ -61,8 +62,11 @@ export function SiteHeader({ hero, heroBadge = "HOT" }: SiteHeaderProps) {
       </div>
 
       {hero ? (
-        <div className="w-full py-2">
-          <div className="mx-auto flex justify-center">
+        <div className="header-hero-layout w-full py-2">
+          <div className="header-ad-slot hidden md:block">
+            <DemoAd />
+          </div>
+          <div className="header-hero-center">
             <Link href={hero.href} className="block">
               <div className="hero-card hero-fixed">
                 <span className={`hero-badge ${heroBadge === "NOW" ? "hero-badge--new" : "hero-badge--hot"}`}>
