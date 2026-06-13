@@ -37,11 +37,10 @@
     "gameInterstitial": {
       "enabled": true,
       "provider": "gpt",
-      "gptSlotType": "interstitial",
-      "slotId": "div-gpt-ad-detail-interstitial",
+      "slotId": "div-gpt-ad-play-interstitial",
       "label": "Pre-Play Interstitial (on Play Now)",
-      "gptUnitPath": "/49490683/59_gameyuiopashop_20260203_inter_320x480_01",
-      "sizes": [[320, 480], [300, 250]],
+      "gptUnitPath": "/49490683/59_gameyuiopashop_20260203_detail_300x250_01",
+      "sizes": [[300, 600], [300, 250], "fluid", [480, 320]],
       "adsenseClient": "",
       "adsenseSlot": "",
       "customHtml": ""
