@@ -291,8 +291,6 @@
 .header-hero-layout {
   position: relative;
   width: 100%;
-  display: flex;
-  align-items: flex-start;
 }
 
 .header-ad-slot {
@@ -300,18 +298,20 @@
 }
 
 @media (min-width: 768px) {
-  /* Only show the ad column when an ad is actually filled */
+  /* Only show when an ad is actually filled — overlay top-left like competitor */
   .header-ad-slot:has(.gpt-ad-slot--filled) {
     display: block;
-    flex-shrink: 0;
+    position: absolute;
+    top: 0.5rem;
+    left: 0;
     width: 300px;
-    padding-top: 0.5rem;
+    z-index: 2;
   }
 }
 
 .header-hero-row {
-  flex: 1;
   display: flex;
+  width: 100%;
   justify-content: center;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
