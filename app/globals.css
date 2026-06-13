@@ -340,10 +340,6 @@
   white-space: nowrap;
 }
 
-.header-ad-slot .gpt-ad-slot--unfilled {
-  display: none !important;
-}
-
 .gpt-ad-slot--unfilled {
   min-height: 0;
 }
