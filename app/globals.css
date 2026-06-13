@@ -298,14 +298,21 @@
 }
 
 @media (min-width: 768px) {
-  /* Only show when an ad is actually filled — overlay top-left like competitor */
-  .header-ad-slot:has(.gpt-ad-slot--filled) {
+  .header-ad-slot {
     display: block;
     position: absolute;
     top: 0.5rem;
     left: 0;
     width: 300px;
+    min-height: 250px;
     z-index: 2;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  /* When ad is filled the demo-ad-container covers the placeholder */
+  .header-ad-slot:has(.gpt-ad-slot--filled) {
+    background: transparent;
   }
 }
 
