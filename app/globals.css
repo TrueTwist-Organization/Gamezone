@@ -327,7 +327,6 @@
   width: 300px;
   min-width: 300px;
   min-height: 250px;
-  overflow: hidden;
   border-radius: 0.5rem;
   background: rgba(255, 255, 255, 0.92);
 }
@@ -369,7 +368,8 @@
 }
 
 .sticky-anchor-bar--hidden {
-  display: none;
+  transform: translateX(-50%) translateY(100%);
+  pointer-events: none;
 }
 
 .sticky-anchor-collapse,
