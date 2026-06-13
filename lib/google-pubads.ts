@@ -70,6 +70,7 @@ let initRetryCount = 0;
 let pendingAds: AdsSettings | null = null;
 const definedSlotIds = new Set<string>();
 const outOfPageSlots = new Map<string, GoogletagSlot>();
+const pendingHideTimers = new Map<string, ReturnType<typeof setTimeout>>();
 
 function getGoogletag() {
   window.googletag = window.googletag ?? { cmd: [] };
@@ -133,7 +134,8 @@ function hideSlotWhenEmpty(slot: AdSlotSettings, event: { slot: GoogletagSlot; i
   // For standard slots, defer hiding by 3 seconds. Responsive display ads fire
   // slotRenderEnded(isEmpty:true) during the first render pass then load visible
   // content asynchronously. Waiting avoids premature collapse.
-  window.setTimeout(() => {
+  const timerId = window.setTimeout(() => {
+    pendingHideTimers.delete(slot.slotId);
     const el = document.getElementById(slot.slotId);
     if (!el) return;
     const iframe = el.querySelector("iframe");
@@ -144,6 +146,7 @@ function hideSlotWhenEmpty(slot: AdSlotSettings, event: { slot: GoogletagSlot; i
       el.classList.remove("gpt-ad-slot--filled");
     }
   }, 3000);
+  pendingHideTimers.set(slot.slotId, timerId);
 }
 
 function defineOutOfPageGptSlot(
@@ -221,7 +224,14 @@ function displayGptSlots(googletag: GoogletagApi, ads: AdsSettings) {
 
     const el = document.getElementById(slot.slotId);
     if (el) {
-      // Reset state from any previous navigation/render before displaying again
+      // Cancel any pending hide timer from a previous navigation that may still be
+      // pending in the JS event queue targeting this same DOM element (same slot ID)
+      const existingTimer = pendingHideTimers.get(slot.slotId);
+      if (existingTimer !== undefined) {
+        clearTimeout(existingTimer);
+        pendingHideTimers.delete(slot.slotId);
+      }
+      // Reset display state from any previous render
       el.style.display = "";
       el.classList.remove("gpt-ad-slot--unfilled", "gpt-ad-slot--filled");
       googletag.display(slot.slotId);
