@@ -107,31 +107,10 @@ function canInitialize(ads: AdsSettings) {
 }
 
 function hideSlotWhenEmpty(slot: AdSlotSettings, event: { slot: GoogletagSlot; isEmpty: boolean }) {
-  if (slotType(slot) === "bottom-anchor") {
-    const anchorSlot = outOfPageSlots.get(slot.slotId);
-    if (!anchorSlot || event.slot !== anchorSlot) {
-      return;
-    }
+  const type = slotType(slot);
 
-    return;
-  }
-
-  if (slot.slotId === "bottom-anchor-ad") {
-    const container = document.getElementById(slot.slotId);
-    if (!container) {
-      return;
-    }
-
-    container.classList.toggle("sticky-anchor-slot--empty", event.isEmpty);
-    container.classList.toggle("sticky-anchor-slot--filled", !event.isEmpty);
-
-    const bar = container.closest(".sticky-anchor-bar");
-    bar?.classList.toggle("sticky-anchor-bar--hidden", event.isEmpty);
-    document.documentElement.classList.toggle("has-bottom-anchor-ad", !event.isEmpty);
-    return;
-  }
-
-  if (slotType(slot) === "interstitial") {
+  // Native out-of-page slots are managed entirely by GPT — nothing to do
+  if (type === "bottom-anchor" || type === "interstitial") {
     return;
   }
 
@@ -144,12 +123,25 @@ function hideSlotWhenEmpty(slot: AdSlotSettings, event: { slot: GoogletagSlot; i
     return;
   }
 
-  container.classList.toggle("gpt-ad-slot--unfilled", event.isEmpty);
-  container.classList.toggle("gpt-ad-slot--filled", !event.isEmpty);
-
-  if (slot.slotId.includes("interstitial")) {
-    container.classList.toggle("game-interstitial-ad--empty", event.isEmpty);
+  if (!event.isEmpty) {
+    container.classList.add("gpt-ad-slot--filled");
+    container.classList.remove("gpt-ad-slot--unfilled");
+    return;
   }
+
+  // For standard slots, defer hiding by 3 seconds. Responsive display ads fire
+  // slotRenderEnded(isEmpty:true) during the first render pass then load visible
+  // content asynchronously. Waiting avoids premature collapse.
+  window.setTimeout(() => {
+    const el = document.getElementById(slot.slotId);
+    if (!el) return;
+    const iframe = el.querySelector("iframe");
+    const iframeHeight = iframe ? iframe.offsetHeight : 0;
+    if (iframeHeight === 0) {
+      el.classList.add("gpt-ad-slot--unfilled");
+      el.classList.remove("gpt-ad-slot--filled");
+    }
+  }, 3000);
 }
 
 function defineOutOfPageGptSlot(
@@ -276,7 +268,6 @@ function runGptInit(ads: AdsSettings) {
     if (!servicesEnabled) {
       servicesEnabled = true;
       pubads.enableSingleRequest();
-      pubads.collapseEmptyDivs();
       googletag.enableServices();
     }
 
