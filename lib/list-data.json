@@ -1,6 +1,14 @@
 {
   "all": [
     {
+      "id": "40001",
+      "title": "Balloon Blitz",
+      "image": "/img/game/40001-512x384.png",
+      "href": "/games/40001",
+      "category": "Hypercasual",
+      "score": 7.8
+    },
+    {
       "id": "32733",
       "title": "Candy Dream: Match & Collect Puzzle Game",
       "image": "https://uvkfq.dailyjob24.com/img/game/i2u9l4ki42txwifuy15pfy71w2vji3s6-512x384.webp",

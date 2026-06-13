@@ -1,3 +1,5 @@
+import { readFile } from "fs/promises";
+import path from "path";
 import { getGameImageSource } from "@/lib/game-sources";
 
 type RouteParams = {
@@ -10,6 +12,26 @@ export async function GET(_request: Request, { params }: RouteParams) {
 
   if (!imageUrl) {
     return new Response("Image not found", { status: 404 });
+  }
+
+  if (imageUrl.startsWith("/")) {
+    const filePath = path.join(process.cwd(), "public", imageUrl.replace(/^\/+/, ""));
+
+    try {
+      const source = await readFile(filePath);
+      const ext = path.extname(filePath).toLowerCase();
+      const contentType =
+        ext === ".png" ? "image/png" : ext === ".webp" ? "image/webp" : "application/octet-stream";
+
+      return new Response(source, {
+        headers: {
+          "Content-Type": contentType,
+          "Cache-Control": "public, max-age=86400",
+        },
+      });
+    } catch {
+      return new Response("Image unavailable", { status: 404 });
+    }
   }
 
   const upstream = await fetch(imageUrl, {

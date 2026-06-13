@@ -7,6 +7,10 @@ export function gameEmbedPath(id: string): string {
 }
 
 export function gameDirectPlayPath(id: string, playUrl?: string): string {
+  if (playUrl?.startsWith("/games/")) {
+    return gameEmbedPath(id);
+  }
+
   if (playUrl) {
     return playUrl.endsWith("/") ? playUrl : `${playUrl}/`;
   }

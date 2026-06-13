@@ -1,4 +1,25 @@
 {
+  "40001": {
+    "id": "40001",
+    "title": "Balloon Blitz",
+    "image": "/img/game/40001-512x384.png",
+    "href": "/games/40001",
+    "badge": "NEW",
+    "category": "Hypercasual",
+    "score": 7.8,
+    "updated": "N/A",
+    "tags": [
+      "1 Player",
+      "Arcade",
+      "Casual",
+      "HTML5",
+      "Tap"
+    ],
+    "howToPlay": "Tap or click to pop balloons before time runs out. Chain pops for higher scores and try to beat your best run.",
+    "description": "Balloon Blitz is a fast-paced arcade game where colorful balloons float across the screen and you pop as many as you can before time runs out. Quick reflexes and sharp aim help you rack up points, while missed shots and tricky balloon patterns keep every round feeling fresh. Easy to pick up and hard to put down.",
+    "editorsView": "Balloon Blitz is perfect for short sessions — the controls are instant (just tap), the pace ramps up nicely, and chasing a new high score stays surprisingly addictive.",
+    "playUrl": "/games/balloon-blitz/"
+  },
   "28543": {
     "id": "28543",
     "title": "Dumpster Dash: Junkyard Maze Racer",
