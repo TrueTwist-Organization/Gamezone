@@ -70,7 +70,7 @@ let initRetryCount = 0;
 let pendingAds: AdsSettings | null = null;
 const definedSlotIds = new Set<string>();
 const outOfPageSlots = new Map<string, GoogletagSlot>();
-const pendingHideTimers = new Map<string, ReturnType<typeof setTimeout>>();
+const pendingHideTimers = new Map<string, number>();
 
 function getGoogletag() {
   window.googletag = window.googletag ?? { cmd: [] };
@@ -145,7 +145,7 @@ function hideSlotWhenEmpty(slot: AdSlotSettings, event: { slot: GoogletagSlot; i
       el.classList.add("gpt-ad-slot--unfilled");
       el.classList.remove("gpt-ad-slot--filled");
     }
-  }, 3000);
+  }, 3000) as unknown as number;
   pendingHideTimers.set(slot.slotId, timerId);
 }
 
