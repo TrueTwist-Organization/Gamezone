@@ -80,17 +80,23 @@ function AdSlotEditor({
           <Field label="Sizes" hint="Format: 300x250, 728x90">
             <input
               className={inputClass}
-              value={slot.sizes.map(([w, h]) => `${w}x${h}`).join(", ")}
+              value={slot.sizes
+                .map((size) => (size === "fluid" ? "fluid" : `${size[0]}x${size[1]}`))
+                .join(", ")}
               onChange={(event) => {
                 const sizes = event.target.value
                   .split(",")
                   .map((part) => part.trim())
                   .filter(Boolean)
                   .map((part) => {
+                    if (part === "fluid") {
+                      return "fluid" as const;
+                    }
+
                     const [w, h] = part.split("x").map(Number);
                     return [w, h] as [number, number];
                   })
-                  .filter(([w, h]) => Number.isFinite(w) && Number.isFinite(h));
+                  .filter((size) => size === "fluid" || (Number.isFinite(size[0]) && Number.isFinite(size[1])));
                 onChange({ ...slot, sizes });
               }}
             />
@@ -149,13 +155,11 @@ export function SettingsEditor({ initialSettings, mode, gameOptions = [] }: Sett
         throw new Error(data.error ?? "Failed to save settings.");
       }
       setSettings(data.settings);
-      const storageLabel =
-        data.storage === "blob"
-          ? "Vercel Blob"
-          : data.storage === "redis"
-            ? "Upstash Redis"
-            : "local file";
-      setStatus(`Saved successfully (${storageLabel}).`);
+      setStatus(
+        data.storage === "file"
+          ? "Saved to data/site-settings.json. Commit and deploy to update the live site."
+          : "Saved successfully.",
+      );
     } catch (error) {
       setStatus(error instanceof Error ? error.message : "Failed to save settings.");
     } finally {

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { AdSlot } from "@/components/ad-slot";
-import { queueGooglePubAds } from "@/lib/google-pubads";
+import { refreshGooglePubAds } from "@/lib/google-pubads";
 import type { AdsSettings } from "@/lib/site-settings.types";
 
 type StickyAnchorAdProps = {
@@ -10,16 +10,21 @@ type StickyAnchorAdProps = {
 };
 
 export function StickyAnchorAd({ ads }: StickyAnchorAdProps) {
-  const [collapsed, setCollapsed] = useState(false);
   const slot = ads.bottomAnchor;
 
   useEffect(() => {
-    queueGooglePubAds(ads);
+    refreshGooglePubAds(ads);
   }, [ads]);
 
   if (!slot.enabled || slot.provider === "disabled") {
     return null;
   }
+
+  return <StickyAnchorBar slot={slot} />;
+}
+
+function StickyAnchorBar({ slot }: { slot: AdsSettings["bottomAnchor"] }) {
+  const [collapsed, setCollapsed] = useState(false);
 
   if (collapsed) {
     return (
@@ -35,7 +40,7 @@ export function StickyAnchorAd({ ads }: StickyAnchorAdProps) {
   }
 
   return (
-    <aside className="sticky-anchor-bar" aria-label="Advertisement">
+    <aside className="sticky-anchor-bar sticky-anchor-bar--hidden" aria-label="Advertisement">
       <button
         type="button"
         className="sticky-anchor-collapse"
@@ -44,7 +49,7 @@ export function StickyAnchorAd({ ads }: StickyAnchorAdProps) {
       >
         <span aria-hidden="true">▼</span>
       </button>
-      <AdSlot slot={slot} className="sticky-anchor-slot" />
+      <AdSlot slot={slot} className="sticky-anchor-slot sticky-anchor-slot--empty" />
     </aside>
   );
 }

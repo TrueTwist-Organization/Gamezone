@@ -1,6 +1,10 @@
-import type { AdSlotSettings, AdsSettings } from "@/lib/site-settings.types";
+import type { AdSize, AdSlotSettings, AdsSettings, GptSlotType } from "@/lib/site-settings.types";
 
 export const GPT_SRC = "https://securepubads.g.doubleclick.net/tag/js/gpt.js";
+
+const INTERSTITIAL_TIMEOUT_MS = 45_000;
+const INIT_RETRY_MS = 100;
+const INIT_MAX_RETRIES = 40;
 
 type GoogletagSlot = {
   addService: (service: unknown) => unknown;
@@ -10,6 +14,12 @@ type GoogletagSlot = {
 
 type GoogletagApi = {
   cmd: Array<() => void>;
+  enums?: {
+    OutOfPageFormat?: {
+      BOTTOM_ANCHOR?: unknown;
+      INTERSTITIAL?: unknown;
+    };
+  };
   sizeMapping: () => {
     addSize: (
       viewport: number[],
@@ -19,18 +29,32 @@ type GoogletagApi = {
   };
   defineSlot: (
     adUnitPath: string,
-    size: number[][] | number[],
+    size: Array<AdSize | number[]>,
     divId: string,
   ) => GoogletagSlot | null;
+  defineOutOfPageSlot?: (adUnitPath: string, format: unknown) => GoogletagSlot | null;
   pubads: () => {
     addEventListener: (
       event: string,
-      handler: (event: { slot: GoogletagSlot; isEmpty: boolean }) => void,
+      handler: (event: {
+        slot: GoogletagSlot;
+        isEmpty?: boolean;
+        inViewPercentage?: number;
+      }) => void,
+    ) => void;
+    removeEventListener: (
+      event: string,
+      handler: (event: {
+        slot: GoogletagSlot;
+        isEmpty?: boolean;
+        inViewPercentage?: number;
+      }) => void,
     ) => void;
     enableSingleRequest: () => void;
+    collapseEmptyDivs: () => void;
   };
   enableServices: () => void;
-  display: (divId: string) => void;
+  display: (target: string | GoogletagSlot) => void;
 };
 
 declare global {
@@ -39,16 +63,78 @@ declare global {
   }
 }
 
+let gptScriptReady = false;
 let servicesEnabled = false;
 let renderListenerAdded = false;
+let initRetryCount = 0;
+let pendingAds: AdsSettings | null = null;
 const definedSlotIds = new Set<string>();
+const outOfPageSlots = new Map<string, GoogletagSlot>();
 
 function getGoogletag() {
   window.googletag = window.googletag ?? { cmd: [] };
   return window.googletag;
 }
 
+export function slotType(slot: AdSlotSettings): GptSlotType {
+  return slot.gptSlotType ?? "standard";
+}
+
+function gptSizes(slot: AdSlotSettings): Array<AdSize | number[]> {
+  return slot.sizes.length ? slot.sizes : [[300, 250]];
+}
+
+function numericSizes(sizes: AdSize[]): number[][] {
+  return sizes.filter((size): size is [number, number] => size !== "fluid");
+}
+
+function activeGptSlots(ads: AdsSettings) {
+  return [ads.headerBanner, ads.bottomAnchor, ads.gameInterstitial].filter(
+    (slot) => slot.enabled && slot.provider === "gpt" && slot.gptUnitPath,
+  );
+}
+
+function standardSlotNeedsDom(slot: AdSlotSettings) {
+  return slotType(slot) === "standard" && !document.getElementById(slot.slotId);
+}
+
+function canInitialize(ads: AdsSettings) {
+  // Only wait for slots that are always in the DOM (header + anchor).
+  // The game interstitial div is created lazily by the modal, so exclude it.
+  return [ads.headerBanner, ads.bottomAnchor]
+    .filter((slot) => slot.enabled && slot.provider === "gpt" && slot.gptUnitPath)
+    .every((slot) => !standardSlotNeedsDom(slot));
+}
+
 function hideSlotWhenEmpty(slot: AdSlotSettings, event: { slot: GoogletagSlot; isEmpty: boolean }) {
+  if (slotType(slot) === "bottom-anchor") {
+    const anchorSlot = outOfPageSlots.get(slot.slotId);
+    if (!anchorSlot || event.slot !== anchorSlot) {
+      return;
+    }
+
+    return;
+  }
+
+  if (slot.slotId === "bottom-anchor-ad") {
+    const container = document.getElementById(slot.slotId);
+    if (!container) {
+      return;
+    }
+
+    container.classList.toggle("sticky-anchor-slot--empty", event.isEmpty);
+    container.classList.toggle("sticky-anchor-slot--filled", !event.isEmpty);
+
+    const bar = container.closest(".sticky-anchor-bar");
+    bar?.classList.toggle("sticky-anchor-bar--hidden", event.isEmpty);
+    document.documentElement.classList.toggle("has-bottom-anchor-ad", !event.isEmpty);
+    return;
+  }
+
+  if (slotType(slot) === "interstitial") {
+    return;
+  }
+
   if (event.slot.getSlotElementId() !== slot.slotId) {
     return;
   }
@@ -58,26 +144,52 @@ function hideSlotWhenEmpty(slot: AdSlotSettings, event: { slot: GoogletagSlot; i
     return;
   }
 
-  if (slot.slotId.includes("bottom-anchor")) {
-    document.documentElement.classList.toggle("has-bottom-anchor-ad", !event.isEmpty);
-    container.classList.toggle("sticky-anchor-slot--empty", event.isEmpty);
-    return;
-  }
+  container.classList.toggle("gpt-ad-slot--unfilled", event.isEmpty);
+  container.classList.toggle("gpt-ad-slot--filled", !event.isEmpty);
 
   if (slot.slotId.includes("interstitial")) {
     container.classList.toggle("game-interstitial-ad--empty", event.isEmpty);
+  }
+}
+
+function defineOutOfPageGptSlot(
+  googletag: GoogletagApi,
+  slot: AdSlotSettings,
+  pubads: ReturnType<GoogletagApi["pubads"]>,
+  format: unknown,
+) {
+  if (!slot.gptUnitPath || definedSlotIds.has(slot.slotId) || !googletag.defineOutOfPageSlot || !format) {
     return;
   }
 
-  container.classList.toggle("demo-ad-container--empty", event.isEmpty);
+  const outOfPageSlot = googletag.defineOutOfPageSlot(slot.gptUnitPath, format);
+  if (!outOfPageSlot) {
+    return;
+  }
+
+  definedSlotIds.add(slot.slotId);
+  outOfPageSlots.set(slot.slotId, outOfPageSlot);
+  outOfPageSlot.addService(pubads);
 }
 
 function defineGptSlot(googletag: GoogletagApi, slot: AdSlotSettings, pubads: ReturnType<GoogletagApi["pubads"]>) {
+  const type = slotType(slot);
+
+  if (type === "bottom-anchor") {
+    defineOutOfPageGptSlot(googletag, slot, pubads, googletag.enums?.OutOfPageFormat?.BOTTOM_ANCHOR);
+    return;
+  }
+
+  if (type === "interstitial") {
+    defineOutOfPageGptSlot(googletag, slot, pubads, googletag.enums?.OutOfPageFormat?.INTERSTITIAL);
+    return;
+  }
+
   if (!document.getElementById(slot.slotId) || !slot.gptUnitPath || definedSlotIds.has(slot.slotId)) {
     return;
   }
 
-  const gptSlot = googletag.defineSlot(slot.gptUnitPath, slot.sizes, slot.slotId);
+  const gptSlot = googletag.defineSlot(slot.gptUnitPath, gptSizes(slot), slot.slotId);
   if (!gptSlot) {
     return;
   }
@@ -87,8 +199,8 @@ function defineGptSlot(googletag: GoogletagApi, slot: AdSlotSettings, pubads: Re
   if (slot.mobileSizes?.length && slot.desktopSizes?.length) {
     const mapping = googletag
       .sizeMapping()
-      .addSize([1024, 0], slot.desktopSizes)
-      .addSize([0, 0], slot.mobileSizes)
+      .addSize([1024, 0], numericSizes(slot.desktopSizes))
+      .addSize([0, 0], numericSizes(slot.mobileSizes))
       .build();
     gptSlot.defineSizeMapping(mapping).addService(pubads);
     return;
@@ -97,30 +209,66 @@ function defineGptSlot(googletag: GoogletagApi, slot: AdSlotSettings, pubads: Re
   gptSlot.addService(pubads);
 }
 
-export function queueGooglePubAds(ads: AdsSettings) {
-  const activeGptSlots = [ads.headerBanner, ads.bottomAnchor, ads.gameInterstitial].filter(
-    (slot) => slot.enabled && slot.provider === "gpt" && slot.gptUnitPath,
-  );
+function displayGptSlots(googletag: GoogletagApi, ads: AdsSettings) {
+  for (const slot of activeGptSlots(ads)) {
+    const type = slotType(slot);
 
-  if (!activeGptSlots.length) {
+    if (type === "bottom-anchor") {
+      const anchorSlot = outOfPageSlots.get(slot.slotId);
+      if (anchorSlot) {
+        googletag.display(anchorSlot);
+      }
+      continue;
+    }
+
+    if (type === "interstitial") {
+      continue;
+    }
+
+    if (document.getElementById(slot.slotId)) {
+      googletag.display(slot.slotId);
+    }
+  }
+}
+
+function runGptInit(ads: AdsSettings) {
+  if (!gptScriptReady) {
+    return;
+  }
+
+  if (!canInitialize(ads)) {
+    if (initRetryCount < INIT_MAX_RETRIES) {
+      initRetryCount += 1;
+      window.setTimeout(() => runGptInit(ads), INIT_RETRY_MS);
+    }
+    return;
+  }
+
+  initRetryCount = 0;
+  const slots = activeGptSlots(ads);
+  if (!slots.length) {
     return;
   }
 
   const googletagQueue = getGoogletag();
-
   googletagQueue.cmd.push(() => {
     const googletag = window.googletag as GoogletagApi;
     const pubads = googletag.pubads();
 
-    for (const slot of activeGptSlots) {
+    for (const slot of slots) {
       defineGptSlot(googletag, slot, pubads);
     }
 
     if (!renderListenerAdded) {
       renderListenerAdded = true;
       pubads.addEventListener("slotRenderEnded", (event) => {
-        for (const slot of activeGptSlots) {
-          hideSlotWhenEmpty(slot, event);
+        const currentAds = pendingAds;
+        if (!currentAds) {
+          return;
+        }
+
+        for (const slot of activeGptSlots(currentAds)) {
+          hideSlotWhenEmpty(slot, event as { slot: GoogletagSlot; isEmpty: boolean });
         }
       });
     }
@@ -130,20 +278,126 @@ export function queueGooglePubAds(ads: AdsSettings) {
       pubads.enableSingleRequest();
       googletag.enableServices();
     }
-  });
 
+    displayGptSlots(googletag, ads);
+  });
+}
+
+export function markGptScriptReady(ads: AdsSettings) {
+  gptScriptReady = true;
+  pendingAds = ads;
+  runGptInit(ads);
+}
+
+export function refreshGooglePubAds(ads: AdsSettings) {
+  pendingAds = ads;
+  runGptInit(ads);
+}
+
+export function displayGptSlotWhenReady(slot: AdSlotSettings, ads: AdsSettings) {
+  if (!slot.enabled || slot.provider !== "gpt" || !slot.gptUnitPath || slotType(slot) !== "standard") {
+    return;
+  }
+
+  pendingAds = ads;
+
+  const googletagQueue = getGoogletag();
   googletagQueue.cmd.push(() => {
+    if (!gptScriptReady) {
+      return;
+    }
+
     const googletag = window.googletag as GoogletagApi;
-    for (const slot of activeGptSlots) {
-      if (document.getElementById(slot.slotId)) {
-        googletag.display(slot.slotId);
-      }
+    const pubads = googletag.pubads();
+
+    defineGptSlot(googletag, slot, pubads);
+
+    if (!servicesEnabled) {
+      servicesEnabled = true;
+      pubads.enableSingleRequest();
+      googletag.enableServices();
+    }
+
+    if (document.getElementById(slot.slotId)) {
+      googletag.display(slot.slotId);
     }
   });
 }
 
+export function queueGooglePubAds(ads: AdsSettings) {
+  refreshGooglePubAds(ads);
+}
+
+export function showGptInterstitial(slot: AdSlotSettings, ads: AdsSettings, onComplete: () => void) {
+  if (!slot.enabled || slot.provider !== "gpt" || slotType(slot) !== "interstitial" || !slot.gptUnitPath) {
+    onComplete();
+    return;
+  }
+
+  refreshGooglePubAds(ads);
+
+  const googletagQueue = getGoogletag();
+  googletagQueue.cmd.push(() => {
+    const googletag = window.googletag as GoogletagApi;
+    const interstitialSlot = outOfPageSlots.get(slot.slotId);
+
+    if (!interstitialSlot) {
+      onComplete();
+      return;
+    }
+
+    let finished = false;
+    const pubads = googletag.pubads();
+
+    const finish = () => {
+      if (finished) {
+        return;
+      }
+
+      finished = true;
+      pubads.removeEventListener("slotRenderEnded", onRenderEnded);
+      pubads.removeEventListener("slotVisibilityChanged", onVisibilityChanged);
+      window.clearTimeout(timeoutId);
+      onComplete();
+    };
+
+    const onRenderEnded = (event: { slot: GoogletagSlot; isEmpty?: boolean }) => {
+      if (event.slot !== interstitialSlot) {
+        return;
+      }
+
+      if (event.isEmpty) {
+        finish();
+      }
+    };
+
+    const onVisibilityChanged = (event: { slot: GoogletagSlot; inViewPercentage?: number }) => {
+      if (event.slot !== interstitialSlot) {
+        return;
+      }
+
+      if (event.inViewPercentage === 0) {
+        finish();
+      }
+    };
+
+    pubads.addEventListener("slotRenderEnded", onRenderEnded);
+    pubads.addEventListener("slotVisibilityChanged", onVisibilityChanged);
+
+    const timeoutId = window.setTimeout(finish, INTERSTITIAL_TIMEOUT_MS);
+
+    googletag.display(interstitialSlot);
+  });
+}
+
 export function hasActiveGptAds(ads: AdsSettings) {
-  return [ads.headerBanner, ads.bottomAnchor, ads.gameInterstitial].some(
-    (slot) => slot.enabled && slot.provider === "gpt" && Boolean(slot.gptUnitPath),
-  );
+  return activeGptSlots(ads).length > 0;
+}
+
+export function isNativeBottomAnchor(slot: AdSlotSettings) {
+  return slot.enabled && slot.provider === "gpt" && slotType(slot) === "bottom-anchor";
+}
+
+export function isNativeGptInterstitial(slot: AdSlotSettings) {
+  return slot.enabled && slot.provider === "gpt" && slotType(slot) === "interstitial";
 }

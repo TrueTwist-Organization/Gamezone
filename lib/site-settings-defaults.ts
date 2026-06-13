@@ -10,6 +10,8 @@ export const defaultSiteSettings: SiteSettings = {
   },
   ads: {
     gptNetworkCode: "",
+    gptPublisherId: "",
+    adsTxt: "",
     globalHeadScripts: "",
     globalBodyScripts: "",
     headerBanner: {

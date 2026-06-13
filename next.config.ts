@@ -17,6 +17,20 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          {
+            key: "Permissions-Policy",
+            value:
+              "gamepad=*, autoplay=*, fullscreen=*, accelerometer=*, gyroscope=*, magnetometer=*, payment=*, camera=(), microphone=()",
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;

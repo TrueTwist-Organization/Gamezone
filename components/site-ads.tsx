@@ -1,32 +1,28 @@
 "use client";
 
 import Script from "next/script";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { AdSlot } from "@/components/ad-slot";
-import { GPT_SRC, hasActiveGptAds, queueGooglePubAds } from "@/lib/google-pubads";
+import { GPT_SRC, hasActiveGptAds, markGptScriptReady, refreshGooglePubAds } from "@/lib/google-pubads";
 import type { AdsSettings } from "@/lib/site-settings.types";
 
 type SiteAdsProps = {
   ads: AdsSettings;
 };
 
+export function GptPreloadSlots({ ads }: SiteAdsProps) {
+  useEffect(() => {
+    refreshGooglePubAds(ads);
+  }, [ads]);
+
+  return null;
+}
+
 export function SiteAds({ ads }: SiteAdsProps) {
-  const initialized = useRef(false);
   const needsGpt = hasActiveGptAds(ads);
   const needsAdSense = [ads.headerBanner, ads.bottomAnchor, ads.gameInterstitial].some(
     (slot) => slot.enabled && slot.provider === "adsense" && slot.adsenseClient,
   );
-
-  const loadGpt = () => {
-    if (initialized.current) {
-      return;
-    }
-
-    initialized.current = true;
-    window.setTimeout(() => {
-      queueGooglePubAds(ads);
-    }, 100);
-  };
 
   return (
     <>
@@ -37,10 +33,11 @@ export function SiteAds({ ads }: SiteAdsProps) {
       ) : null}
       {needsGpt ? (
         <Script
+          id="gpt-loader"
           src={GPT_SRC}
           strategy="afterInteractive"
           crossOrigin="anonymous"
-          onLoad={loadGpt}
+          onReady={() => markGptScriptReady(ads)}
         />
       ) : null}
       {needsAdSense ? (
@@ -61,13 +58,14 @@ export function SiteAds({ ads }: SiteAdsProps) {
           {ads.globalBodyScripts}
         </Script>
       ) : null}
+      {needsGpt ? <GptPreloadSlots ads={ads} /> : null}
     </>
   );
 }
 
 export function HeaderBannerAd({ ads }: SiteAdsProps) {
   useEffect(() => {
-    queueGooglePubAds(ads);
+    refreshGooglePubAds(ads);
   }, [ads]);
 
   return <AdSlot slot={ads.headerBanner} className="demo-ad-container" />;

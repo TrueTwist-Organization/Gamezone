@@ -29,9 +29,8 @@ export default async function AdminAdsPage() {
             starts
           </li>
           <li>
-            <strong>Vercel saves:</strong> connect <strong>Blob</strong> (Storage tab) or add{" "}
-            <strong>Upstash Redis</strong> (Marketplace) to this project, then redeploy. Without that, Save shows a
-            read-only filesystem error.
+            <strong>Go live:</strong> edit <code className="rounded bg-slate-900 px-1">data/site-settings.json</code>{" "}
+            in the repo (or Save while running locally), then push and redeploy to Vercel.
           </li>
         </ul>
       </div>

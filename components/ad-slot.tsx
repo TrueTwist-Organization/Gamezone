@@ -1,12 +1,24 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, type CSSProperties } from "react";
 import type { AdSlotSettings } from "@/lib/site-settings.types";
 
 type AdSlotProps = {
   slot: AdSlotSettings;
   className?: string;
 };
+
+function gptSlotStyle(slot: AdSlotSettings): CSSProperties {
+  if (slot.slotId === "bottom-anchor-ad") {
+    return { width: "100%", maxWidth: 728, minHeight: 50 };
+  }
+
+  if (slot.slotId.includes("interstitial")) {
+    return { minWidth: 300, minHeight: 250 };
+  }
+
+  return { minWidth: 300, minHeight: 250 };
+}
 
 export function AdSlot({ slot, className }: AdSlotProps) {
   const initialized = useRef(false);
@@ -61,7 +73,14 @@ export function AdSlot({ slot, className }: AdSlotProps) {
   }
 
   if (slot.provider === "gpt") {
-    return <div id={slot.slotId} className={className} data-ad-slot={slot.slotId} />;
+    return (
+      <div
+        id={slot.slotId}
+        className={className}
+        data-ad-slot={slot.slotId}
+        style={gptSlotStyle(slot)}
+      />
+    );
   }
 
   return null;

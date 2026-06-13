@@ -6,16 +6,18 @@
     "copyrightYear": 2026
   },
   "ads": {
-    "gptNetworkCode": "",
+    "gptNetworkCode": "49490683",
+    "gptPublisherId": "6779260501485953",
+    "adsTxt": "google.com, pub-6779260501485953, DIRECT, f08c47fec0942fa0\ngoogle.com, pub-9465182413143563, DIRECT, f08c47fec0942fa0",
     "globalHeadScripts": "",
     "globalBodyScripts": "",
     "headerBanner": {
       "enabled": true,
       "provider": "gpt",
-      "slotId": "demo-ad-container",
+      "slotId": "div-gpt-ad-1781186715624-0",
       "label": "Header Banner",
-      "gptUnitPath": "/6355419/Travel/Europe/France/Paris",
-      "sizes": [[300, 250]],
+      "gptUnitPath": "/49490683/59_gameyuiopashop",
+      "sizes": [[300, 600], [300, 250], "fluid", [300, 1050], [480, 320]],
       "adsenseClient": "",
       "adsenseSlot": "",
       "customHtml": ""
@@ -24,8 +26,8 @@
       "enabled": true,
       "provider": "gpt",
       "slotId": "bottom-anchor-ad",
-      "label": "Bottom Sticky Banner",
-      "gptUnitPath": "/6355419/Travel/Europe",
+      "label": "Bottom Anchor",
+      "gptUnitPath": "/49490683/59_gameyuiopashop_20260203_home_anchor_01",
       "sizes": [[320, 50], [728, 90]],
       "mobileSizes": [[320, 50]],
       "desktopSizes": [[728, 90]],
@@ -36,10 +38,10 @@
     "gameInterstitial": {
       "enabled": true,
       "provider": "gpt",
-      "slotId": "game-interstitial-ad",
+      "slotId": "div-gpt-ad-detail-interstitial",
       "label": "Pre-Play Interstitial (on Play Now)",
-      "gptUnitPath": "/6355419/Travel/Europe/France/Paris",
-      "sizes": [[300, 250], [320, 480], [336, 280]],
+      "gptUnitPath": "/49490683/59_gameyuiopashop_20260203_detail_300x250_01",
+      "sizes": [[300, 600], [300, 250], "fluid", [480, 320]],
       "adsenseClient": "",
       "adsenseSlot": "",
       "customHtml": ""

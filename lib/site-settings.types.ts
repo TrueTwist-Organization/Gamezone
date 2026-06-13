@@ -1,6 +1,8 @@
 export type AdProvider = "gpt" | "adsense" | "custom" | "disabled";
 
-export type AdSize = [number, number];
+export type GptSlotType = "standard" | "bottom-anchor" | "interstitial";
+
+export type AdSize = [number, number] | "fluid";
 
 export type AdSlotSettings = {
   enabled: boolean;
@@ -8,6 +10,7 @@ export type AdSlotSettings = {
   slotId: string;
   label: string;
   gptUnitPath: string;
+  gptSlotType?: GptSlotType;
   sizes: AdSize[];
   mobileSizes?: AdSize[];
   desktopSizes?: AdSize[];
@@ -18,6 +21,8 @@ export type AdSlotSettings = {
 
 export type AdsSettings = {
   gptNetworkCode: string;
+  gptPublisherId: string;
+  adsTxt: string;
   globalHeadScripts: string;
   globalBodyScripts: string;
   headerBanner: AdSlotSettings;

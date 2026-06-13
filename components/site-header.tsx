@@ -67,14 +67,12 @@ export function SiteHeader({ hero, heroBadge = "HOT", heroLink = true, heroRefre
       </div>
 
       {hero ? (
-        <>
-          <div className="header-ad-row hidden w-full md:block">
-            <div className="mx-auto">
-              <HeaderBannerAd ads={ads} />
-            </div>
-          </div>
-          <div className="header-hero-row w-full">
-            <div className="header-hero-center mx-auto">
+        <div className="header-hero-layout w-full">
+          <aside className="header-ad-slot hidden md:block" aria-label="Advertisement">
+            <HeaderBannerAd ads={ads} />
+          </aside>
+          <div className="header-hero-row">
+            <div className="header-hero-center">
               {heroRefresh ? (
                 <a
                   href={hero.href}
@@ -97,7 +95,7 @@ export function SiteHeader({ hero, heroBadge = "HOT", heroLink = true, heroRefre
               )}
             </div>
           </div>
-        </>
+        </div>
       ) : null}
 
       {menuOpen ? (

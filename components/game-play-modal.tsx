@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { AdSlot } from "@/components/ad-slot";
 import { useSiteSettings } from "@/components/site-settings-provider";
-import { queueGooglePubAds } from "@/lib/google-pubads";
+import { displayGptSlotWhenReady } from "@/lib/google-pubads";
 import type { AdSlotSettings } from "@/lib/site-settings.types";
 
 const AUTO_CLOSE_SECONDS = 30;
@@ -80,8 +80,12 @@ export function GamePlayModal({ open, title, playSrc, onClose }: GamePlayModalPr
       return;
     }
 
-    queueGooglePubAds(ads);
-  }, [showInterstitial, ads]);
+    const timer = window.setTimeout(() => {
+      displayGptSlotWhenReady(interstitial, ads);
+    }, 50);
+
+    return () => window.clearTimeout(timer);
+  }, [showInterstitial, interstitial, ads]);
 
   const focusGameFrame = useCallback(() => {
     const iframe = iframeRef.current;
