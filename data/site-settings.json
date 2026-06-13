@@ -17,7 +17,7 @@
       "slotId": "div-gpt-ad-1781186715624-0",
       "label": "Header Banner",
       "gptUnitPath": "/49490683/59_gameyuiopashop",
-      "sizes": [[300, 600], [300, 250], [300, 1050], [480, 320]],
+      "sizes": [[300, 600], [300, 250], "fluid", [300, 1050], [480, 320]],
       "adsenseClient": "",
       "adsenseSlot": "",
       "customHtml": ""
@@ -25,12 +25,11 @@
     "bottomAnchor": {
       "enabled": true,
       "provider": "gpt",
+      "gptSlotType": "bottom-anchor",
       "slotId": "bottom-anchor-ad",
       "label": "Bottom Anchor",
       "gptUnitPath": "/49490683/59_gameyuiopashop_20260203_home_anchor_01",
       "sizes": [[320, 50], [728, 90]],
-      "mobileSizes": [[320, 50]],
-      "desktopSizes": [[728, 90]],
       "adsenseClient": "",
       "adsenseSlot": "",
       "customHtml": ""
@@ -38,10 +37,11 @@
     "gameInterstitial": {
       "enabled": true,
       "provider": "gpt",
+      "gptSlotType": "interstitial",
       "slotId": "div-gpt-ad-detail-interstitial",
       "label": "Pre-Play Interstitial (on Play Now)",
-      "gptUnitPath": "/49490683/59_gameyuiopashop_20260203_detail_300x250_01",
-      "sizes": [[300, 600], [300, 250], "fluid", [480, 320]],
+      "gptUnitPath": "/49490683/59_gameyuiopashop_20260203_inter_320x480_01",
+      "sizes": [[300, 600], [300, 250], "fluid", [300, 1050], [480, 320]],
       "adsenseClient": "",
       "adsenseSlot": "",
       "customHtml": ""

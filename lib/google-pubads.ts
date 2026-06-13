@@ -276,6 +276,7 @@ function runGptInit(ads: AdsSettings) {
     if (!servicesEnabled) {
       servicesEnabled = true;
       pubads.enableSingleRequest();
+      pubads.collapseEmptyDivs();
       googletag.enableServices();
     }
 

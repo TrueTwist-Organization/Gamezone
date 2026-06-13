@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { AdSlot } from "@/components/ad-slot";
 import { useSiteSettings } from "@/components/site-settings-provider";
-import { displayGptSlotWhenReady } from "@/lib/google-pubads";
+import { displayGptSlotWhenReady, showGptInterstitial, slotType } from "@/lib/google-pubads";
 import type { AdSlotSettings } from "@/lib/site-settings.types";
 
 const AUTO_CLOSE_SECONDS = 30;
@@ -57,8 +57,24 @@ export function GamePlayModal({ open, title, playSrc, onClose }: GamePlayModalPr
 
     setAutoCloseSeconds(AUTO_CLOSE_SECONDS);
     setSkipCountdownSeconds(SKIP_DELAY_SECONDS);
+
+    const isNativeInterstitial =
+      interstitialEnabled &&
+      interstitial.provider === "gpt" &&
+      slotType(interstitial) === "interstitial";
+
+    if (isNativeInterstitial) {
+      setShowInterstitial(false);
+      const timer = window.setTimeout(() => {
+        showGptInterstitial(interstitial, ads, () => {
+          // Native overlay dismissed or no fill — game already visible
+        });
+      }, 50);
+      return () => window.clearTimeout(timer);
+    }
+
     setShowInterstitial(interstitialEnabled);
-  }, [open, playSrc, interstitialEnabled]);
+  }, [open, playSrc, interstitialEnabled, interstitial, ads]);
 
   useEffect(() => {
     if (!open) {
