@@ -219,7 +219,11 @@ function displayGptSlots(googletag: GoogletagApi, ads: AdsSettings) {
       continue;
     }
 
-    if (document.getElementById(slot.slotId)) {
+    const el = document.getElementById(slot.slotId);
+    if (el) {
+      // Reset state from any previous navigation/render before displaying again
+      el.style.display = "";
+      el.classList.remove("gpt-ad-slot--unfilled", "gpt-ad-slot--filled");
       googletag.display(slot.slotId);
     }
   }
