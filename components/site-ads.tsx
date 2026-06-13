@@ -76,3 +76,25 @@ export function HeaderBannerAd({ ads }: SiteAdsProps) {
 
   return <AdSlot slot={ads.headerBanner} className="demo-ad-container" />;
 }
+
+type DetailBannerProps = SiteAdsProps & { slot: "detailBanner1" | "detailBanner2" };
+
+export function DetailBannerAd({ ads, slot }: DetailBannerProps) {
+  const adSlot = ads[slot];
+
+  useEffect(() => {
+    if (!adSlot) return;
+    const el = document.getElementById(adSlot.slotId);
+    if (el) {
+      el.style.display = "";
+      el.classList.remove("gpt-ad-slot--unfilled", "gpt-ad-slot--filled");
+    }
+    refreshGooglePubAds(ads);
+  }, [ads, adSlot]);
+
+  if (!adSlot || !adSlot.enabled || adSlot.provider === "disabled") {
+    return null;
+  }
+
+  return <AdSlot slot={adSlot} className="demo-ad-container" />;
+}

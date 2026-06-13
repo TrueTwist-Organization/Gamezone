@@ -17,7 +17,7 @@
       "slotId": "div-gpt-ad-1781186715624-0",
       "label": "Header Banner",
       "gptUnitPath": "/49490683/59_gameyuiopashop",
-      "sizes": [[300, 600], [300, 250], [300, 1050], [480, 320]],
+      "sizes": [[300, 600], [300, 250], "fluid", [300, 1050], [480, 320]],
       "adsenseClient": "",
       "adsenseSlot": "",
       "customHtml": ""
@@ -41,6 +41,28 @@
       "slotId": "div-gpt-ad-detail-interstitial",
       "label": "Pre-Play Interstitial (on Play Now)",
       "gptUnitPath": "/49490683/59_gameyuiopashop_20260203_inter_320x480_01",
+      "sizes": [[320, 480], [300, 250]],
+      "adsenseClient": "",
+      "adsenseSlot": "",
+      "customHtml": ""
+    },
+    "detailBanner1": {
+      "enabled": true,
+      "provider": "gpt",
+      "slotId": "div-gpt-ad-detail-banner-01",
+      "label": "Game Detail Banner 1 (left of hero)",
+      "gptUnitPath": "/49490683/59_gameyuiopashop_20260203_detail_300x250_01",
+      "sizes": [[300, 600], [300, 250], "fluid", [300, 1050], [480, 320]],
+      "adsenseClient": "",
+      "adsenseSlot": "",
+      "customHtml": ""
+    },
+    "detailBanner2": {
+      "enabled": true,
+      "provider": "gpt",
+      "slotId": "div-gpt-ad-detail-banner-02",
+      "label": "Game Detail Banner 2 (below game info)",
+      "gptUnitPath": "/49490683/59_gameyuiopashop_20260203_detail_300x250_02",
       "sizes": [[300, 600], [300, 250], "fluid", [300, 1050], [480, 320]],
       "adsenseClient": "",
       "adsenseSlot": "",

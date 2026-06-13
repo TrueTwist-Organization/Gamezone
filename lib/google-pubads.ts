@@ -70,7 +70,6 @@ let initRetryCount = 0;
 let pendingAds: AdsSettings | null = null;
 const definedSlotIds = new Set<string>();
 const outOfPageSlots = new Map<string, GoogletagSlot>();
-const pendingHideTimers = new Map<string, number>();
 
 function getGoogletag() {
   window.googletag = window.googletag ?? { cmd: [] };
@@ -90,9 +89,10 @@ function numericSizes(sizes: AdSize[]): number[][] {
 }
 
 function activeGptSlots(ads: AdsSettings) {
-  return [ads.headerBanner, ads.bottomAnchor, ads.gameInterstitial].filter(
-    (slot) => slot.enabled && slot.provider === "gpt" && slot.gptUnitPath,
-  );
+  const slots: AdSlotSettings[] = [ads.headerBanner, ads.bottomAnchor, ads.gameInterstitial];
+  if (ads.detailBanner1) slots.push(ads.detailBanner1);
+  if (ads.detailBanner2) slots.push(ads.detailBanner2);
+  return slots.filter((slot) => slot.enabled && slot.provider === "gpt" && slot.gptUnitPath);
 }
 
 function standardSlotNeedsDom(slot: AdSlotSettings) {
@@ -128,25 +128,11 @@ function hideSlotWhenEmpty(slot: AdSlotSettings, event: { slot: GoogletagSlot; i
     container.style.display = "";
     container.classList.add("gpt-ad-slot--filled");
     container.classList.remove("gpt-ad-slot--unfilled");
-    return;
+  } else {
+    // collapseEmptyDivs() handles display:none natively — just track the state
+    container.classList.add("gpt-ad-slot--unfilled");
+    container.classList.remove("gpt-ad-slot--filled");
   }
-
-  // For standard slots, defer hiding by 3 seconds. Responsive display ads fire
-  // slotRenderEnded(isEmpty:true) during the first render pass then load visible
-  // content asynchronously. Waiting avoids premature collapse.
-  const timerId = window.setTimeout(() => {
-    pendingHideTimers.delete(slot.slotId);
-    const el = document.getElementById(slot.slotId);
-    if (!el) return;
-    const iframe = el.querySelector("iframe");
-    const iframeHeight = iframe ? iframe.offsetHeight : 0;
-    if (iframeHeight === 0) {
-      el.style.display = "none";
-      el.classList.add("gpt-ad-slot--unfilled");
-      el.classList.remove("gpt-ad-slot--filled");
-    }
-  }, 3000) as unknown as number;
-  pendingHideTimers.set(slot.slotId, timerId);
 }
 
 function defineOutOfPageGptSlot(
@@ -224,14 +210,7 @@ function displayGptSlots(googletag: GoogletagApi, ads: AdsSettings) {
 
     const el = document.getElementById(slot.slotId);
     if (el) {
-      // Cancel any pending hide timer from a previous navigation that may still be
-      // pending in the JS event queue targeting this same DOM element (same slot ID)
-      const existingTimer = pendingHideTimers.get(slot.slotId);
-      if (existingTimer !== undefined) {
-        clearTimeout(existingTimer);
-        pendingHideTimers.delete(slot.slotId);
-      }
-      // Reset display state from any previous render
+      // Reset display state from any previous render (collapseEmptyDivs sets display:none)
       el.style.display = "";
       el.classList.remove("gpt-ad-slot--unfilled", "gpt-ad-slot--filled");
       googletag.display(slot.slotId);
@@ -284,6 +263,7 @@ function runGptInit(ads: AdsSettings) {
     if (!servicesEnabled) {
       servicesEnabled = true;
       pubads.enableSingleRequest();
+      pubads.collapseEmptyDivs();
       googletag.enableServices();
     }
 

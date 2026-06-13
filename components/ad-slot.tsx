@@ -17,8 +17,7 @@ function gptSlotStyle(slot: AdSlotSettings): CSSProperties {
     return { minWidth: 300, minHeight: 250 };
   }
 
-  // Provide 600px container so a 300x600 creative renders without SafeFrame expansion
-  return { minWidth: 300, minHeight: 600 };
+  return { minWidth: 300, minHeight: 250 };
 }
 
 export function AdSlot({ slot, className }: AdSlotProps) {

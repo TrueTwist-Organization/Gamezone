@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { GameImage } from "@/components/game-image";
-import { HeaderBannerAd } from "@/components/site-ads";
+import { DetailBannerAd, HeaderBannerAd } from "@/components/site-ads";
 import { useSiteSettings } from "@/components/site-settings-provider";
 import { mobileNavLinks, navLinks } from "@/lib/games";
 import { siteAssets } from "@/lib/public-paths";
@@ -19,9 +19,11 @@ type SiteHeaderProps = {
   heroLink?: boolean;
   /** Reload the page when the hero image is clicked (game detail page). */
   heroRefresh?: boolean;
+  /** Use detailBanner1 instead of headerBanner for the ad slot. */
+  useDetailBanner?: boolean;
 };
 
-export function SiteHeader({ hero, heroBadge = "HOT", heroLink = true, heroRefresh = false }: SiteHeaderProps) {
+export function SiteHeader({ hero, heroBadge = "HOT", heroLink = true, heroRefresh = false, useDetailBanner = false }: SiteHeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const { site, ads } = useSiteSettings();
 
@@ -69,7 +71,11 @@ export function SiteHeader({ hero, heroBadge = "HOT", heroLink = true, heroRefre
       {hero ? (
         <div className="header-hero-layout w-full">
           <aside className="header-ad-slot hidden md:block" aria-label="Advertisement">
-            <HeaderBannerAd ads={ads} />
+            {useDetailBanner ? (
+              <DetailBannerAd ads={ads} slot="detailBanner1" />
+            ) : (
+              <HeaderBannerAd ads={ads} />
+            )}
           </aside>
           <div className="header-hero-row">
             <div className="header-hero-center">

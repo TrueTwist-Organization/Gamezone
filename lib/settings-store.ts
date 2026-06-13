@@ -31,6 +31,14 @@ function mergeSettings(partial: Partial<SiteSettings>): SiteSettings {
         ...defaultSiteSettings.ads.gameInterstitial,
         ...partial.ads?.gameInterstitial,
       },
+      detailBanner1: {
+        ...(defaultSiteSettings.ads.detailBanner1 ?? defaultSiteSettings.ads.headerBanner),
+        ...partial.ads?.detailBanner1,
+      } as import("@/lib/site-settings.types").AdSlotSettings,
+      detailBanner2: {
+        ...(defaultSiteSettings.ads.detailBanner2 ?? defaultSiteSettings.ads.headerBanner),
+        ...partial.ads?.detailBanner2,
+      } as import("@/lib/site-settings.types").AdSlotSettings,
     },
     homepage: { ...defaultSiteSettings.homepage, ...partial.homepage },
   };

@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useGamePlay } from "@/components/game-play-provider";
 import { ScrollToTop, SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { DetailBannerAd } from "@/components/site-ads";
+import { useSiteSettings } from "@/components/site-settings-provider";
 import type { PublicGameDetail } from "@/lib/public-game";
 import { gamePagePath } from "@/lib/public-paths";
 
@@ -14,6 +16,7 @@ type GameDetailViewProps = {
 
 export function GameDetailView({ game }: GameDetailViewProps) {
   const { openGame } = useGamePlay();
+  const { ads } = useSiteSettings();
 
   return (
     <div className="min-h-screen bg-white text-gray-900">
@@ -21,6 +24,7 @@ export function GameDetailView({ game }: GameDetailViewProps) {
         hero={{ id: game.id, title: game.title, image: game.image, href: game.href }}
         heroBadge="NOW"
         heroRefresh
+        useDetailBanner
       />
 
       <main id="main" role="main">
@@ -69,6 +73,10 @@ export function GameDetailView({ game }: GameDetailViewProps) {
                   <div className="whitespace-pre-line text-sm text-gray-800">{game.editorsView}</div>
                 </div>
               ) : null}
+            </div>
+
+            <div className="flex justify-center">
+              <DetailBannerAd ads={ads} slot="detailBanner2" />
             </div>
 
             <div className="flex flex-col gap-4">
