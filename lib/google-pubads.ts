@@ -285,8 +285,13 @@ export function refreshGooglePubAds(ads: AdsSettings) {
   runGptInit(ads);
 }
 
-export function displayGptSlotWhenReady(slot: AdSlotSettings, ads: AdsSettings) {
+export function displayGptSlotWhenReady(
+  slot: AdSlotSettings,
+  ads: AdsSettings,
+  callbacks?: { onEmpty?: () => void; onFilled?: () => void },
+) {
   if (!slot.enabled || slot.provider !== "gpt" || !slot.gptUnitPath || slotType(slot) !== "standard") {
+    callbacks?.onEmpty?.();
     return;
   }
 
@@ -295,6 +300,7 @@ export function displayGptSlotWhenReady(slot: AdSlotSettings, ads: AdsSettings) 
   const googletagQueue = getGoogletag();
   googletagQueue.cmd.push(() => {
     if (!gptScriptReady) {
+      callbacks?.onEmpty?.();
       return;
     }
 
@@ -310,7 +316,21 @@ export function displayGptSlotWhenReady(slot: AdSlotSettings, ads: AdsSettings) 
     }
 
     if (document.getElementById(slot.slotId)) {
+      if (callbacks?.onEmpty || callbacks?.onFilled) {
+        const onRender = (event: { slot: GoogletagSlot; isEmpty?: boolean }) => {
+          if (event.slot.getSlotElementId() !== slot.slotId) return;
+          pubads.removeEventListener("slotRenderEnded", onRender);
+          if (event.isEmpty) {
+            callbacks.onEmpty?.();
+          } else {
+            callbacks.onFilled?.();
+          }
+        };
+        pubads.addEventListener("slotRenderEnded", onRender);
+      }
       googletag.display(slot.slotId);
+    } else {
+      callbacks?.onEmpty?.();
     }
   });
 }

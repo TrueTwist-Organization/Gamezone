@@ -109,7 +109,9 @@ export function GamePlayModal({ open, title, playSrc, onClose }: GamePlayModalPr
     }
 
     const timer = window.setTimeout(() => {
-      displayGptSlotWhenReady(interstitial, ads);
+      displayGptSlotWhenReady(interstitial, ads, {
+        onEmpty: () => setShowInterstitial(false),
+      });
     }, 50);
 
     return () => window.clearTimeout(timer);
@@ -144,7 +146,9 @@ export function GamePlayModal({ open, title, playSrc, onClose }: GamePlayModalPr
     }
 
     const timer = window.setTimeout(() => {
-      displayGptSlotWhenReady(midGameBanner, ads);
+      displayGptSlotWhenReady(midGameBanner, ads, {
+        onEmpty: () => setShowMidGame(false),
+      });
     }, 50);
 
     return () => window.clearTimeout(timer);
