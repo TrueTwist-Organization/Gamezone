@@ -65,6 +65,12 @@ export function SiteAds({ ads }: SiteAdsProps) {
 
 export function HeaderBannerAd({ ads }: SiteAdsProps) {
   useEffect(() => {
+    // Reset element state that may have been set by a previous page's ad render
+    const el = document.getElementById(ads.headerBanner.slotId);
+    if (el) {
+      el.style.display = "";
+      el.classList.remove("gpt-ad-slot--unfilled", "gpt-ad-slot--filled");
+    }
     refreshGooglePubAds(ads);
   }, [ads]);
 
