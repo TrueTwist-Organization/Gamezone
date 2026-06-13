@@ -70,7 +70,7 @@ export function SiteHeader({ hero, heroBadge = "HOT", heroLink = true, heroRefre
 
       {hero ? (
         <div className="header-hero-layout w-full">
-          <aside className="header-ad-slot hidden md:block" aria-label="Advertisement">
+          <aside className="header-ad-slot" aria-label="Advertisement">
             {useDetailBanner ? (
               <DetailBannerAd ads={ads} slot="detailBanner1" />
             ) : (
