@@ -124,6 +124,7 @@ function hideSlotWhenEmpty(slot: AdSlotSettings, event: { slot: GoogletagSlot; i
   }
 
   if (!event.isEmpty) {
+    container.style.display = "";
     container.classList.add("gpt-ad-slot--filled");
     container.classList.remove("gpt-ad-slot--unfilled");
     return;
@@ -138,6 +139,7 @@ function hideSlotWhenEmpty(slot: AdSlotSettings, event: { slot: GoogletagSlot; i
     const iframe = el.querySelector("iframe");
     const iframeHeight = iframe ? iframe.offsetHeight : 0;
     if (iframeHeight === 0) {
+      el.style.display = "none";
       el.classList.add("gpt-ad-slot--unfilled");
       el.classList.remove("gpt-ad-slot--filled");
     }

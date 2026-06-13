@@ -326,7 +326,7 @@
 .gpt-preload-ad {
   width: 300px;
   min-width: 300px;
-  min-height: 250px;
+  min-height: 600px;
   border-radius: 0.5rem;
   background: rgba(255, 255, 255, 0.92);
 }
