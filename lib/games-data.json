@@ -7,6 +7,12 @@
   },
   "popular": [
     {
+      "title": "Weighted Seesaw",
+      "image": "/img/game/40002-512x384.png",
+      "href": "/games/40002",
+      "id": "40002"
+    },
+    {
       "title": "Balloon Blitz",
       "image": "/img/game/40001-512x384.png",
       "href": "/games/40001",

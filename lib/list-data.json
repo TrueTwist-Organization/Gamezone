@@ -1,6 +1,14 @@
 {
   "all": [
     {
+      "id": "40002",
+      "title": "Weighted Seesaw",
+      "image": "/img/game/40002-512x384.png",
+      "href": "/games/40002",
+      "category": "Puzzles",
+      "score": 7.7
+    },
+    {
       "id": "40001",
       "title": "Balloon Blitz",
       "image": "/img/game/40001-512x384.png",

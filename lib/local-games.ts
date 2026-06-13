@@ -29,6 +29,7 @@ export function contentTypeForPath(filePath: string): string {
     ".png": "image/png",
     ".webm": "video/webm",
     ".wasm": "application/wasm",
+    ".ttf": "font/ttf",
   };
   return types[ext] ?? "application/octet-stream";
 }

@@ -1,4 +1,25 @@
 {
+  "40002": {
+    "id": "40002",
+    "title": "Weighted Seesaw",
+    "image": "/img/game/40002-512x384.png",
+    "href": "/games/40002",
+    "badge": "NEW",
+    "category": "Puzzles",
+    "score": 7.7,
+    "updated": "N/A",
+    "tags": [
+      "1 Player",
+      "Physics",
+      "Puzzle",
+      "HTML5",
+      "Balance"
+    ],
+    "howToPlay": "Place weighted pieces on the seesaw and keep it balanced. Think carefully about where each block goes before the scale tips.",
+    "description": "Weighted Seesaw is a physics puzzle game where you place blocks on a seesaw and try to keep it perfectly balanced. Each piece has its own weight, so every placement matters. Plan your moves, adjust carefully, and see how long you can keep the seesaw steady.",
+    "editorsView": "Weighted Seesaw is a smart little balance puzzler — simple to understand but satisfying when you nail the perfect placement and keep the seesaw level.",
+    "playUrl": "/games/weighted-seesaw/"
+  },
   "40001": {
     "id": "40001",
     "title": "Balloon Blitz",
