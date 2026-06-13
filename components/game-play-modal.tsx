@@ -11,6 +11,8 @@ const AUTO_CLOSE_SECONDS = 30;
 const SKIP_DELAY_SECONDS = 5;
 const MID_GAME_AUTO_CLOSE_SECONDS = 30;
 const MID_GAME_SKIP_DELAY_SECONDS = 5;
+// Minimum milliseconds between mid-game ads (prevents double-fire)
+const MID_GAME_COOLDOWN_MS = 3_000;
 
 type GamePlayModalProps = {
   open: boolean;
@@ -46,6 +48,7 @@ export function GamePlayModal({ open, title, playSrc, onClose }: GamePlayModalPr
   );
 
   const iframeRef = useRef<HTMLIFrameElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
   const [mounted, setMounted] = useState(false);
   const [showInterstitial, setShowInterstitial] = useState(false);
   const [autoCloseSeconds, setAutoCloseSeconds] = useState(AUTO_CLOSE_SECONDS);
@@ -55,6 +58,22 @@ export function GamePlayModal({ open, title, playSrc, onClose }: GamePlayModalPr
   const [midGameAutoClose, setMidGameAutoClose] = useState(MID_GAME_AUTO_CLOSE_SECONDS);
   const [midGameSkipCountdown, setMidGameSkipCountdown] = useState(MID_GAME_SKIP_DELAY_SECONDS);
   const midGameSkipAvailable = midGameSkipCountdown === 0;
+
+  // Refs for reading latest state inside event handlers without stale closures
+  const showInterstitialRef = useRef(false);
+  const showMidGameRef = useRef(false);
+  const midGameBannerEnabledRef = useRef(midGameBannerEnabled);
+  const midGameLastShownRef = useRef(0);
+
+  useEffect(() => {
+    showInterstitialRef.current = showInterstitial;
+  }, [showInterstitial]);
+  useEffect(() => {
+    showMidGameRef.current = showMidGame;
+  }, [showMidGame]);
+  useEffect(() => {
+    midGameBannerEnabledRef.current = midGameBannerEnabled;
+  }, [midGameBannerEnabled]);
 
   const skipAvailable = skipCountdownSeconds === 0;
 
@@ -117,27 +136,59 @@ export function GamePlayModal({ open, title, playSrc, onClose }: GamePlayModalPr
     return () => window.clearTimeout(timer);
   }, [showInterstitial, interstitial, ads]);
 
-  // Listen for GM_SHOW_BANNER postMessage from the game iframe (GameMonetize SDK relay)
+  // ── Mid-game ad: trigger 1 — GameMonetize SDK showBanner() relay ──────────
+  // Works for games that use the GM SDK and call gdApi.showBanner() on state
+  // transitions (menu→play, game-over→replay). The embed-shield stub relays
+  // these calls to the parent via postMessage({ type: 'GM_SHOW_BANNER' }).
   useEffect(() => {
-    if (!open || !midGameBannerEnabled) {
-      return;
-    }
+    if (!open) return;
 
     const handleMessage = (event: MessageEvent) => {
-      if (
-        event.data?.type === "GM_SHOW_BANNER" &&
-        !showInterstitial &&
-        !showMidGame
-      ) {
-        setShowMidGame(true);
-        setMidGameAutoClose(MID_GAME_AUTO_CLOSE_SECONDS);
-        setMidGameSkipCountdown(MID_GAME_SKIP_DELAY_SECONDS);
-      }
+      if (event.data?.type !== "GM_SHOW_BANNER") return;
+      if (!midGameBannerEnabledRef.current) return;
+      if (showInterstitialRef.current || showMidGameRef.current) return;
+
+      const now = Date.now();
+      if (now - midGameLastShownRef.current < MID_GAME_COOLDOWN_MS) return;
+      midGameLastShownRef.current = now;
+
+      setShowMidGame(true);
+      setMidGameAutoClose(MID_GAME_AUTO_CLOSE_SECONDS);
+      setMidGameSkipCountdown(MID_GAME_SKIP_DELAY_SECONDS);
     };
 
     window.addEventListener("message", handleMessage);
     return () => window.removeEventListener("message", handleMessage);
-  }, [open, midGameBannerEnabled, showInterstitial, showMidGame]);
+  }, [open]);
+
+  // ── Mid-game ad: trigger 2 — window.blur (user clicks into game iframe) ───
+  // When the parent window loses focus to the game iframe (i.e. user clicks
+  // any button inside the game), we show the mid-game ad.  After each ad
+  // closes we keep focus on the modal panel — not the iframe — so the next
+  // click inside the game fires window.blur again.
+  useEffect(() => {
+    if (!open) return;
+
+    const handleBlur = () => {
+      window.setTimeout(() => {
+        // Confirm focus actually moved to an iframe (our game iframe)
+        if (document.activeElement?.tagName !== "IFRAME") return;
+        if (!midGameBannerEnabledRef.current) return;
+        if (showInterstitialRef.current || showMidGameRef.current) return;
+
+        const now = Date.now();
+        if (now - midGameLastShownRef.current < MID_GAME_COOLDOWN_MS) return;
+        midGameLastShownRef.current = now;
+
+        setShowMidGame(true);
+        setMidGameAutoClose(MID_GAME_AUTO_CLOSE_SECONDS);
+        setMidGameSkipCountdown(MID_GAME_SKIP_DELAY_SECONDS);
+      }, 50);
+    };
+
+    window.addEventListener("blur", handleBlur);
+    return () => window.removeEventListener("blur", handleBlur);
+  }, [open]);
 
   // Display the mid-game GPT slot when the overlay becomes visible
   useEffect(() => {
@@ -168,40 +219,35 @@ export function GamePlayModal({ open, title, playSrc, onClose }: GamePlayModalPr
     return () => window.clearInterval(timer);
   }, [showMidGame]);
 
-  // Auto-close mid-game banner
+  // Auto-close mid-game banner; keep focus on parent so next game click
+  // triggers window.blur again.
   useEffect(() => {
     if (showMidGame && midGameAutoClose === 0) {
       setShowMidGame(false);
+      window.setTimeout(() => closeButtonRef.current?.focus(), 0);
     }
   }, [showMidGame, midGameAutoClose]);
 
-  const focusGameFrame = useCallback(() => {
-    const iframe = iframeRef.current;
-    if (!iframe) {
-      return;
-    }
-
-    iframe.focus();
-    try {
-      iframe.contentWindow?.focus();
-    } catch {
-      // Cross-origin focus may be blocked.
-    }
+  // Dismiss mid-game overlay and return focus to modal (not iframe)
+  const dismissMidGame = useCallback(() => {
+    setShowMidGame(false);
+    window.setTimeout(() => closeButtonRef.current?.focus(), 0);
   }, []);
 
+  // revealGame intentionally does NOT call focusGameFrame — keeping focus on
+  // the parent means the very next click into the game triggers window.blur
+  // and shows the mid-game ad.
   const revealGame = useCallback(() => {
     setShowInterstitial(false);
-    focusGameFrame();
-  }, [focusGameFrame]);
+  }, []);
 
   const handleSkipAd = useCallback(
     (event: React.MouseEvent<HTMLButtonElement>) => {
       event.preventDefault();
       event.stopPropagation();
       revealGame();
-      requestAnimationFrame(() => focusGameFrame());
     },
-    [revealGame, focusGameFrame],
+    [revealGame],
   );
 
   useEffect(() => {
@@ -244,7 +290,12 @@ export function GamePlayModal({ open, title, playSrc, onClose }: GamePlayModalPr
   return createPortal(
     <div className="game-play-modal is-open" role="dialog" aria-modal="true" aria-label={title}>
       <div className="game-play-modal__panel">
-        <button type="button" className="game-play-modal__close" onClick={handleClose}>
+        <button
+          ref={closeButtonRef}
+          type="button"
+          className="game-play-modal__close"
+          onClick={handleClose}
+        >
           Close
         </button>
 
@@ -297,11 +348,7 @@ export function GamePlayModal({ open, title, playSrc, onClose }: GamePlayModalPr
                   Ad will be closed in {midGameAutoClose} secs
                 </p>
                 {midGameSkipAvailable ? (
-                  <button
-                    type="button"
-                    className="game-play-modal__skip"
-                    onClick={() => setShowMidGame(false)}
-                  >
+                  <button type="button" className="game-play-modal__skip" onClick={dismissMidGame}>
                     SKIP
                   </button>
                 ) : (
