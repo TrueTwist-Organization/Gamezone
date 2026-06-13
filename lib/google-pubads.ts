@@ -100,11 +100,13 @@ function standardSlotNeedsDom(slot: AdSlotSettings) {
 }
 
 function canInitialize(ads: AdsSettings) {
-  // Only wait for slots that are always in the DOM (header + anchor).
-  // The game interstitial div is created lazily by the modal, so exclude it.
-  return [ads.headerBanner, ads.bottomAnchor]
-    .filter((slot) => slot.enabled && slot.provider === "gpt" && slot.gptUnitPath)
-    .every((slot) => !standardSlotNeedsDom(slot));
+  // Proceed once at least one standard slot has its DOM element in the page,
+  // OR when there are no standard slots at all (all are out-of-page formats).
+  // This handles the case where different pages render different slot elements
+  // (e.g. home renders headerBanner, game-detail renders detailBanner1/2).
+  const standardSlots = activeGptSlots(ads).filter((slot) => slotType(slot) === "standard");
+  if (standardSlots.length === 0) return true;
+  return standardSlots.some((slot) => !!document.getElementById(slot.slotId));
 }
 
 function hideSlotWhenEmpty(slot: AdSlotSettings, event: { slot: GoogletagSlot; isEmpty: boolean }) {
