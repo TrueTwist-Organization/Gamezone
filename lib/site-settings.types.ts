@@ -30,6 +30,7 @@ export type AdsSettings = {
   gameInterstitial: AdSlotSettings;
   detailBanner1?: AdSlotSettings;
   detailBanner2?: AdSlotSettings;
+  midGameBanner?: AdSlotSettings;
 };
 
 export type SiteBranding = {

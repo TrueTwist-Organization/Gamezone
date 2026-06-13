@@ -9,6 +9,8 @@ import type { AdSlotSettings } from "@/lib/site-settings.types";
 
 const AUTO_CLOSE_SECONDS = 30;
 const SKIP_DELAY_SECONDS = 5;
+const MID_GAME_AUTO_CLOSE_SECONDS = 30;
+const MID_GAME_SKIP_DELAY_SECONDS = 5;
 
 type GamePlayModalProps = {
   open: boolean;
@@ -36,13 +38,23 @@ function isInterstitialActive(slot: AdSlotSettings) {
 export function GamePlayModal({ open, title, playSrc, onClose }: GamePlayModalProps) {
   const { ads } = useSiteSettings();
   const interstitial = ads.gameInterstitial;
+  const midGameBanner = ads.midGameBanner;
   const interstitialEnabled = useMemo(() => isInterstitialActive(interstitial), [interstitial]);
+  const midGameBannerEnabled = useMemo(
+    () => Boolean(midGameBanner && isInterstitialActive(midGameBanner)),
+    [midGameBanner],
+  );
 
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const [mounted, setMounted] = useState(false);
   const [showInterstitial, setShowInterstitial] = useState(false);
   const [autoCloseSeconds, setAutoCloseSeconds] = useState(AUTO_CLOSE_SECONDS);
   const [skipCountdownSeconds, setSkipCountdownSeconds] = useState(SKIP_DELAY_SECONDS);
+
+  const [showMidGame, setShowMidGame] = useState(false);
+  const [midGameAutoClose, setMidGameAutoClose] = useState(MID_GAME_AUTO_CLOSE_SECONDS);
+  const [midGameSkipCountdown, setMidGameSkipCountdown] = useState(MID_GAME_SKIP_DELAY_SECONDS);
+  const midGameSkipAvailable = midGameSkipCountdown === 0;
 
   const skipAvailable = skipCountdownSeconds === 0;
 
@@ -102,6 +114,62 @@ export function GamePlayModal({ open, title, playSrc, onClose }: GamePlayModalPr
 
     return () => window.clearTimeout(timer);
   }, [showInterstitial, interstitial, ads]);
+
+  // Listen for GM_SHOW_BANNER postMessage from the game iframe (GameMonetize SDK relay)
+  useEffect(() => {
+    if (!open || !midGameBannerEnabled) {
+      return;
+    }
+
+    const handleMessage = (event: MessageEvent) => {
+      if (
+        event.data?.type === "GM_SHOW_BANNER" &&
+        !showInterstitial &&
+        !showMidGame
+      ) {
+        setShowMidGame(true);
+        setMidGameAutoClose(MID_GAME_AUTO_CLOSE_SECONDS);
+        setMidGameSkipCountdown(MID_GAME_SKIP_DELAY_SECONDS);
+      }
+    };
+
+    window.addEventListener("message", handleMessage);
+    return () => window.removeEventListener("message", handleMessage);
+  }, [open, midGameBannerEnabled, showInterstitial, showMidGame]);
+
+  // Display the mid-game GPT slot when the overlay becomes visible
+  useEffect(() => {
+    if (!showMidGame || !midGameBanner) {
+      return;
+    }
+
+    const timer = window.setTimeout(() => {
+      displayGptSlotWhenReady(midGameBanner, ads);
+    }, 50);
+
+    return () => window.clearTimeout(timer);
+  }, [showMidGame, midGameBanner, ads]);
+
+  // Mid-game banner countdown
+  useEffect(() => {
+    if (!showMidGame) {
+      return;
+    }
+
+    const timer = window.setInterval(() => {
+      setMidGameAutoClose((s) => Math.max(0, s - 1));
+      setMidGameSkipCountdown((s) => Math.max(0, s - 1));
+    }, 1000);
+
+    return () => window.clearInterval(timer);
+  }, [showMidGame]);
+
+  // Auto-close mid-game banner
+  useEffect(() => {
+    if (showMidGame && midGameAutoClose === 0) {
+      setShowMidGame(false);
+    }
+  }, [showMidGame, midGameAutoClose]);
 
   const focusGameFrame = useCallback(() => {
     const iframe = iframeRef.current;
@@ -183,7 +251,7 @@ export function GamePlayModal({ open, title, playSrc, onClose }: GamePlayModalPr
             src={playSrc}
             title={title}
             className={`game-play-modal__frame game-play-modal__frame--active${
-              showInterstitial ? " game-play-modal__frame--behind" : ""
+              showInterstitial || showMidGame ? " game-play-modal__frame--behind" : ""
             }`}
             allow="autoplay; fullscreen; gamepad *"
             allowFullScreen
@@ -207,6 +275,34 @@ export function GamePlayModal({ open, title, playSrc, onClose }: GamePlayModalPr
                 ) : (
                   <p className="game-play-modal__skip-hint">
                     You can skip this in {skipCountdownSeconds} secs
+                  </p>
+                )}
+              </div>
+            </div>
+          ) : null}
+
+          {showMidGame && midGameBanner ? (
+            <div className="game-play-modal__interstitial" role="dialog" aria-label="Advertisement">
+              <div className="game-play-modal__interstitial-body">
+                <div className="game-play-modal__interstitial-content">
+                  <AdSlot slot={midGameBanner} className="game-interstitial-ad" />
+                </div>
+              </div>
+              <div className="game-play-modal__interstitial-footer">
+                <p className="game-play-modal__auto-close">
+                  Ad will be closed in {midGameAutoClose} secs
+                </p>
+                {midGameSkipAvailable ? (
+                  <button
+                    type="button"
+                    className="game-play-modal__skip"
+                    onClick={() => setShowMidGame(false)}
+                  >
+                    SKIP
+                  </button>
+                ) : (
+                  <p className="game-play-modal__skip-hint">
+                    You can skip this in {midGameSkipCountdown} secs
                   </p>
                 )}
               </div>

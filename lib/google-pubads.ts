@@ -92,6 +92,7 @@ function activeGptSlots(ads: AdsSettings) {
   const slots: AdSlotSettings[] = [ads.headerBanner, ads.bottomAnchor, ads.gameInterstitial];
   if (ads.detailBanner1) slots.push(ads.detailBanner1);
   if (ads.detailBanner2) slots.push(ads.detailBanner2);
+  if (ads.midGameBanner) slots.push(ads.midGameBanner);
   return slots.filter((slot) => slot.enabled && slot.provider === "gpt" && slot.gptUnitPath);
 }
 

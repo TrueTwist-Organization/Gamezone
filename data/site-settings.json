@@ -66,6 +66,17 @@
       "adsenseClient": "",
       "adsenseSlot": "",
       "customHtml": ""
+    },
+    "midGameBanner": {
+      "enabled": true,
+      "provider": "gpt",
+      "slotId": "div-gpt-ad-mid-game-banner",
+      "label": "Mid-Game Banner (shows on play/replay/restart)",
+      "gptUnitPath": "/49490683/59_gameyuiopashop_20260203_detail_300x250_02",
+      "sizes": [[300, 600], [300, 250], "fluid", [480, 320]],
+      "adsenseClient": "",
+      "adsenseSlot": "",
+      "customHtml": ""
     }
   },
   "homepage": {

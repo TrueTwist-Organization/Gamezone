@@ -78,6 +78,17 @@ export const defaultSiteSettings: SiteSettings = {
       adsenseSlot: "",
       customHtml: "",
     },
+    midGameBanner: {
+      enabled: false,
+      provider: "disabled",
+      slotId: "div-gpt-ad-mid-game-banner",
+      label: "Mid-Game Banner (shows on play/replay/restart)",
+      gptUnitPath: "",
+      sizes: [[300, 250]],
+      adsenseClient: "",
+      adsenseSlot: "",
+      customHtml: "",
+    },
   },
   homepage: {
     heroGameId: "29221",

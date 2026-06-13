@@ -61,6 +61,11 @@ export const embedGamemonetizeSdkBootstrap = `<script>
     }
 
     GdApi.prototype.showBanner = function () {
+      try {
+        if (window.parent && window.parent !== window) {
+          window.parent.postMessage({ type: 'GM_SHOW_BANNER' }, '*');
+        }
+      } catch (e) {}
       var opts = this.options;
       if (!opts || !opts.onEvent) return;
       opts.onEvent({ name: "SDK_GAME_PAUSE" });
