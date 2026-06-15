@@ -6,11 +6,12 @@ import { SiteHeader } from "@/components/site-header";
 import { TrendingNow } from "@/components/trending-now";
 import { siteData } from "@/lib/games";
 import { getHomepageHero } from "@/lib/homepage";
+import { getHomepagePopularGames } from "@/lib/homepage-games";
 import { toPublicGameCard } from "@/lib/public-game";
 
 export default async function Home() {
   const hero = await getHomepageHero();
-  const popular = siteData.popular.map((game) => toPublicGameCard(game));
+  const popular = getHomepagePopularGames().map((game) => toPublicGameCard(game));
   const hotPicks = siteData.hotPicks.map((game) => toPublicGameCard(game));
   const funRanks = siteData.funRanks.map((rank) => ({
     ...rank,
