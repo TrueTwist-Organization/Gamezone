@@ -1,12 +1,7 @@
-import { readFile } from "fs/promises";
 import { prepareEmbeddedHtml } from "@/lib/embed-html";
 import { embedContentSecurityPolicy, sanitizeEmbeddedJavaScript } from "@/lib/embed-shield";
 import { getGamePlaySource } from "@/lib/game-sources";
-import {
-  contentTypeForPath,
-  isLocalGamePlayUrl,
-  resolveLocalGameFile,
-} from "@/lib/local-games";
+import { contentTypeForPath, isLocalGamePlayUrl } from "@/lib/local-games";
 
 type RouteParams = {
   params: Promise<{ id: string; path?: string[] }>;
@@ -20,46 +15,6 @@ const embedHeaders = {
   "Content-Security-Policy": embedContentSecurityPolicy,
   "X-Content-Type-Options": "nosniff",
 };
-
-async function serveLocalGameFile(
-  playUrl: string,
-  subPath: string,
-  embedPrefix: string,
-) {
-  const filePath = resolveLocalGameFile(playUrl, subPath);
-  const contentType = contentTypeForPath(filePath);
-  const source = await readFile(filePath);
-
-  if (contentType.includes("text/html") && subPath === "") {
-    const body = prepareEmbeddedHtml(source.toString("utf-8"), embedPrefix);
-    return new Response(body, {
-      headers: {
-        ...embedHeaders,
-        "Content-Type": "text/html; charset=utf-8",
-        "Cache-Control": "public, max-age=300",
-      },
-    });
-  }
-
-  if (contentType.includes("javascript") || filePath.endsWith(".js")) {
-    const sanitized = sanitizeEmbeddedJavaScript(source.toString("utf-8"));
-    return new Response(sanitized, {
-      headers: {
-        ...embedHeaders,
-        "Content-Type": contentType,
-        "Cache-Control": "public, max-age=86400",
-      },
-    });
-  }
-
-  return new Response(source, {
-    headers: {
-      ...embedHeaders,
-      "Content-Type": contentType,
-      "Cache-Control": "public, max-age=86400",
-    },
-  });
-}
 
 async function serveLocalGameFileFromStatic(
   request: Request,
@@ -132,10 +87,7 @@ export async function GET(request: Request, { params }: RouteParams) {
 
   if (isLocalGamePlayUrl(playUrl)) {
     try {
-      if (process.env.VERCEL) {
-        return await serveLocalGameFileFromStatic(request, playUrl, subPath, embedPrefix);
-      }
-      return await serveLocalGameFile(playUrl, subPath, embedPrefix);
+      return await serveLocalGameFileFromStatic(request, playUrl, subPath, embedPrefix);
     } catch {
       return new Response("Game unavailable", { status: 404 });
     }

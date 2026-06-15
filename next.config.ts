@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   devIndicators: false,
   trailingSlash: true,
   outputFileTracingExcludes: {
+    "*": ["public/games/**/*"],
     "/api/admin/local-games": ["public/games/**/*"],
     "/embed/[id]/[[...path]]": ["public/games/**/*"],
   },
