@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Slackey } from "next/font/google";
 import { GamePlayProvider } from "@/components/game-play-provider";
+import { GoogleTag } from "@/components/google-tag";
 import { SiteAds } from "@/components/site-ads";
 import { SiteSettingsProvider } from "@/components/site-settings-provider";
 import { StickyAnchorAd } from "@/components/sticky-anchor-ad";
@@ -35,6 +36,9 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className={`${slackey.variable} h-full`}>
+      <head>
+        <GoogleTag />
+      </head>
       <body className="min-h-screen antialiased">
         <SiteSettingsProvider settings={settings}>
           <GamePlayProvider>
