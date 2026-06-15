@@ -1,7 +1,6 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
+import { createContext, useCallback, useContext, useMemo, useState, type ReactNode } from "react";
 import { GamePlayModal } from "@/components/game-play-modal";
 import { getGamePlaySource } from "@/lib/game-sources";
 import { gameDirectPlayPath } from "@/lib/public-paths";
@@ -19,7 +18,6 @@ type GamePlayContextValue = {
 const GamePlayContext = createContext<GamePlayContextValue | null>(null);
 
 export function GamePlayProvider({ children }: { children: ReactNode }) {
-  const pathname = usePathname();
   const [activeGame, setActiveGame] = useState<ActiveGame | null>(null);
 
   const openGame = useCallback((game: ActiveGame) => {
@@ -29,10 +27,6 @@ export function GamePlayProvider({ children }: { children: ReactNode }) {
   const closeGame = useCallback(() => {
     setActiveGame(null);
   }, []);
-
-  useEffect(() => {
-    setActiveGame(null);
-  }, [pathname]);
 
   const value = useMemo(
     () => ({

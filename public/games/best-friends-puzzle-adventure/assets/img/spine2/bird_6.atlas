@@ -1,0 +1,69 @@
+
+bird_6.png
+size: 479, 490
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+brucho
+  rotate: false
+  xy: 2, 36
+  size: 250, 219
+  orig: 250, 219
+  offset: 0, 0
+  index: -1
+chvost
+  rotate: false
+  xy: 254, 33
+  size: 105, 88
+  orig: 105, 88
+  offset: 0, 0
+  index: -1
+hlava
+  rotate: false
+  xy: 2, 257
+  size: 259, 231
+  orig: 259, 231
+  offset: 0, 0
+  index: -1
+kridlo_L
+  rotate: false
+  xy: 263, 123
+  size: 79, 197
+  orig: 79, 197
+  offset: 0, 0
+  index: -1
+kridlo_P
+  rotate: false
+  xy: 344, 135
+  size: 71, 185
+  orig: 71, 185
+  offset: 0, 0
+  index: -1
+noha_L
+  rotate: false
+  xy: 417, 217
+  size: 60, 103
+  orig: 60, 103
+  offset: 0, 0
+  index: -1
+noha_P
+  rotate: false
+  xy: 361, 20
+  size: 70, 113
+  orig: 70, 113
+  offset: 0, 0
+  index: -1
+oci
+  rotate: false
+  xy: 263, 322
+  size: 208, 166
+  orig: 208, 166
+  offset: 0, 0
+  index: -1
+zrenicky
+  rotate: false
+  xy: 2, 2
+  size: 124, 32
+  orig: 124, 32
+  offset: 0, 0
+  index: -1

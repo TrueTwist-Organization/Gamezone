@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Ad Blocker Stubs -->
+	<script>
+		if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.register('./sw-adblock.js').then(function(reg) {
+				console.log('[AdBlock] Service Worker registered');
+			}).catch(function(err) {
+				console.log('[AdBlock] SW registration failed:', err);
+			});
+		}
+
+		(function() {
+			var noop = function() { return Promise.resolve(); };
+			var noopFalse = function() { return false; };
+			var noopObj = function() { return {}; };
+
+			window.GameMonetize = { showAd: noop, displayAd: noop, showBanner: noop, hideBanner: noop, isAdBlocked: noopFalse, init: noop };
+			window.gdsdk = { showAd: noop, displayAd: noop, showBanner: noop, hideBanner: noop, preloadAd: noop, cancelAd: noop, addEventListener: noop };
+			window.GD_SDK = window.gdsdk;
+			window.sdk = { showBanner: noop, showAd: noop };
+
+			window.showAd = noop;
+			window.displayAd = noop;
+			window.showBannerAd = noop;
+			window.hideBannerAd = noop;
+			window.showInterstitial = noop;
+			window.showRewardedAd = noop;
+			window.showRewardedVideo = noop;
+			window.happyTimeStart = noop;
+			window.happyTimeStop = noop;
+
+			var origCreateElement = document.createElement.bind(document);
+			document.createElement = function(tag) {
+				var el = origCreateElement(tag);
+				if (tag.toLowerCase() === 'script') {
+					var origSetSrc = Object.getOwnPropertyDescriptor(HTMLScriptElement.prototype, 'src');
+					Object.defineProperty(el, 'src', {
+						set: function(val) {
+							var blocked = ['gamemonetize', 'adinplay', 'adsense', 'googlesyndication', 'doubleclick', 'adsbygoogle', 'adnxs', 'openx', 'rubiconproject', 'pubmatic', 'sdk.js'];
+							if (blocked.some(function(b) { return val && val.indexOf(b) !== -1; })) {
+								console.log('[AdBlock] Blocked ad script:', val);
+								return;
+							}
+							origSetSrc.set.call(this, val);
+						},
+						get: function() { return origSetSrc.get.call(this); }
+					});
+				}
+				return el;
+			};
+		})();
+	</script>
+	<script src="my.js"></script>
+
+<meta charset="UTF-8">
+<title>Roly Santa Claus</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+<meta name="generator" content="Scirra Construct">
+	<meta name="author" content="Video Igrice">
+	<meta name="description" content="Minecraft Coin Adventure">
+	<link rel="manifest" href="appmanifest.json">
+	<link rel="apple-touch-icon" sizes="128x128" href="icons/icon-128.png">
+	<link rel="apple-touch-icon" sizes="256x256" href="icons/icon-256.png">
+	<link rel="icon" type="image/png" href="icons/icon-256.png">
+
+<link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+
+<script>
+if (location.protocol.substr(0, 4) === "file")
+{
+	alert("Web exports won't work until you upload them. (When running on the file: protocol, browsers block many features from working for security reasons.)");
+}
+</script>
+	<script src="box2d.wasm.js"></script>
+	<noscript>
+		<div id="notSupportedWrap">
+			<h2 id="notSupportedTitle">This content requires JavaScript</h2>
+			<p class="notSupportedMessage">JavaScript appears to be disabled. Please enable it to view this content.</p>
+		</div>
+	</noscript>
+	<script src="scripts/supportcheck.js"></script>
+	<script src="scripts/offlineclient.js" type="module"></script>
+	<script src="scripts/main.js" type="module"></script>
+	<script src="scripts/register-sw.js" type="module"></script>
+
+</body>
+</html>

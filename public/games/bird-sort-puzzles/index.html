@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <title>Bird Sort: Color Sort Puzzle</title>
+  <style>
+    html {
+      box-sizing: border-box;
+    }
+
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+    body {
+      margin: 0;
+      background: #444;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    #gameContainer {
+      width: calc((100vh / 1280) * 720);
+      height: 100vh;
+      background: #333;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* Loader styles */
+    #loader {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #444;
+      z-index: 999;
+    }
+
+    /* Rotating "VODOGAME" text along the X-axis */
+    .rotating-text {
+      font-size: 3rem;
+      font-weight: bold;
+      color: yellow;
+      text-transform: uppercase;
+      animation: rotateXAxis 2s linear infinite;
+      transform-origin: center;
+    }
+
+    @keyframes rotateXAxis {
+      0% {
+        transform: rotateX(0deg);
+      }
+      100% {
+        transform: rotateX(360deg);
+      }
+    }
+
+    /* Fading dots below the text */
+    .dots {
+      display: flex;
+      margin-top: 1rem;
+    }
+
+    .dots span {
+      width: 1rem;
+      height: 1rem;
+      margin: 0 0.5rem;
+      background: white;
+      border-radius: 50%;
+      opacity: 0;
+      animation: fadeDots 2s infinite;
+    }
+
+    .dots span:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .dots span:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+
+    .dots span:nth-child(3) {
+      animation-delay: 0.8s;
+    }
+
+    .dots span:nth-child(4) {
+      animation-delay: 1.2s;
+    }
+
+    .dots span:nth-child(5) {
+      animation-delay: 1.6s;
+    }
+
+    @keyframes fadeDots {
+      0%, 100% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="gameContainer"></div>
+  <div id="loader">
+    <div class="rotating-text">VODOGAME</div>
+    <div class="dots">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <script src="Build/UnityLoader.js"></script>
+  <script>
+    var gameInstance = UnityLoader.instantiate("gameContainer", "Build/GMO.json", { onProgress: UnityProgress });
+
+    function UnityProgress(gameInstance, progress) {
+      if (!gameInstance.Module) {
+        return;
+      }
+      const loader = document.querySelector("#loader");
+
+      // Hide the loader when progress reaches 100%
+      if (progress === 1 && !gameInstance.removeTimeout) {
+        gameInstance.removeTimeout = setTimeout(function () {
+          loader.style.display = "none";
+        }, 2000);
+      }
+    }
+
+    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      container.className = "unity-mobile";
+      config.devicePixelRatio = 1.5;
+    }
+  </script>
+</body>
+
+</html>

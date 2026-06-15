@@ -1,0 +1,106 @@
+{
+	"data" : { 
+		"key" : "",
+		"name" : "",
+		"is_change_name" : 0,
+		"score_best" : 0 ,
+		"score" : 0,
+		"is_guide" : 0, 
+		"data_save" : "",
+		"coin" : 0,
+		"background_active" : 1,
+		"booster" : {
+			"swap" : 0,
+			"rocket" : 0,
+			"sort" : 0,
+			"magnet" : 0
+		},
+		"background" : {
+			"1" : {
+				"active" : 1,
+				"unlock" : 1
+			},
+			"2" : {
+				"active" : 0,
+				"unlock" : 0
+			},
+			"3" : {
+				"active" : 0,
+				"unlock" : 0
+			},
+			"4" : {
+				"active" : 0,
+				"unlock" : 0
+			},
+			"5" : {
+				"active" : 0,
+				"unlock" : 0
+			}
+		},
+		"score_target" : 0,
+		"score_index" : 0,
+		"score_ads" : [
+			{
+				"min" : 2000,
+				"max" : 2500
+			},
+			
+			{
+				"min" : 5000,
+				"max" : 5500
+			},
+			{
+				"min" : 10000,
+				"max" : 11000
+			},
+			
+			{
+				"min" : 15000,
+				"max" : 16000
+			},
+			
+			
+			{
+				"min" : 19000,
+				"max" : 20000
+			},
+			
+			
+			{
+				"min" : 25000,
+				"max" : 30000
+			},
+			
+			
+			{
+				"min" : 35000,
+				"max" : 40000
+			},
+			
+			
+			{
+				"min" : 45000,
+				"max" : 50000
+			},
+			
+			
+			{
+				"min" : 55000,
+				"max" : 60000
+			},
+			
+			{
+				"min" : 65000,
+				"max" : 70000
+			},
+			{
+				"min" : 75000,
+				"max" : 80000
+			},
+			{
+				"min" : 10000000000,
+				"max" : 1000000000000
+			}
+		]
+	}
+}

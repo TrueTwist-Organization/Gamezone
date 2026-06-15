@@ -1,0 +1,69 @@
+
+bird_12.png
+size: 284, 884
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+brucho
+  rotate: false
+  xy: 2, 621
+  size: 280, 261
+  orig: 280, 261
+  offset: 0, 0
+  index: -1
+chvost
+  rotate: false
+  xy: 166, 42
+  size: 113, 128
+  orig: 113, 128
+  offset: 0, 0
+  index: -1
+hlava
+  rotate: false
+  xy: 2, 388
+  size: 270, 231
+  orig: 270, 231
+  offset: 0, 0
+  index: -1
+kridlo_L
+  rotate: false
+  xy: 194, 172
+  size: 85, 214
+  orig: 85, 214
+  offset: 0, 0
+  index: -1
+kridlo_P
+  rotate: false
+  xy: 2, 51
+  size: 79, 205
+  orig: 79, 205
+  offset: 0, 0
+  index: -1
+noha_L
+  rotate: false
+  xy: 83, 36
+  size: 70, 105
+  orig: 70, 105
+  offset: 0, 0
+  index: -1
+noha_P
+  rotate: false
+  xy: 83, 143
+  size: 81, 113
+  orig: 81, 113
+  offset: 0, 0
+  index: -1
+oci
+  rotate: false
+  xy: 2, 258
+  size: 190, 128
+  orig: 190, 128
+  offset: 0, 0
+  index: -1
+zrenicky
+  rotate: false
+  xy: 2, 2
+  size: 134, 32
+  orig: 134, 32
+  offset: 0, 0
+  index: -1

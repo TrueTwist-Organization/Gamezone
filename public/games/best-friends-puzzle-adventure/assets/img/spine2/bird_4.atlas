@@ -1,0 +1,69 @@
+
+bird_4.png
+size: 989, 330
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+brucho
+  rotate: false
+  xy: 254, 18
+  size: 246, 310
+  orig: 246, 310
+  offset: 0, 0
+  index: -1
+chvost
+  rotate: false
+  xy: 855, 23
+  size: 110, 128
+  orig: 110, 128
+  offset: 0, 0
+  index: -1
+hlava
+  rotate: false
+  xy: 2, 2
+  size: 250, 326
+  orig: 250, 326
+  offset: 0, 0
+  index: -1
+kridlo_L
+  rotate: false
+  xy: 696, 34
+  size: 82, 294
+  orig: 82, 294
+  offset: 0, 0
+  index: -1
+kridlo_P
+  rotate: false
+  xy: 780, 48
+  size: 73, 280
+  orig: 73, 280
+  offset: 0, 0
+  index: -1
+noha_L
+  rotate: false
+  xy: 927, 161
+  size: 60, 167
+  orig: 60, 167
+  offset: 0, 0
+  index: -1
+noha_P
+  rotate: false
+  xy: 855, 153
+  size: 70, 175
+  orig: 70, 175
+  offset: 0, 0
+  index: -1
+oci
+  rotate: false
+  xy: 502, 120
+  size: 192, 208
+  orig: 192, 208
+  offset: 0, 0
+  index: -1
+zrenicky
+  rotate: false
+  xy: 502, 92
+  size: 129, 26
+  orig: 129, 26
+  offset: 0, 0
+  index: -1

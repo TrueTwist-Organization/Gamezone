@@ -5,7 +5,6 @@ import { createPortal } from "react-dom";
 import { AdSlot } from "@/components/ad-slot";
 import { useSiteSettings } from "@/components/site-settings-provider";
 import { displayGptSlotWhenReady, showGptInterstitial, slotType } from "@/lib/google-pubads";
-import { stopEmbeddedGame } from "@/lib/stop-embedded-game";
 import type { AdSlotSettings } from "@/lib/site-settings.types";
 
 const AUTO_CLOSE_SECONDS = 30;
@@ -83,22 +82,6 @@ export function GamePlayModal({ open, title, playSrc, onClose }: GamePlayModalPr
     setMounted(true);
   }, []);
 
-  const shutdownGame = useCallback(() => {
-    stopEmbeddedGame(iframeRef.current);
-    setShowInterstitial(false);
-    setShowMidGame(false);
-  }, []);
-
-  useEffect(() => {
-    if (!open) {
-      return;
-    }
-
-    return () => {
-      shutdownGame();
-    };
-  }, [open, shutdownGame]);
-
   useEffect(() => {
     if (!open) {
       return;
@@ -132,14 +115,13 @@ export function GamePlayModal({ open, title, playSrc, onClose }: GamePlayModalPr
 
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        shutdownGame();
         onClose();
       }
     };
 
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [open, onClose, shutdownGame]);
+  }, [open, onClose]);
 
   useEffect(() => {
     if (!showInterstitial) {
@@ -257,14 +239,12 @@ export function GamePlayModal({ open, title, playSrc, onClose }: GamePlayModalPr
         return;
       }
 
-      shutdownGame();
       onClose();
       return;
     }
 
-    shutdownGame();
     onClose();
-  }, [showInterstitial, skipAvailable, revealGame, onClose, shutdownGame]);
+  }, [showInterstitial, skipAvailable, revealGame, onClose]);
 
   if (!open || !mounted) {
     return null;

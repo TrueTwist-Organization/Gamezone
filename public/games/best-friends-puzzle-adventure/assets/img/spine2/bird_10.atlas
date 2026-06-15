@@ -1,0 +1,69 @@
+
+bird_10.png
+size: 557, 522
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+brucho
+  rotate: false
+  xy: 2, 225
+  size: 263, 295
+  orig: 263, 295
+  offset: 0, 0
+  index: -1
+chvost
+  rotate: false
+  xy: 390, 4
+  size: 109, 139
+  orig: 109, 139
+  offset: 0, 0
+  index: -1
+hlava
+  rotate: false
+  xy: 2, 8
+  size: 215, 215
+  orig: 215, 215
+  offset: 0, 0
+  index: -1
+kridlo_L
+  rotate: false
+  xy: 392, 242
+  size: 96, 278
+  orig: 96, 278
+  offset: 0, 0
+  index: -1
+kridlo_P
+  rotate: false
+  xy: 267, 228
+  size: 123, 292
+  orig: 123, 292
+  offset: 0, 0
+  index: -1
+noha_L
+  rotate: false
+  xy: 219, 30
+  size: 83, 193
+  orig: 83, 193
+  offset: 0, 0
+  index: -1
+noha_P
+  rotate: false
+  xy: 304, 37
+  size: 84, 189
+  orig: 84, 189
+  offset: 0, 0
+  index: -1
+oci
+  rotate: false
+  xy: 392, 145
+  size: 163, 95
+  orig: 163, 95
+  offset: 0, 0
+  index: -1
+zrenicky
+  rotate: false
+  xy: 219, 2
+  size: 124, 26
+  orig: 124, 26
+  offset: 0, 0
+  index: -1

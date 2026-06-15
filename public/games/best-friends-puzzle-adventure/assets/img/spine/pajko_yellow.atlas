@@ -1,0 +1,111 @@
+
+pajko_yellow.png
+size: 605, 538
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+hlava_smutna
+  rotate: false
+  xy: 259, 262
+  size: 252, 274
+  orig: 252, 274
+  offset: 0, 0
+  index: -1
+hlava_vesela
+  rotate: false
+  xy: 2, 262
+  size: 255, 274
+  orig: 255, 274
+  offset: 0, 0
+  index: -1
+kridlo_1
+  rotate: false
+  xy: 564, 57
+  size: 34, 95
+  orig: 34, 95
+  offset: 0, 0
+  index: -1
+kridlo_2
+  rotate: false
+  xy: 519, 18
+  size: 43, 68
+  orig: 43, 68
+  offset: 0, 0
+  index: -1
+noha_P_1
+  rotate: false
+  xy: 513, 266
+  size: 52, 56
+  orig: 52, 56
+  offset: 0, 0
+  index: -1
+noha_P_2
+  rotate: false
+  xy: 520, 210
+  size: 50, 54
+  orig: 50, 54
+  offset: 0, 0
+  index: -1
+noha_P_3
+  rotate: false
+  xy: 203, 6
+  size: 49, 45
+  orig: 49, 45
+  offset: 0, 0
+  index: -1
+noha_Z
+  rotate: false
+  xy: 520, 154
+  size: 49, 54
+  orig: 49, 54
+  offset: 0, 0
+  index: -1
+oci
+  rotate: false
+  xy: 281, 2
+  size: 236, 84
+  orig: 236, 84
+  offset: 0, 0
+  index: -1
+telo
+  rotate: false
+  xy: 2, 53
+  size: 277, 207
+  orig: 296, 231
+  offset: 19, 0
+  index: -1
+tykadlo_L
+  rotate: false
+  xy: 513, 324
+  size: 73, 130
+  orig: 73, 130
+  offset: 0, 0
+  index: -1
+tykadlo_P
+  rotate: false
+  xy: 513, 456
+  size: 90, 80
+  orig: 90, 80
+  offset: 0, 0
+  index: -1
+viecka
+  rotate: false
+  xy: 281, 175
+  size: 237, 85
+  orig: 237, 85
+  offset: 0, 0
+  index: -1
+viecka_smutne
+  rotate: false
+  xy: 281, 88
+  size: 237, 85
+  orig: 237, 85
+  offset: 0, 0
+  index: -1
+zrenicky
+  rotate: false
+  xy: 2, 5
+  size: 199, 46
+  orig: 199, 46
+  offset: 0, 0
+  index: -1

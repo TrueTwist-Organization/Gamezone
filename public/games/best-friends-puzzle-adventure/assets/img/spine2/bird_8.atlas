@@ -1,0 +1,69 @@
+
+bird_8.png
+size: 288, 796
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+brucho
+  rotate: false
+  xy: 2, 340
+  size: 276, 218
+  orig: 276, 218
+  offset: 0, 0
+  index: -1
+chvost
+  rotate: false
+  xy: 93, 144
+  size: 105, 88
+  orig: 105, 88
+  offset: 0, 0
+  index: -1
+hlava
+  rotate: false
+  xy: 2, 560
+  size: 267, 234
+  orig: 267, 234
+  offset: 0, 0
+  index: -1
+kridlo_L
+  rotate: false
+  xy: 205, 148
+  size: 81, 190
+  orig: 81, 190
+  offset: 0, 0
+  index: -1
+kridlo_P
+  rotate: false
+  xy: 2, 33
+  size: 89, 199
+  orig: 89, 199
+  offset: 0, 0
+  index: -1
+noha_L
+  rotate: false
+  xy: 200, 43
+  size: 70, 103
+  orig: 70, 103
+  offset: 0, 0
+  index: -1
+noha_P
+  rotate: false
+  xy: 93, 38
+  size: 61, 104
+  orig: 61, 104
+  offset: 0, 0
+  index: -1
+oci
+  rotate: false
+  xy: 2, 234
+  size: 201, 104
+  orig: 201, 104
+  offset: 0, 0
+  index: -1
+zrenicky
+  rotate: false
+  xy: 93, 2
+  size: 185, 34
+  orig: 185, 34
+  offset: 0, 0
+  index: -1

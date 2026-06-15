@@ -1,46 +1,4 @@
 {
-  "40002": {
-    "id": "40002",
-    "title": "Weighted Seesaw",
-    "image": "/img/game/40002-512x384.png",
-    "href": "/games/40002",
-    "badge": "NEW",
-    "category": "Puzzles",
-    "score": 7.7,
-    "updated": "N/A",
-    "tags": [
-      "1 Player",
-      "Physics",
-      "Puzzle",
-      "HTML5",
-      "Balance"
-    ],
-    "howToPlay": "Place weighted pieces on the seesaw and keep it balanced. Think carefully about where each block goes before the scale tips.",
-    "description": "Weighted Seesaw is a physics puzzle game where you place blocks on a seesaw and try to keep it perfectly balanced. Each piece has its own weight, so every placement matters. Plan your moves, adjust carefully, and see how long you can keep the seesaw steady.",
-    "editorsView": "Weighted Seesaw is a smart little balance puzzler — simple to understand but satisfying when you nail the perfect placement and keep the seesaw level.",
-    "playUrl": "/games/weighted-seesaw/"
-  },
-  "40001": {
-    "id": "40001",
-    "title": "Balloon Blitz",
-    "image": "/img/game/40001-512x384.png",
-    "href": "/games/40001",
-    "badge": "NEW",
-    "category": "Hypercasual",
-    "score": 7.8,
-    "updated": "N/A",
-    "tags": [
-      "1 Player",
-      "Arcade",
-      "Casual",
-      "HTML5",
-      "Tap"
-    ],
-    "howToPlay": "Tap or click to pop balloons before time runs out. Chain pops for higher scores and try to beat your best run.",
-    "description": "Balloon Blitz is a fast-paced arcade game where colorful balloons float across the screen and you pop as many as you can before time runs out. Quick reflexes and sharp aim help you rack up points, while missed shots and tricky balloon patterns keep every round feeling fresh. Easy to pick up and hard to put down.",
-    "editorsView": "Balloon Blitz is perfect for short sessions — the controls are instant (just tap), the pace ramps up nicely, and chasing a new high score stays surprisingly addictive.",
-    "playUrl": "/games/balloon-blitz/"
-  },
   "28543": {
     "id": "28543",
     "title": "Dumpster Dash: Junkyard Maze Racer",
@@ -231,7 +189,7 @@
     "howToPlay": "Mouse click or tap to play",
     "description": "Some games barely need an introduction—Bubble Shooter Classic is definitely one of them. You get that satisfying setup: a rainbow wall of glossy bubbles waiting above, your trusty launcher beneath. Shoot up the matching color, try to group three or more together, and pop! Instantly rewarding, especially when you clear half a row with one clever shot. The levels creep from gentle to tricky without you noticing at first; that’s a sneaky part of its charm. You start thinking it’ll just be mindless popping but, well, the planning sort of gets under your skin after a while.\n\nAs for mechanics? Simple drag-and-aim controls mean anyone can hop in—kids will figure it out fast but grown-ups tend to stick around longer than expected. It’s interesting how relaxing and slightly stressful it can be at the same time, especially as the pile creeps downward toward defeat (and trust me, it happens). There’s no timer pressuring you so pacing feels mostly chill; sometimes I pause just to plan my next angle.\n\nIf you want instant play or something casual between other tasks, Bubble Shooter Classic fits pretty well. It’s oddly timeless—a short round turns into a dozen if you're not watching the clock. Good for stress breaks or simply zoning out.",
     "editorsView": "I’ve played way more rounds of Bubble Shooter Classic than I’d ever admit out loud. Something about clearing clusters in one go never really gets old—even after countless tries. Early on it feels like you’re just mindlessly matching colors (which has its charm), but later stages sneak up with angles that make you squint and hesitate.\n\nSometimes I wish there were power-ups or maybe extra challenges—it can get repetitive if you marathon too many games in a row. But then again, that simplicity is probably why I keep coming back during breaks at work or when I’m trying to unwind before bed.\n\nTo be honest, there’s real satisfaction in watching everything pop perfectly into place after planning out just the right shot.",
-    "playUrl": "https://html5.gamemonetize.com/dmfvcnfbhxuukza7f1uqp31de9hrd8u8/"
+    "playUrl": "/games/bubble-shooter-classic-play-online-free/"
   },
   "29095": {
     "id": "29095",
@@ -333,7 +291,7 @@
     "howToPlay": "Mouse click or touch the screen to play",
     "description": "You ever wondered what would happen if you put a meme character in goal? Well, Skibidi Toilet Soccer throws that idea right at you. You’re basically handed control over Skibidi (yeah, the singing toilet guy) and tasked with blocking as many incoming balls as you possibly can. The rules are as stripped-back as they come: swipe to move, no complicated menus or distracting upgrades or anything like that. Penalty balls get lobbed in by the computer — it doesn’t wait around either.\n\nAt first you’ll probably just be sliding your finger side to side, laughing at the sheer silliness of a toilet doing football drills. But once things speed up… well, there’s a tiny sense of panic that sneaks in. Reacting fast is sort of addicting — and missing a ball? That stings more than expected.\n\nIt’s interesting how little instructions you actually need here. Anyone could pick it up and figure it out within seconds. That’s part of its charm, though honestly I found myself wishing for just one extra layer—maybe an unlockable hat or some bonus challenge now and then.\n\nFor quick bursts or to kill those odd two minutes, this is gold.</div>",
     "editorsView": "Honestly, I didn’t expect much going in—how seriously can anyone take soccer when the goalie is a Skibidi Toilet? But after one round I was weirdly hooked by how fast things ramp up. At first blocking shots feels like a joke (the animations are funny), but then suddenly my thumb couldn’t keep up with all those penalty kicks.\n\nThe game feels snappy enough, but I do wish there was something more than just swiping back and forth forever; after five minutes it turns pretty repetitive. Still…it gave me some cheap laughs trying to beat my last score. If you want depth or strategy, maybe look elsewhere—but as far as mindless fun goes? It kind of works.</div>",
-    "playUrl": "https://html5.gamemonetize.com/sy3abv7l2dkmrmt8ez8s30wsyrrnpodo/"
+    "playUrl": "/games/skibidi-toilet-soccer/"
   },
   "29235": {
     "id": "29235",
@@ -619,7 +577,7 @@
     "howToPlay": "Desktop Drag plants onto the field using a mouse or touchpad Mobile Use the touchscreen to place plants on the battlefield",
     "description": "So, Angry Plants isn’t really the kind of tower defense that lets you zone out. Not unless you’re okay with losing fast—seriously, those first waves seem chill but blink and it gets wild. It’s sort of all about picking which plant goes where. You get these different types—shooters, blockers, some oddballs (the watermelon one is a favorite). Each does its own thing, so you end up juggling between throwing down damage and building a bit of a wall.\n\nYou just drag and drop onto the path, then try not to panic when things start piling up. Sometimes I thought I was doing fine and then... oops—totally overrun by zombies that felt way faster than they looked at first.\n\nIt’s easy enough for anyone to pick up but takes a bit to really figure out what combos actually work past the early rounds. There’s this upgrade system too where your sun/energy lets you boost plants mid-level or unlock better versions after each round—it gives that feeling of maybe-outsmarting the game if you’re quick.\n\nQuick sessions mostly, unless you get totally obsessed with pushing farther against those late-stage zombie swarms.\n\nIt’s interesting how the little decisions add up over time. Younger players can enjoy just planting stuff everywhere; more experienced folks will chase those perfect lines.",
     "editorsView": "At first glance, Angry Plants felt like another spin on the whole plants-vs-zombies thing—you know what I mean? But after playing for a while, there’s actually something pretty satisfying about lining up the right plant combo and barely holding off that last horde. I liked how simple it was to learn: drag a plant here or there, suddenly realize you’re in trouble and scramble to fix your mistakes—that urgency hits different when you’re on wave eight or nine.\n\nThe difficulty ramped up almost before I was ready for it; honestly caught me off guard once or twice. The upgrade system could use a little more depth or surprises (it gets repetitive picking similar boosts). Still, those tense moments kept me coming back for 'just one more' round even after losing badly once or twice.\n\nNot perfect—but definitely scratched an itch for bite-sized strategy fun.",
-    "playUrl": "https://html5.gamemonetize.com/1rkuefl640zbdd4hnyq9jf4iyds2ny03/"
+    "playUrl": "/games/angry-plants-garden-defense/"
   },
   "30056": {
     "id": "30056",
@@ -979,7 +937,7 @@
     "howToPlay": "tap to shoot the ball",
     "description": "In Color Ball Shoot, you’ve got colored orbs lined up, a launcher in hand, and a simple goal: recreate the pattern up ahead by firing the right colors at just the right spots. Not always as straightforward as it sounds—some levels nudge you to pause and think for a second before going wild with shots. Sometimes you’ll breeze right through a level, sometimes the answer will dodge you for longer than expected.\n\nWell, there are fifty stages in all. That’s more than enough for one sitting if you’re stubborn—or just something to come back to when you want a short burst of challenge. There isn’t much story here (none really), but it does the job if you like direct, satisfying puzzle loops that don’t over-complicate things.\n\nIf you’re quick with your reflexes or someone who enjoys those little eureka moments when a pattern suddenly clicks, it’ll probably feel rewarding. Patterns shift from almost-too-easy to “wait—what did I miss?” pretty fast.\n\nI do wonder if younger players might find some of the timing sections tricky. Nothing overwhelming though. And honestly, that makes getting it right feel even better—sometimes that part really matters, really.</div>",
     "editorsView": "So I jumped into Color Ball Shoot not expecting too much—it looked pretty standard at first glance. The first few rounds were easy going, kind of mindless fun which was fine after a long day. But then out of nowhere some patterns got way trickier (to be honest I fumbled three or four times on Level 14). Suddenly I found myself actually paying attention to where each ball went instead of just firing off shots.\n\nThat surprised me.\n\nThe controls are straightforward but every now and then my shot didn’t seem to land exactly where I aimed—which got mildly annoying during tougher layouts. Still, piecing together the correct sequence can be oddly satisfying when it finally clicks.\n\nIt’s interesting how such a simple idea manages to stay engaging across so many levels without needing flashy extras.</div>",
-    "playUrl": "https://html5.gamemonetize.com/dpxn1ewamiv97d6xrz19oma9ekb1k38b/"
+    "playUrl": "/games/color-ball-shoot-aim-match-solve/"
   },
   "30716": {
     "id": "30716",
@@ -1359,7 +1317,7 @@
     "howToPlay": "Mouse click or tap to play",
     "description": "There’s something quietly satisfying about putting together models, and Toy Assembly 3D leans right into that. You start with basic sets—think blocky cars or tiny buildings—before the game gradually hands you more challenging projects. There’s no rush here, which is pretty refreshing. Tap the right part when it pops up, and watch as each piece clicks perfectly into place. No cluttered living room floor, no lost instructions.\n\nIt’s designed so anyone can pick it up quickly. Controls are all tapping (and a little bit of dragging at times), so you won’t get stuck fiddling with tricky menus or timers. For kids? Absolutely approachable, but honestly, adults who remember that endless patience it takes to finish a tricky model kit might find themselves drawn in too.\n\nAfter a while, the complexity ramps up just enough to keep things interesting without feeling overwhelming—which was smart design if you ask me.\n\nWell, maybe some would wish for even tougher builds or more creative freedom to play around with their own designs; mostly though, it scratches that relaxed, methodical itch. Sometimes I just want to zone out and snap bricks together for a few minutes—Toy Assembly gets that.</div>",
     "editorsView": "I’ve spent a surprising amount of time in Toy Assembly 3D. At first it felt almost too easy—just tapping pieces onto plastic shells—but then the sets started getting bigger and suddenly I noticed how focused I’d become. It’s interesting how soothing it is; I didn’t expect to enjoy the repetition quite this much.\n\nTo be honest, sometimes I wanted more variety in what I could build or maybe extra features like free-building modes. A small gripe: occasionally pieces don’t seem to fit until you tap just right, which breaks the flow a bit.\n\nStill… when work gets hectic this is what I find myself opening just to clear my head for five minutes.</div>",
-    "playUrl": "https://html5.gamemonetize.com/wkavx8wx7u48i4pbmc01n7ungr8ajzts/"
+    "playUrl": "/games/build-a-burger-runner-cooking-game/"
   },
   "31509": {
     "id": "31509",
@@ -1467,7 +1425,7 @@
     "howToPlay": "How to play Android Use On-Screen touch and tap PC Use Mouse Left Click",
     "description": "Fruit Cutter Fun Game keeps things direct—tap the screen to slice as many fruits as possible. The moment you start, bright fruit whizzes up from the bottom, and your only job is to act fast. Tap, slash, repeat. There’s a weird sort of satisfaction in seeing a perfect split or catching three fruits in one go. It’s simple but addictive. Bombs pop up unexpectedly (and they look just threatening enough), so there’s that constant tension: do I risk it for one more combo? Sometimes I do—I usually regret it.\n\nTwo different modes are available; honestly, one feels more frantic than the other but both can get surprisingly intense if you lose focus for even a second. The controls are dead simple—just tap—but that makes every miss or accidental bomb hit feel like my own fault.\n\nAnyone who likes quick reflex games or just wants a five-minute escape will probably find this strangely satisfying. The game doesn’t overload you with menus or upgrades either—just straight into slicing action every time you load it up. You know, there’s something refreshing about how little setup there is.\n\nHigh scores keep me coming back now and then, even when I’m not sure why.</div>",
     "editorsView": "So Fruit Cutter Fun surprised me—did not expect myself getting hooked on something this basic. Tapping on flying fruit for points sounds almost too simple at first blush, but somehow I ended up playing longer than planned. There’s that jittery excitement when three fruits line up and you nail them all at once; honestly, those moments feel good.\n\nBut sometimes the bombs come out of nowhere (it gets frustrating). Wish there was maybe one extra life or a way to recover from an unlucky tap—I get punished pretty harshly for tiny mistakes. Still, the speed ramps up at just the right pace to keep me focused without being overwhelming.\n\nWell, if I needed to zone out for ten minutes on my phone while waiting somewhere… this does the trick.</div>",
-    "playUrl": "https://html5.gamemonetize.com/sw6gr6e5drzeym1lyikkqqgvy3n09zov/"
+    "playUrl": "/games/fruit-cutter-fun-game/"
   },
   "31690": {
     "id": "31690",
@@ -1562,7 +1520,7 @@
     "howToPlay": "Mouse click or tap to play",
     "description": "Weight Puzzle 3D is a bit of an odd one, but in a good way. It isn’t just about picking up random blocks and putting them down—you have to balance weights across sections of the road so your character can actually make it to the end without, well, toppling over or stopping short. The main mechanic is lifting these weights and figuring out which spot needs more (or less) to even things out. It&#39;s surprisingly satisfying when you finally nail the balance after three failed tries.\n\nThe game keeps things moving—each level isn’t overly long, but does build on what came before just enough to keep you guessing. There’s a bit of that math-y satisfaction here too; not full-blown math drills, but enough number sense required that you feel engaged without being bored. You don’t need to be a physics genius for this one, though—just paying attention goes a long way.\n\nIt’s interesting because it works for both puzzle fans who like spatial reasoning and folks just looking for something different in their browser break time. Graphics are simple but clear (no distractions there), so all focus stays on the balancing act itself.\n\nI found myself grinning when I solved a tricky section—not sure if that&#39;s pride or relief.</div>",
     "editorsView": "So at first I thought Weight Puzzle 3D would be another basic block-stacking thing—turns out it&#39;s more clever than that. Actually having to judge where every chunk belongs gets me thinking more than expected. Sometimes I’d mess up by forgetting which side needed more weight (and yeah, there were a couple of those silly moments where my player went nowhere).\n\nI like how quickly you get back into trying again after messing up. Well, sometimes the challenge spikes unexpectedly—one level felt much harder than the previous ones for no obvious reason—but maybe that&#39;s just part of its charm? I wish there were maybe some hints for those head-scratchers.\n\nStill, it scratches that little puzzle itch.</div>",
-    "playUrl": "https://html5.gamemonetize.com/z62h7dsza71b8957l45wgpqq652ttour/"
+    "playUrl": "/games/screw-puzzle-game-3d/"
   },
   "31984": {
     "id": "31984",
@@ -1664,7 +1622,7 @@
     "howToPlay": "How to play Android Use On-Screen touch buttons to control the player PC Move Left - Press ldquo A rdquo Move Right - Press ldquo D rdquo Jump - Press ldquo W rdquo",
     "description": "Kai Archer is one of those platformers that starts simple—just you, your bow, and a handful of brightly colored landscapes. The main goal is to collect a key tucked away somewhere on the level. Of course, reaching it isn’t as straightforward as walking up and grabbing it. There are spikes placed at tricky angles, moving traps you have to time just right, and sometimes paths that really make you pause to plan out your jump or drop. Sometimes I found myself restarting just because I got too impatient or missed an obvious route.\n\nIt’s definitely got that pick-up-and-play feeling going for it. Controls are super easy to get used to, which helps a lot when things start getting a bit more complicated in later levels. Each stage is short enough that retrying doesn’t feel annoying—but long enough to keep things interesting.\n\nTo be honest, the graphics are nicer than I expected from such a lightweight game (it barely takes up any space). Kai looks oddly charming leaping between platforms or narrowly escaping some trap. It’s probably best for people who enjoy quick platforming sessions but still want a little challenge without anything too intense or overwhelming.\n\nA few more surprises or enemy types would spice things up more, honestly.",
     "editorsView": "I gave Kai Archer a try on my lunch break thinking it would just be another throwaway platformer, but I kept playing way longer than planned. The controls are super tight—no weird lag or floaty jumps—and the keys never feel totally out of reach if you’re paying attention. Well, there were times I wished for something more unexpected; most traps show up where you’d expect after a while.\n\nThe visuals are clean and cute without being distracting. Actually, it did surprise me how quickly each level loads—I barely had time for any frustration before trying again. My only gripe? Maybe after five or six levels the formula settles in too comfortably; I caught myself wishing for one twist or another just to shake things up.\n\nStill, if you want a decent bite-sized challenge with friendly presentation... not bad.",
-    "playUrl": "https://html5.gamemonetize.com/8u030s91ibex255z7f9cbn0whv3167ui/"
+    "playUrl": "/games/kai-archer-adventure-quest/"
   },
   "32242": {
     "id": "32242",
@@ -1830,7 +1788,7 @@
     "howToPlay": "- Swipe Aim amp Shoot Fire your ball at matching numbers and colours - Merge for Victory Combine bubbles to create higher numbers and reach the target - Break Obstacles Smash through barrels and boxes to clear the level",
     "description": "Bubble Merge 2048 blends two game worlds that don’t usually collide—number merging and bubble shooting. You basically shoot numbered bubbles onto a field and if two of the same number touch, they merge into a higher value. There’s something oddly relaxing about watching them bounce around or drop into place, but it gets pretty tricky once things start crowding up. You can’t just shoot randomly; sometimes a single shot feels like it really matters, really.\n\nIt’s interesting because there’s always this push-pull between planning ahead and just going for a lucky shot when the board fills up. Plus, not every level is simply about merging numbers—you might have to break obstacles or trigger little chain reactions to clear the stage. Now and then, the physics does its own thing and sends your bubble off somewhere you didn’t expect (which is both fun and frustrating).\n\nPlayers who like classic puzzle shooters or those who loved the first time they tried 2048 on mobile will probably settle into this pretty quickly. The pace shifts: some levels are calm, others are packed with moving parts or limited shots that really test your aim under pressure.\n\nI’d say it skews more casual but isn’t afraid to throw in tougher puzzles now and then.",
     "editorsView": "At first, I thought Bubble Merge 2048 would be another quick-and-done puzzle game—then I got hooked on trying to plan merges while dodging awkward angles. Merging bubbles is oddly satisfying when you set up big combos (it makes you feel clever), but other times my shots bounced everywhere except where I wanted. That part can be slightly annoying if you’re aiming for three stars.\n\nHonestly, the mix of familiar mechanics is what kept me going longer than expected—it scratches that itch for both luck and logic. There are moments when boosters feel necessary instead of optional though.\n\nNot perfect, but better than most mashups I’ve played recently.",
-    "playUrl": "https://html5.gamemonetize.com/9vwyi3z5ew1y0fkt7sl3veu7z8gg9hfy/"
+    "playUrl": "/games/bubble-merge-2048-puzzle-shooter/"
   },
   "32534": {
     "id": "32534",
@@ -1969,7 +1927,7 @@
     "howToPlay": "How to Play Match 3 Candies Swap adjacent candies to match three or more of the same kind in a row or column Complete Objectives Each level has specific objectives such as reaching a certain score collecting particular candies or clearing obstacles",
     "description": "Candy Dream is one of those games you start just to pass a minute, then… well, the minutes keep slipping by. It’s a classic match-3 puzzle but with an extra sugar rush—literally. You drag, swap or nudge bright little candies around until three (or more) line up and pop right off the board. The explosions are oddly satisfying. Each level brings something slightly different; sometimes there are awkward blockers or odd shapes that make you think for a second longer than you’d like to admit.\n\nThere’s a soft pace here—not frantic unless you want it to be, which is probably why it pulls in people who just need some downtime between work emails or waiting at the bus stop. Power-ups appear if you plan ahead (and sometimes by pure luck), so there’s always that tiny thrill when things fall just right.\n\nTo be honest, the visual style is bright—almost over-the-top if your eyes aren’t used to pinks and purples everywhere—but it fits what Candy Dream’s going for: playful escape. Suitable for kids? Yes, but I’ve seen plenty of adults quietly obsessed with getting those stubborn cherry pieces free from sticky corners. It’s not groundbreaking, but for fans of easy-to-learn puzzles with quick levels, this one hits the spot.",
     "editorsView": "Honestly didn’t expect much from another candy matching game—I mean, there are so many out there—but Candy Dream is actually pretty addictive in its own way. The levels aren’t too hard at first; almost cozy somehow. Later on they throw some real curveballs with obstacles that can get frustrating though (in particular those jelly blocks—ugh). Sometimes the colors blur together if I play too long, which isn’t ideal for my old eyes.\n\nStill, it nails that weirdly soothing routine: match, match, big combo… almost win! To be fair though, it could use a bit more variety in backgrounds or music maybe? Even so—I kept coming back anyway because beating just one more level always feels doable. That part really matters, really.",
-    "playUrl": "https://html5.gamemonetize.com/i2u9l4ki42txwifuy15pfy71w2vji3s6/"
+    "playUrl": "/games/candy-match-3-kit-2025-puzzle-game/"
   },
   "32791": {
     "id": "32791",
@@ -2063,7 +2021,7 @@
     "howToPlay": "Mouse aim and click",
     "description": "Bullets Master isn’t your usual mindless shooter. You get handed these tiny environments, packed with goons and obstacles, and—well—the rest is pretty much up to you. It’s less about going in guns blazing, more about thinking several steps ahead: Can I bounce this shot off the crate? Will ricocheting get both those baddies in one go? Sometimes you’ll sit staring at a level longer than you’ll spend shooting, honestly. The controls are dead simple—just aim and tap—but there’s real trickiness as soon as the game starts layering in new gadgets or barriers. Eventually you start seeing weird possibilities everywhere (like maybe that gas canister could help me out here…).\n\nThere’s a kind of pleasing tension in waiting for a bullet to do all the right things after you set it up. The pace moves fast if you want it to—or grinds to a crawl while you scratch your head over an especially nasty stage.\n\nBest for folks who like their action games served up with little puzzles and don’t mind retrying until that perfect trickshot lands. Not overly violent or serious either; there’s something almost slapstick about how enemies topple when things go right.",
     "editorsView": "At first glance, Bullets Master seemed like just another quick fix shooter—you know the type. But after a couple levels, I started getting oddly into lining up the perfect shots. There’s something addictive about setting up the wildest ricochet possible (and sometimes failing spectacularly). I did find some puzzles made me wish for an undo button rather than restarting entirely; that part can grate if you’re impatient.\n\nStill, watching my plans succeed felt genuinely satisfying—not many mobile shooters give that kind of puzzle-solving buzz. It could use more enemy variety or maybe some extra traps later on—I mean, after a while some stages blur together.\n\nBut for short bursts? It works well enough.",
-    "playUrl": "https://html5.gamemonetize.com/akv5limd2zgxnztbvx0scihheyk30ld6/"
+    "playUrl": "/games/bullets-master-puzzle-shooter/"
   },
   "32957": {
     "id": "32957",
@@ -2085,7 +2043,7 @@
     "howToPlay": "Mouse click or tap to play",
     "description": "Bird Sort Puzzles sort of sneaks up on you. At first it feels like a light puzzle about birds and color—you just tap and drag little feathery blobs into nests that match their shades. But then, well, as the levels go on, the challenge quietly grows. Not quite frantic but definitely more head-scratching than you’d expect after those early easy wins. Sometimes you’ll need to add extra branches (that’s basically more space) if things get jammed up, which I appreciated because it keeps frustration in check.\n\nIt’s visually cheerful—bright colors, slightly goofy bird expressions—and honestly there’s something mellow about watching the right combinations click together. Anyone could pick this up; it doesn’t matter if you’re a kid or an adult who just needs a wind-down between meetings or classes.\n\nMechanics are simple enough for a quick grasp but there’s that moment where you realize placement really does matter. If you rush ahead, well…you’ll end up with tangled birds and nowhere to put them! It actually surprised me how much I started caring about planning my moves after a while.\n\nNot every level is satisfying (sometimes the randomization can be off) but overall, the way Bird Sort Puzzles blends gentle pacing with real puzzles works better than it should.",
     "editorsView": "When I started Bird Sort Puzzles I figured it would just be another quick puzzle app—tap here, drag there—but after playing for half an hour I was hooked by its odd mix of relaxing pace and sneaky difficulty spikes. The bright artwork makes everything look friendly, though to be honest sometimes those birds stack so awkwardly I wish there was just a tiny bit more control over movement (maybe that’s me?).\n\nA few levels did get repetitive when the solutions were pretty obvious; still, tossing in new colors or letting me add branches kept it interesting for longer than expected. What caught me off guard was how careful planning suddenly became necessary—not always what I expect from cute games like this.\n\nAnyway, Bird Sort is better when played in small bursts—the calming part wears thin if you play too long at once.",
-    "playUrl": "https://html5.gamemonetize.com/sbrgeezeghg0oj1tr0h5fh4ddmrem1xf/"
+    "playUrl": "/games/bird-sort-puzzles/"
   },
   "32972": {
     "id": "32972",
@@ -2305,7 +2263,7 @@
     "howToPlay": "Slide on the game screen to play this game or use the arrow keys on your keyboard",
     "description": "Diamond Digger isn’t about rushing. You dig slowly, making decisions at every turn—sometimes it feels more like a gentle puzzle than anything frantic. The main idea is clear: get those diamonds, but the earth’s not going to make it easy for you. Some spots are packed tight with rocks that’ll mess up your route if you’re not careful. There’s a real sense of satisfaction when you clear a nice path and hit a pocket of gems—those moments keep pulling you back in, honestly.\n\nPower-ups pop up now and then. Some speed things along, others save your run when you get cornered by those stubborn stones. It’s interesting how one wrong move can leave you stuck, so there’s always this low-level tension as you tap or click away layer by layer.\n\nKids can enjoy it because it isn’t stressful (unless you want it to be), but I think anyone who likes chill arcade games will have fun too. There’s no timer breathing down your neck unless you’re really gunning for high scores.\n\nTo be honest, sometimes the randomness of obstacles feels like luck more than skill—but maybe that’s part of the charm here? Anyway, don’t expect deep strategy—it’s more about that satisfying little burst each time the next diamond sparkles out from the dirt.",
     "editorsView": "I jumped into Diamond Digger thinking it’d be another simple match game, but actually digging through layers gives everything a different vibe. Early levels felt light-hearted; just me and some easy sparkly wins. But after a while those rocks started getting trickier—the way they block your progress makes even short runs feel tense.\n\nWell, power-ups help for sure, but sometimes I wished there were more options or maybe a bit less luck involved when things got cluttered in tight spaces. Still, there’s something cozy about watching all those little gems drop into view after an awkward detour pays off.\n\nIt can feel repetitive after long stretches and I found myself wishing for slightly new mechanics to show up later on—but as quick breaks go, Diamond Digger scratches that itch nicely.",
-    "playUrl": "https://html5.gamemonetize.com/hp8kibm59oby5q1kbj1yq7l6f2n9x838/"
+    "playUrl": "/games/diamond-digger/"
   },
   "33382": {
     "id": "33382",
@@ -2370,7 +2328,7 @@
     "howToPlay": "1 At first it will be easy to connect the fruits but over time there will be more and more of them",
     "description": "Merge Fruits 3D looks pretty simple at first glance but, honestly, it quickly turns into a game where you get caught up chasing just one more combo. The idea is to drop different fruit pieces into a 3D game zone. When two of the same type touch, they merge and upgrade into the next fruit. Sounds easy? Well, it’s not always—those pieces start stacking up faster than you’d expect. There’s this push-and-pull between planning ahead and reacting quickly when the board gets crowded.\n\nThe main goal: keep merging until you finally manage to build that elusive watermelon. It takes some real patience…and a bit of luck when things aren’t lining up perfectly. Each successful merge racks up your score, so every choice counts more than you might notice at first.\n\nI guess that’s what makes it oddly relaxing too; just sliding fruits around until everything clicks—or doesn’t! Competing on leaderboards adds an extra reason to replay for folks who love chasing high scores against friends (or randoms). It works well both as a brain-teaser for puzzle fans or just as something casual if you want to zone out for a few minutes between things.\n\nIt’s interesting: sometimes ten minutes will fly by before you realize you’re still trying to nudge that stubborn pair of oranges together. Try it yourself; see how far you get before the stack tips over.</div>",
     "editorsView": "So I sat down with Merge Fruits 3D expecting a basic matching puzzle—maybe something I’d play once or twice and move on from. Actually, I kept coming back to beat my own score because there’s just enough randomness mixed in with those strategy choices. Watching two apples smoosh together into an orange feels satisfying in the moment—kind of addictive after a while.\n\nThat said, sometimes there isn’t quite enough room to maneuver if your drops don’t line up right early on. That part really matters, really—I ended up restarting more than once due to bad placement rather than actual mistakes.\n\nTo be honest, it can feel repetitive if played too long in one go but as a casual little time-filler? Works great for me.</div>",
-    "playUrl": "https://html5.gamemonetize.com/8kz657jy0ona0x75idlv0c3p70bn1fdo/"
+    "playUrl": "/games/merge-2048-cake-puzzle-game/"
   },
   "33490": {
     "id": "33490",
@@ -2396,7 +2354,7 @@
     "howToPlay": "Mouse click or tap to play",
     "description": "Enchanted Battlements is the sort of tower defense game that wants you to pay attention—just when you think you've got it handled, something odd or tougher shows up. You start with just a few simple towers and limited gold (the basics), but before long, choices get deeper and suddenly you’re balancing upgrades, element types, and positioning all at once. It’s interesting; not everything is explained outright. Sometimes you’re left to figure out how a particular monster can just breeze through your line unless you tinker with spell timing or adjust placements.\n\nThere’s a kind of old-school charm to the visuals—vivid little sprites and backgrounds that hint at more lore than they spell out. Enemy waves come in oddly-shaped clusters rather than neat rows, so strategies shift round-to-round. The elemental theme works itself into everything: water vs fire, earth slowing down baddies...that part really matters, really.\n\nSessions are quick if you want them short but can stretch if you're trying higher levels or experimenting with layouts. I’d say it lands somewhere between casual play and those times when you want to really sink into patterns or try hard mode just once more.\n\nGreat for folks who like strategy without too much reading or fuss.",
     "editorsView": "I went in expecting another run-of-the-mill tower defense but Enchanted Battlements surprised me after just a few rounds. The first couple of stages felt breezy; then came this odd flying enemy I hadn't prepared for at all—it almost ruined my streak! That unpredictability kind of pulled me in.\n\nThe upgrade system isn’t complicated but timing things right takes some trial and error, honestly. Not every level feels balanced—sometimes it leans either too easy or suddenly punishing—but maybe that keeps it from feeling stale? The art style won me over though; those quirky little creature animations add personality where some games would go generic.\n\nI did wish there was a bit more explanation upfront about what each element does specifically. Still, I found myself wanting another go even after getting stomped late-game.",
-    "playUrl": "https://html5.gamemonetize.com/8bxmmbgq3l9wllxfgzkchyrkn50lu2fl/"
+    "playUrl": "/games/enchanted-battlements-2d-fantasy-defense/"
   },
   "33520": {
     "id": "33520",
@@ -2688,7 +2646,7 @@
     "howToPlay": "A Move Left D Move Right Space Jump",
     "description": "Cube Speed Dash looks so easy at first glance—just a little cube sprinting along neon tracks, with nothing but spikes and chasms to worry about. But once you actually try it, well, it’s clear that appearances can be deceiving. The core idea? Tap or hold to jump over obstacles as your cube hurtles forward at a surprisingly brisk pace. There are no complicated moves here; it&#39;s all about timing (and luck sometimes). Levels are pretty short, so if you fail—and you probably will—you’re back at the start in seconds.\n\nThis is one of those games where your hands just start itching to beat your last score before you even realize it. There&#39;s something oddly satisfying about the way the levels are built: barely any distractions on screen, just clean lines and glowing colors guiding your focus entirely to dodging that next trap.\n\nAnd honestly, it&#39;s interesting how quickly things escalate from calm to frantic. Kids pick this up for its straightforward controls but there’s depth here for anyone craving a quick challenge during a break or commute. Sometimes frustration creeps in when you mistime a leap by what feels like a millisecond—but that&#39;s part of the ride, really. For anyone who enjoys that classic &#39;just one more try&#39; loop without too much fuss or clutter.</div>",
     "editorsView": "I started Cube Speed Dash thinking it’d be another forgettable hypercasual game—nice visuals but shallow gameplay. Actually, I was surprised by how hooked I got after just a few rounds. The pace ramps up quick and the margin for error is razor thin (sometimes frustratingly so), but that makes each victory feel earned. Minimalist design keeps distractions away; you&#39;re laser-focused on survival—honestly, my palms were sweating more than I care to admit.\n\nThere’s not much in terms of variety though—levels start blending together after a bit, which makes longer sessions repetitive for me. Still, during short bursts (like waiting for coffee), it just works. For anyone looking for pure reflex fun without frills or fluff? This is worth trying.</div>",
-    "playUrl": "https://html5.gamemonetize.com/ka7gp9a9pt3nb71yo961xqwg8aqhcxjx/"
+    "playUrl": "/games/cube-speed-dash-reflex-arcade-run/"
   },
   "34046": {
     "id": "34046",
@@ -2907,7 +2865,7 @@
     "howToPlay": "Mouse click or tap to play",
     "description": "So, Black And Pink. At first glance, it’s simple: connect all sides of a shape to color it in, while these restless balls bounce around you. The colors alternate—sometimes you’re filling up with black, sometimes pink, and honestly, the vibe shifts a bit depending on the hue. It has that kind of easy-to-pick-up, impossible-to-master rhythm that makes for an oddly gripping loop.\n\nNow here’s the catch—the moment you manage to fill one shape, suddenly there are twice as many balls next round. That part really matters, really. The screen gets way more frantic almost before you realize it; things escalate fast. If you have decent reflexes and don’t mind a game that seems gentle but actually bites back after a few rounds, this one’s right up your alley.\n\nTo be honest, after just a couple tries I was hooked—but also mildly frustrated (in the best way). Anyone can get started thanks to its mouse-only controls. But getting even halfway through? That’s another story entirely.\n\nThere’s no elaborate tutorial or handholding here; just click-and-drag what needs connecting and try not to mess up when those balls come flying past. It surprised me how much tension builds out of something so barebones.</div>",
     "editorsView": "I jumped into Black And Pink expecting something breezy—just link up shapes and fill them in before any of those little bouncing balls got in my way. For a few rounds, it honestly felt almost meditative… until suddenly it wasn&#39;t anymore.\n\nOnce those extra balls hit the screen (it doubles each time!), my calm quickly turned into low-key panic as I scrambled to dodge while still completing shapes. It gets surprisingly hard fast—I’m not sure everyone will have patience for that difficulty spike, though maybe that&#39;s half the draw if you&#39;re into challenge-heavy games like I am.\n\nOne thing I wish: maybe some variety with power-ups or slight twists could make later levels feel less repetitive—well, just a thought! Still fun to see how long you last before making some silly mistake.</div>",
-    "playUrl": "https://html5.gamemonetize.com/30dx8hml6r4cfbx0bj341mfnaqnkkrrm/"
+    "playUrl": "/games/black-and-pink-puzzle-challenge/"
   },
   "34318": {
     "id": "34318",
@@ -2928,7 +2886,7 @@
     "howToPlay": "Your character is in a boat and all you have to do is fish Cast your line and fish gradually upgrade your equipment and pull in more and more fish good luck",
     "description": "Fish Master isn’t in a rush. The game lets you take things at your own pace—cast your rod, wait out the bite, then reel in whatever’s hooked on the line. It sort of has this relaxing rhythm to it, something you notice after just a couple of minutes playing. You start with basic equipment but gradually get options to upgrade your gear or unlock new lures as you collect more unusual fish.\n\nWhat stands out is how simple everything feels: swipe to cast, tap when there’s movement in the water—that’s pretty much all there is to the main mechanic. Still, chasing bigger or rarer catches can be oddly satisfying. The art is pleasant too; cartoonish but not overdone.\n\nYou know, it’s interesting how even hypercasual games like this can be so soothing after a long day. There aren’t timers pressuring you or complicated combos to memorize—you can play for five minutes or an hour and it won’t really penalize you either way.\n\nOccasionally I found myself just watching the scenery drift by instead of paying attention to the task, which probably says something about its easygoing charm. Anyone looking for a relaxed experience—kids or adults—will probably enjoy dipping their toe into these quiet digital waters.",
     "editorsView": "At first I expected Fish Master would be another throwaway time killer, but well—it grew on me surprisingly fast. There’s something oddly addictive about waiting for a fish to bite and then scrambling just a little (not too much) to land it before it gets away. The graphics are bright enough without being distracting; I appreciate that simplicity.\n\nNot everything clicks though: after a while, upgrading my rod started feeling repetitive and some rare fish seemed nearly impossible to catch unless you grind quite a bit longer than I wanted to. Still, actually, I kept returning for short sessions just because it felt calming between meetings.\n\nFor anyone wanting stress-free play without thinking too hard? This absolutely works.",
-    "playUrl": "https://html5.gamemonetize.com/1xhcqbonnmw8i8zn6kovy66mk3u1b15i/"
+    "playUrl": "/games/fish-master-relaxed-fishing-fun/"
   },
   "34353": {
     "id": "34353",
@@ -3164,7 +3122,7 @@
     "howToPlay": "Use the left mouse button to play and interact with the in-game UI",
     "description": "Brainrot Click to Hatch isn’t your typical idle game—though it seems simple on the surface, there’s this bizarre charm that keeps poking through. All you really have to do is click (or tap, whatever suits) and hatch these little oddball Brainrots. Each one’s got its own personality and name that kind of make you laugh. Bombardero Cocodrilo? Sure. Then there’s Tralalero Tralala—don’t ask me what’s going on in their universe.\n\nYou start slow, clicking for coins and unlocking new Brainrots as you go, but the more you play, the stranger things get. There are backgrounds that shift from day to night—a subtle thing at first, but somehow it stands out after a while. Maybe it’s because there aren’t many idle games that even bother with that sort of touch.\n\nUpgrades come thick and fast if you keep tapping away—some are just for speed or coins, but others transform your creatures into their... well, let’s call it \"peak\" forms (for lack of a better word). The humor is intentionally offbeat; not everyone will get the appeal, honestly.\n\nIt moves at the pace you set. Hypercasual gamers probably don’t mind leaving it running in the background to watch numbers climb or critters evolve without fuss.\n\nFor anyone who likes absurd collection games or just wants something silly and oddly satisfying in between serious titles—it fits right in.",
     "editorsView": "So I tried Brainrot Click to Hatch mostly because a friend wouldn’t stop sending screenshots. Honestly, at first I didn’t really get why anyone would want dozens of weirdly-named monsters crowding up their screen. But then… after a while I started hunting for new ones just to see what name came next (Lirali Liralira still cracks me up).\n\nThe clicking feels both addictive and kind of mindless—you can zone out or pay attention as much as you like. That said, some upgrades seem pointless after a bit; like I reached max power on one Brainrot only for the progress to stall elsewhere.\n\nWell, maybe that’s part of the joke: endless collecting with no real reason except sheer curiosity. It has its flaws but when you want something totally unserious? This works.",
-    "playUrl": "https://html5.gamemonetize.com/84pbd1sr3mqpg1q0gwumcd8ebv42jtcv/"
+    "playUrl": "/games/brainrot-click-to-hatch-game/"
   },
   "34836": {
     "id": "34836",
@@ -3354,5 +3312,465 @@
     "description": "Brain Puzzle: Tricky Quest doesn’t just serve up the same old logic tests—each level tries to trip you up with oddball solutions or the occasional bait-and-switch. Sometimes it feels like the answer is staring right at you…or hiding behind a corner you didn’t even think to check. There’s no timer rushing you along, so you can mess with each riddle as long as you like (or throw your hands up and guess when patience runs out). The puzzles bounce between silly and surprisingly sharp, so it never quite settles into a predictable groove.\n\nIt’s interesting how simple some of them look at first. Yet they make you squint twice and reconsider what you thought was obvious. Anyone can jump in—seriously, kids will probably giggle at some of the weirder ones—though sometimes I wondered if adults are secretly more stumped by overthinking things.\n\nThe best part is that it doesn’t force ads after every move (well, most of the time). If anything, playing it with someone else might turn into a mini debate about what to try next. To be honest, there were moments I put my phone down for a breather before coming back fresh—and that part really matters, really.",
     "editorsView": "At first glance Brain Puzzle: Tricky Quest seemed like just another riddle app I’d seen a dozen times already. But then I hit one level that made me stop and actually laugh out loud—that twisty kind of humor where the solution is technically correct but not what anyone would expect. Some puzzles almost dared me to look silly trying too hard; others were genuinely clever.\n\nNot every level landed though—occasionally an answer felt random or too forced for its own good. Still, I didn’t feel frustrated much, maybe just mildly baffled here or there (which is half the fun anyway). It’s interesting how playing with a friend changed things—we ended up arguing over the weirdest ideas before finally guessing right.\n\nTo sum up? It kept me coming back for more stumped attempts and little victories.",
     "playUrl": "https://html5.gamemonetize.com/0xpoap7mxwuwhj89a49njoponru4a0pr/"
+  },
+  "40001": {
+    "id": "40001",
+    "title": "Balloon Blitz",
+    "image": "/img/game/40001-512x384.png",
+    "href": "/games/40001",
+    "badge": "NEW",
+    "category": "Hypercasual",
+    "score": 7.8,
+    "updated": "N/A",
+    "tags": [
+      "1 Player",
+      "Arcade",
+      "Casual",
+      "HTML5",
+      "Tap"
+    ],
+    "howToPlay": "Tap or click to pop balloons before time runs out. Chain pops for higher scores and try to beat your best run.",
+    "description": "Balloon Blitz is a fast-paced arcade game where colorful balloons float across the screen and you pop as many as you can before time runs out. Quick reflexes and sharp aim help you rack up points, while missed shots and tricky balloon patterns keep every round feeling fresh. Easy to pick up and hard to put down.",
+    "editorsView": "Balloon Blitz is perfect for short sessions — the controls are instant (just tap), the pace ramps up nicely, and chasing a new high score stays surprisingly addictive.",
+    "playUrl": "/games/balloon-blitz/"
+  },
+  "40002": {
+    "id": "40002",
+    "title": "Weighted Seesaw",
+    "image": "/img/game/40002-512x384.png",
+    "href": "/games/40002",
+    "badge": "NEW",
+    "category": "Puzzles",
+    "score": 7.7,
+    "updated": "N/A",
+    "tags": [
+      "1 Player",
+      "Physics",
+      "Puzzle",
+      "HTML5",
+      "Balance"
+    ],
+    "howToPlay": "Place weighted pieces on the seesaw and keep it balanced. Think carefully about where each block goes before the scale tips.",
+    "description": "Weighted Seesaw is a physics puzzle game where you place blocks on a seesaw and try to keep it perfectly balanced. Each piece has its own weight, so every placement matters. Plan your moves, adjust carefully, and see how long you can keep the seesaw steady.",
+    "editorsView": "Weighted Seesaw is a smart little balance puzzler — simple to understand but satisfying when you nail the perfect placement and keep the seesaw level.",
+    "playUrl": "/games/weighted-seesaw/"
+  },
+  "50001": {
+    "id": "50001",
+    "title": "Starving Lion Rope Cutting Puzzle",
+    "image": "/img/game/50001-512x384.png",
+    "href": "/games/50001",
+    "badge": "NOW",
+    "category": "Puzzles",
+    "score": 7.5,
+    "updated": "N/A",
+    "tags": [
+      "Puzzles",
+      "HTML5",
+      "1 Player"
+    ],
+    "howToPlay": "Mouse click or touch the screen to play",
+    "description": "Play Starving Lion Rope Cutting Puzzle online for free on GameZone.",
+    "editorsView": "",
+    "playUrl": "/games/starving-lion-rope-cutting-puzzle/"
+  },
+  "50002": {
+    "id": "50002",
+    "title": "Best Friends Puzzle Adventure",
+    "image": "/img/game/50002-512x384.png",
+    "href": "/games/50002",
+    "badge": "NOW",
+    "category": "Puzzles",
+    "score": 7.5,
+    "updated": "N/A",
+    "tags": [
+      "Puzzles",
+      "HTML5",
+      "1 Player"
+    ],
+    "howToPlay": "Mouse click or touch the screen to play",
+    "description": "Play Best Friends Puzzle Adventure online for free on GameZone.",
+    "editorsView": "",
+    "playUrl": "/games/best-friends-puzzle-adventure/"
+  },
+  "50003": {
+    "id": "50003",
+    "title": "Kids Supermarket Shopping Game",
+    "image": "/img/game/50003-512x384.png",
+    "href": "/games/50003",
+    "badge": "NOW",
+    "category": "Puzzles",
+    "score": 7.5,
+    "updated": "N/A",
+    "tags": [
+      "Puzzles",
+      "HTML5",
+      "1 Player"
+    ],
+    "howToPlay": "Mouse click or touch the screen to play",
+    "description": "Play Kids Supermarket Shopping Game online for free on GameZone.",
+    "editorsView": "",
+    "playUrl": "/games/kids-supermarket-shopping-game/"
+  },
+  "50004": {
+    "id": "50004",
+    "title": "Shape Shifting Race Challenge",
+    "image": "/img/game/50004-512x384.png",
+    "href": "/games/50004",
+    "badge": "NOW",
+    "category": "Puzzles",
+    "score": 7.5,
+    "updated": "N/A",
+    "tags": [
+      "Puzzles",
+      "HTML5",
+      "1 Player"
+    ],
+    "howToPlay": "Mouse click or touch the screen to play",
+    "description": "Play Shape Shifting Race Challenge online for free on GameZone.",
+    "editorsView": "",
+    "playUrl": "/games/shape-shifting-race-challenge/"
+  },
+  "50005": {
+    "id": "50005",
+    "title": "Goal Gang",
+    "image": "/img/game/50005-512x384.png",
+    "href": "/games/50005",
+    "badge": "NOW",
+    "category": "Puzzles",
+    "score": 7.5,
+    "updated": "N/A",
+    "tags": [
+      "Puzzles",
+      "HTML5",
+      "1 Player"
+    ],
+    "howToPlay": "Mouse click or touch the screen to play",
+    "description": "Play Goal Gang online for free on GameZone.",
+    "editorsView": "",
+    "playUrl": "/games/goal-gang-multiplayer-soccer/"
+  },
+  "50006": {
+    "id": "50006",
+    "title": "Animerge",
+    "image": "/img/game/50006-512x384.png",
+    "href": "/games/50006",
+    "badge": "NOW",
+    "category": "Puzzles",
+    "score": 7.5,
+    "updated": "N/A",
+    "tags": [
+      "Puzzles",
+      "HTML5",
+      "1 Player"
+    ],
+    "howToPlay": "Mouse click or touch the screen to play",
+    "description": "Play Animerge online for free on GameZone.",
+    "editorsView": "",
+    "playUrl": "/games/animerge-relaxing-animal-merge-game/"
+  },
+  "50007": {
+    "id": "50007",
+    "title": "Baby Panda Kindergarten",
+    "image": "/img/game/50007-512x384.png",
+    "href": "/games/50007",
+    "badge": "NOW",
+    "category": "Puzzles",
+    "score": 7.5,
+    "updated": "N/A",
+    "tags": [
+      "Puzzles",
+      "HTML5",
+      "1 Player"
+    ],
+    "howToPlay": "Mouse click or touch the screen to play",
+    "description": "Play Baby Panda Kindergarten online for free on GameZone.",
+    "editorsView": "",
+    "playUrl": "/games/baby-panda-kindergarten/"
+  },
+  "50008": {
+    "id": "50008",
+    "title": "Letters popping",
+    "image": "/img/game/50008-512x384.png",
+    "href": "/games/50008",
+    "badge": "NOW",
+    "category": "Puzzles",
+    "score": 7.5,
+    "updated": "N/A",
+    "tags": [
+      "Puzzles",
+      "HTML5",
+      "1 Player"
+    ],
+    "howToPlay": "Mouse click or touch the screen to play",
+    "description": "Play Letters popping online for free on GameZone.",
+    "editorsView": "",
+    "playUrl": "/games/balloon-letter-pop-puzzle-game/"
+  },
+  "50009": {
+    "id": "50009",
+    "title": "Candy Match",
+    "image": "/img/game/50009-512x384.png",
+    "href": "/games/50009",
+    "badge": "NOW",
+    "category": "Puzzles",
+    "score": 7.5,
+    "updated": "N/A",
+    "tags": [
+      "Puzzles",
+      "HTML5",
+      "1 Player"
+    ],
+    "howToPlay": "Mouse click or touch the screen to play",
+    "description": "Play Candy Match online for free on GameZone.",
+    "editorsView": "",
+    "playUrl": "/games/candy-match-3-kit-2025-puzzle-game/"
+  },
+  "50010": {
+    "id": "50010",
+    "title": "Go And Shoot",
+    "image": "/img/game/50010-512x384.png",
+    "href": "/games/50010",
+    "badge": "NOW",
+    "category": "Puzzles",
+    "score": 7.5,
+    "updated": "N/A",
+    "tags": [
+      "Puzzles",
+      "HTML5",
+      "1 Player"
+    ],
+    "howToPlay": "Mouse click or touch the screen to play",
+    "description": "Play Go And Shoot online for free on GameZone.",
+    "editorsView": "",
+    "playUrl": "/games/go-and-shoot/"
+  },
+  "50011": {
+    "id": "50011",
+    "title": "Hungry Crab",
+    "image": "/img/game/50011-512x384.png",
+    "href": "/games/50011",
+    "badge": "NOW",
+    "category": "Puzzles",
+    "score": 7.5,
+    "updated": "N/A",
+    "tags": [
+      "Puzzles",
+      "HTML5",
+      "1 Player"
+    ],
+    "howToPlay": "Mouse click or touch the screen to play",
+    "description": "Play Hungry Crab online for free on GameZone.",
+    "editorsView": "",
+    "playUrl": "/games/hungry-crab-rope-puzzle/"
+  },
+  "50012": {
+    "id": "50012",
+    "title": "Block Matching",
+    "image": "/img/game/50012-512x384.png",
+    "href": "/games/50012",
+    "badge": "NOW",
+    "category": "Puzzles",
+    "score": 7.5,
+    "updated": "N/A",
+    "tags": [
+      "Puzzles",
+      "HTML5",
+      "1 Player"
+    ],
+    "howToPlay": "Mouse click or touch the screen to play",
+    "description": "Play Block Matching online for free on GameZone.",
+    "editorsView": "",
+    "playUrl": "/games/match-the-blocks-isometric-puzzle-game/"
+  },
+  "50013": {
+    "id": "50013",
+    "title": "Merge2048Cake",
+    "image": "/img/game/50013-512x384.png",
+    "href": "/games/50013",
+    "badge": "NOW",
+    "category": "Puzzles",
+    "score": 7.5,
+    "updated": "N/A",
+    "tags": [
+      "Puzzles",
+      "HTML5",
+      "1 Player"
+    ],
+    "howToPlay": "Mouse click or touch the screen to play",
+    "description": "Play Merge2048Cake online for free on GameZone.",
+    "editorsView": "",
+    "playUrl": "/games/merge-2048-cake-puzzle-game/"
+  },
+  "50014": {
+    "id": "50014",
+    "title": "Monster Demolition - Giants 3D",
+    "image": "/img/game/50014-512x384.png",
+    "href": "/games/50014",
+    "badge": "NOW",
+    "category": "Puzzles",
+    "score": 7.5,
+    "updated": "N/A",
+    "tags": [
+      "Puzzles",
+      "HTML5",
+      "1 Player"
+    ],
+    "howToPlay": "Mouse click or touch the screen to play",
+    "description": "Play Monster Demolition - Giants 3D online for free on GameZone.",
+    "editorsView": "",
+    "playUrl": "/games/monster-demolition/"
+  },
+  "50015": {
+    "id": "50015",
+    "title": "My Happy Farm",
+    "image": "/img/game/50015-512x384.png",
+    "href": "/games/50015",
+    "badge": "NOW",
+    "category": "Puzzles",
+    "score": 7.5,
+    "updated": "N/A",
+    "tags": [
+      "Puzzles",
+      "HTML5",
+      "1 Player"
+    ],
+    "howToPlay": "Mouse click or touch the screen to play",
+    "description": "Play My Happy Farm online for free on GameZone.",
+    "editorsView": "",
+    "playUrl": "/games/my-happy-farm/"
+  },
+  "50016": {
+    "id": "50016",
+    "title": "Obby Firefighter",
+    "image": "/img/game/50016-512x384.png",
+    "href": "/games/50016",
+    "badge": "NOW",
+    "category": "Puzzles",
+    "score": 7.5,
+    "updated": "N/A",
+    "tags": [
+      "Puzzles",
+      "HTML5",
+      "1 Player"
+    ],
+    "howToPlay": "Mouse click or touch the screen to play",
+    "description": "Play Obby Firefighter online for free on GameZone.",
+    "editorsView": "",
+    "playUrl": "/games/obby-firefighter/"
+  },
+  "50017": {
+    "id": "50017",
+    "title": "Obby Minecraft Ultimate",
+    "image": "/img/game/50017-512x384.png",
+    "href": "/games/50017",
+    "badge": "NOW",
+    "category": "Puzzles",
+    "score": 7.5,
+    "updated": "N/A",
+    "tags": [
+      "Puzzles",
+      "HTML5",
+      "1 Player"
+    ],
+    "howToPlay": "Mouse click or touch the screen to play",
+    "description": "Play Obby Minecraft Ultimate online for free on GameZone.",
+    "editorsView": "",
+    "playUrl": "/games/obby-minecraft-ultimate/"
+  },
+  "50018": {
+    "id": "50018",
+    "title": "Roly Santa Claus",
+    "image": "/img/game/50018-512x384.png",
+    "href": "/games/50018",
+    "badge": "NOW",
+    "category": "Puzzles",
+    "score": 7.5,
+    "updated": "N/A",
+    "tags": [
+      "Puzzles",
+      "HTML5",
+      "1 Player"
+    ],
+    "howToPlay": "Mouse click or touch the screen to play",
+    "description": "Play Roly Santa Claus online for free on GameZone.",
+    "editorsView": "",
+    "playUrl": "/games/roly-santa-claus/"
+  },
+  "50019": {
+    "id": "50019",
+    "title": "Screw Puzzle Game 3d",
+    "image": "/img/game/50019-512x384.png",
+    "href": "/games/50019",
+    "badge": "NOW",
+    "category": "Puzzles",
+    "score": 7.5,
+    "updated": "N/A",
+    "tags": [
+      "Puzzles",
+      "HTML5",
+      "1 Player"
+    ],
+    "howToPlay": "Mouse click or touch the screen to play",
+    "description": "Play Screw Puzzle Game 3d online for free on GameZone.",
+    "editorsView": "",
+    "playUrl": "/games/screw-puzzle-game-3d/"
+  },
+  "50020": {
+    "id": "50020",
+    "title": "Super Mario Card Match",
+    "image": "/img/game/50020-512x384.png",
+    "href": "/games/50020",
+    "badge": "NOW",
+    "category": "Puzzles",
+    "score": 7.5,
+    "updated": "N/A",
+    "tags": [
+      "Puzzles",
+      "HTML5",
+      "1 Player"
+    ],
+    "howToPlay": "Mouse click or touch the screen to play",
+    "description": "Play Super Mario Card Match online for free on GameZone.",
+    "editorsView": "",
+    "playUrl": "/games/super-mario-card-match/"
+  },
+  "50021": {
+    "id": "50021",
+    "title": "Sweet Solve",
+    "image": "/img/game/50021-512x384.png",
+    "href": "/games/50021",
+    "badge": "NOW",
+    "category": "Puzzles",
+    "score": 7.5,
+    "updated": "N/A",
+    "tags": [
+      "Puzzles",
+      "HTML5",
+      "1 Player"
+    ],
+    "howToPlay": "Mouse click or touch the screen to play",
+    "description": "Play Sweet Solve online for free on GameZone.",
+    "editorsView": "",
+    "playUrl": "/games/sweet-solve/"
+  },
+  "50022": {
+    "id": "50022",
+    "title": "Twist Knots Challenge",
+    "image": "/img/game/50022-512x384.png",
+    "href": "/games/50022",
+    "badge": "NOW",
+    "category": "Puzzles",
+    "score": 7.5,
+    "updated": "N/A",
+    "tags": [
+      "Puzzles",
+      "HTML5",
+      "1 Player"
+    ],
+    "howToPlay": "Mouse click or touch the screen to play",
+    "description": "Play Twist Knots Challenge online for free on GameZone.",
+    "editorsView": "",
+    "playUrl": "/games/twist-knots-3d-puzzle-game/"
   }
 }

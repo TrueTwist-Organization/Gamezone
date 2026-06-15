@@ -1,0 +1,31 @@
+{
+  "project_info": {
+    "project_number": "82374819558",
+    "project_id": "kick-guys-development",
+    "storage_bucket": "kick-guys-development.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:82374819558:ios:ba7d9d44a2a34f38f74527",
+        "android_client_info": {
+          "package_name": "com.turbofutur.football"
+        }
+      },
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6mZ6myLy_WdHBbAy5HfVAfjoYUc-E02I"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 0
+        },
+        "appinvite_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,125 @@
+
+pajko_orange.png
+size: 1233, 297
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+chodidlo_P_1
+  rotate: false
+  xy: 1002, 83
+  size: 44, 16
+  orig: 48, 16
+  offset: 1, 0
+  index: -1
+chodidlo_P_2
+  rotate: false
+  xy: 1161, 51
+  size: 42, 18
+  orig: 42, 20
+  offset: 0, 1
+  index: -1
+chodidlo_P_3
+  rotate: false
+  xy: 401, 2
+  size: 46, 14
+  orig: 48, 16
+  offset: 1, 1
+  index: -1
+chodidlo_Z
+  rotate: false
+  xy: 449, 2
+  size: 46, 14
+  orig: 48, 16
+  offset: 0, 0
+  index: -1
+hlava_smutna
+  rotate: false
+  xy: 401, 100
+  size: 247, 195
+  orig: 297, 256
+  offset: 15, 34
+  index: -1
+hlava_vesela
+  rotate: false
+  xy: 650, 100
+  size: 246, 195
+  orig: 297, 256
+  offset: 15, 34
+  index: -1
+noha_P_1
+  rotate: false
+  xy: 1198, 193
+  size: 20, 102
+  orig: 44, 107
+  offset: 0, 5
+  index: -1
+noha_P_2
+  rotate: false
+  xy: 1220, 196
+  size: 11, 99
+  orig: 43, 107
+  offset: 0, 8
+  index: -1
+noha_P_3
+  rotate: false
+  xy: 1214, 94
+  size: 12, 97
+  orig: 47, 102
+  offset: 0, 5
+  index: -1
+noha_Z
+  rotate: false
+  xy: 1198, 89
+  size: 14, 102
+  orig: 48, 102
+  offset: 34, 0
+  index: -1
+oci
+  rotate: false
+  xy: 602, 18
+  size: 198, 80
+  orig: 198, 80
+  offset: 0, 0
+  index: -1
+telo
+  rotate: false
+  xy: 2, 7
+  size: 397, 288
+  orig: 408, 323
+  offset: 0, 0
+  index: -1
+tykadlo_L
+  rotate: false
+  xy: 1079, 71
+  size: 117, 224
+  orig: 153, 260
+  offset: 0, 36
+  index: -1
+tykadlo_P
+  rotate: false
+  xy: 898, 101
+  size: 179, 194
+  orig: 213, 228
+  offset: 34, 34
+  index: -1
+viecka
+  rotate: false
+  xy: 401, 18
+  size: 199, 80
+  orig: 199, 80
+  offset: 0, 0
+  index: -1
+viecka_smutne
+  rotate: false
+  xy: 802, 22
+  size: 198, 76
+  orig: 198, 80
+  offset: 0, 4
+  index: -1
+zrenicky
+  rotate: false
+  xy: 1002, 28
+  size: 157, 41
+  orig: 157, 41
+  offset: 0, 0
+  index: -1

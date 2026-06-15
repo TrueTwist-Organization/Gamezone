@@ -1,0 +1,181 @@
+
+pajko_green.png
+size: 1332, 316
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+chodidlo_P_1
+  rotate: false
+  xy: 688, 109
+  size: 26, 48
+  orig: 26, 48
+  offset: 0, 0
+  index: -1
+chodidlo_P_2
+  rotate: false
+  xy: 389, 4
+  size: 38, 41
+  orig: 38, 41
+  offset: 0, 0
+  index: -1
+chodidlo_Z_1
+  rotate: false
+  xy: 429, 9
+  size: 32, 36
+  orig: 32, 36
+  offset: 0, 0
+  index: -1
+chodidlo_Z_2
+  rotate: false
+  xy: 603, 104
+  size: 37, 29
+  orig: 37, 29
+  offset: 0, 0
+  index: -1
+hlava
+  rotate: false
+  xy: 863, 17
+  size: 199, 140
+  orig: 201, 140
+  offset: 1, 0
+  index: -1
+noha_P_1
+  rotate: false
+  xy: 439, 73
+  size: 41, 241
+  orig: 41, 241
+  offset: 0, 0
+  index: -1
+noha_P_2
+  rotate: false
+  xy: 2, 14
+  size: 44, 300
+  orig: 44, 300
+  offset: 0, 0
+  index: -1
+noha_Z_1
+  rotate: false
+  xy: 389, 47
+  size: 48, 267
+  orig: 48, 267
+  offset: 0, 0
+  index: -1
+noha_Z_2
+  rotate: false
+  xy: 318, 24
+  size: 69, 290
+  orig: 69, 290
+  offset: 0, 0
+  index: -1
+oci
+  rotate: false
+  xy: 1133, 213
+  size: 197, 101
+  orig: 234, 134
+  offset: 17, 27
+  index: -1
+ruka_P_1
+  rotate: false
+  xy: 1064, 56
+  size: 68, 77
+  orig: 68, 77
+  offset: 0, 0
+  index: -1
+ruka_P_2
+  rotate: false
+  xy: 543, 7
+  size: 182, 93
+  orig: 182, 93
+  offset: 0, 0
+  index: -1
+ruka_P_3
+  rotate: false
+  xy: 877, 189
+  size: 54, 125
+  orig: 115, 185
+  offset: 33, 31
+  index: -1
+ruka_Z_1
+  rotate: false
+  xy: 463, 7
+  size: 78, 64
+  orig: 78, 64
+  offset: 0, 0
+  index: -1
+ruka_Z_2
+  rotate: false
+  xy: 727, 3
+  size: 134, 154
+  orig: 134, 154
+  offset: 0, 0
+  index: -1
+ruka_Z_3
+  rotate: false
+  xy: 933, 161
+  size: 138, 50
+  orig: 139, 50
+  offset: 1, 0
+  index: -1
+smutny
+  rotate: false
+  xy: 104, 6
+  size: 39, 16
+  orig: 39, 16
+  offset: 0, 0
+  index: -1
+telo
+  rotate: false
+  xy: 603, 135
+  size: 83, 179
+  orig: 83, 179
+  offset: 0, 0
+  index: -1
+tykadlo_L
+  rotate: false
+  xy: 688, 159
+  size: 187, 155
+  orig: 187, 155
+  offset: 0, 0
+  index: -1
+tykadlo_P
+  rotate: false
+  xy: 482, 102
+  size: 119, 212
+  orig: 119, 212
+  offset: 0, 0
+  index: -1
+usmev
+  rotate: false
+  xy: 48, 2
+  size: 54, 20
+  orig: 54, 20
+  offset: 0, 0
+  index: -1
+viecka
+  rotate: false
+  xy: 933, 213
+  size: 198, 101
+  orig: 198, 101
+  offset: 0, 0
+  index: -1
+viecka_smutne
+  rotate: false
+  xy: 1073, 135
+  size: 196, 76
+  orig: 198, 76
+  offset: 2, 0
+  index: -1
+zadok
+  rotate: false
+  xy: 48, 24
+  size: 268, 290
+  orig: 269, 291
+  offset: 1, 0
+  index: -1
+zrenicky
+  rotate: false
+  xy: 1134, 77
+  size: 156, 56
+  orig: 219, 119
+  offset: 37, 27
+  index: -1

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <script src="ad-guard.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Goal Gang</title>
+  <link rel="shortcut icon" href="TemplateData/favicon.ico">
+  <link rel="stylesheet" href="TemplateData/style.css">
+  <style>
+    html, body { margin: 0; padding: 0; width: 100%; height: 100%; background: #13141E; overflow: hidden; }
+    #unity-container { width: 100%; height: 100%; }
+    #unity-canvas { width: 100%; height: 100%; display: block; }
+    #loading-cover { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; flex-direction: column; background: linear-gradient(180deg, #090C15 0%, #16143C 50%, #452A65 100%); color: #fff; font-family: system-ui, sans-serif; z-index: 10; }
+    #unity-progress-bar-empty { width: 300px; height: 18px; margin-top: 16px; background: rgba(255,255,255,0.2); border-radius: 9px; overflow: hidden; }
+    #unity-progress-bar-full { width: 0%; height: 100%; background: #6cf; border-radius: 9px; transition: width 0.1s; }
+    h1 { font-size: 28px; margin: 0 0 8px; }
+    p { opacity: 0.8; margin: 0; }
+  </style>
+</head>
+<body>
+  <div id="unity-container">
+    <canvas id="unity-canvas"></canvas>
+  </div>
+  <div id="loading-cover">
+    <h1>Goal Gang</h1>
+    <p id="loading-status">Loading...</p>
+    <div id="unity-progress-bar-empty"><div id="unity-progress-bar-full"></div></div>
+  </div>
+  <script src="game-bridge.js"></script>
+  <script>
+    const buildUrl = "Build";
+    const loaderUrl = buildUrl + "/6715d7020700107d848007a59a5f1ede.loader.js";
+    const config = {
+      dataUrl: buildUrl + "/01e1e1f44fad98a239eab0950fac5214.data",
+      frameworkUrl: buildUrl + "/0425cc5d79aa6936c01ed6acdf324d9e.framework.js",
+      codeUrl: buildUrl + "/f05d7c84beb6e21c6894b48cab77fb1f.wasm",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "Turbo Futur",
+      productName: "Goal Gang",
+      productVersion: "1.0",
+      autoSyncPersistentDataPath: true,
+    };
+    const canvas = document.querySelector("#unity-canvas");
+    const loadingCover = document.querySelector("#loading-cover");
+    const progressBarFull = document.querySelector("#unity-progress-bar-full");
+    const loadingStatus = document.querySelector("#loading-status");
+    const script = document.createElement("script");
+    script.src = loaderUrl;
+    script.onload = () => {
+      createUnityInstance(canvas, config, (progress) => {
+        progressBarFull.style.width = `${Math.round(100 * progress)}%`;
+        loadingStatus.textContent = `Loading... ${Math.round(100 * progress)}%`;
+      }).then(() => {
+        loadingCover.style.display = "none";
+      }).catch((message) => {
+        loadingStatus.textContent = String(message);
+        console.error(message);
+      });
+    };
+    document.body.appendChild(script);
+  </script>
+</body>
+</html>

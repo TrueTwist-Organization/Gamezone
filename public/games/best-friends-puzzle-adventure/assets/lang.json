@@ -1,0 +1,1228 @@
+{
+    "stringresources": {
+        "strings": {
+            "string": [
+                {
+                    "-id": "LanguageKey",
+                    "en": "Language",
+                    "de": "Sprache",
+                    "es": "Idioma",
+                    "fr": "La langue",
+                    "it": "Linguaggio",
+                    "br": "Língua",
+                    "ru": "язык"
+                },
+                {
+                    "-id": "PlayKey",
+                    "en": "Play",
+                    "de": "Spielen",
+                    "es": "Jugar",
+                    "fr": "Jouer",
+                    "it": "Gioca",
+                    "br": "Reproduzir",
+                    "ru": "Играть"
+                },
+                {
+                    "-id": "LevelKey",
+                    "en": "Level",
+                    "de": "Level",
+                    "es": "Nivel",
+                    "fr": "Niveau",
+                    "it": "Livello",
+                    "br": "Nível",
+                    "ru": "Уровень"
+                },
+                {
+                    "-id": "GoalsKey",
+                    "en": "Goals",
+                    "de": "Ziele",
+                    "es": "Objetivos",
+                    "fr": "Objectifs",
+                    "it": "Obiettivi",
+                    "br": "Objectivos",
+                    "ru": "Цели"
+                },
+                {
+                    "-id": "MovesKey",
+                    "en": "Moves",
+                    "de": "Züge",
+                    "es": "Movimientos",
+                    "fr": "Coups",
+                    "it": "Mosse",
+                    "br": "Movimentos",
+                    "ru": "Ходов"
+                },
+                {
+                    "-id": "ChangePerksKey",
+                    "en": "Change Perks",
+                    "de": "Perks ändern",
+                    "es": "Cambiar ventajas",
+                    "fr": "Changez les avantages",
+                    "it": "Cambiamento dei vantaggi",
+                    "br": "Mude as vantagens",
+                    "ru": "Изменение навыков"
+                },
+                {
+                    "-id": "DoneKey",
+                    "en": "Done",
+                    "de": "Fertig",
+                    "es": "Hecho",
+                    "fr": "Terminé",
+                    "it": "Fatto",
+                    "br": "Feito",
+                    "ru": "Выполнено "
+                },
+                {
+                    "-id": "AwayKey",
+                    "en": "Away",
+                    "de": "Weg",
+                    "es": "Lejos",
+                    "fr": "Loin",
+                    "it": "Lontano",
+                    "br": "Longe",
+                    "ru": "Вдали"
+                },
+                {
+                    "-id": "LevelCompleteKey",
+                    "en": "Level complete!",
+                    "de": "Level abgeschlossen!",
+                    "es": "¡Nivel completado!",
+                    "fr": "Niveau terminé !",
+                    "it": "Livello completato!",
+                    "br": "Nível concluído!",
+                    "ru": "Уровень пройден!"
+                },
+                {
+                    "-id": "LevelFailedKey",
+                    "en": "Level failed",
+                    "de": "Level nicht geschafft",
+                    "es": "Nivel fallido",
+                    "fr": "Niveau échoué",
+                    "it": "Livello fallito",
+                    "br": "Nível fracassado",
+                    "ru": "Уровень провален!"
+                },
+                {
+                    "-id": "YourRewardKey",
+                    "en": "Your reward:",
+                    "de": "Deine Belohnung:",
+                    "es": "Tu recompensa:",
+                    "fr": "Votre récompense :",
+                    "it": "La tua ricompensa:",
+                    "br": "Sua recompensa:",
+                    "ru": "Ваша награда:"
+                },
+                {
+                    "-id": "OutOfMovesKey",
+                    "en": "Out of moves!",
+                    "de": "Keine Züge mehr!",
+                    "es": "¡Te has quedado sin movimientos!",
+                    "fr": "À court de coups !",
+                    "it": "Hai esaurito le mosse!",
+                    "br": "Sem movimentos!",
+                    "ru": "Нет ходов!"
+                },
+                {
+                    "-id": "GoalsLeftKey",
+                    "en": "Goals left",
+                    "de": "Verlassene Tore",
+                    "es": "Goles dejados",
+                    "fr": "Buts laissés",
+                    "it": "Obiettivi lasciati",
+                    "br": "Objetivos restantes",
+                    "ru": "НЕВЫПОЛНЕННЫЕ ЦЕЛИ"
+                },
+                {
+                    "-id": "Plus3MovesKey",
+                    "en": "+3 moves",
+                    "de": "+3 Züge",
+                    "es": "+3 Movimientos",
+                    "fr": "+3 Coups",
+                    "it": "+3 Mosse",
+                    "br": "+3 Movimentos",
+                    "ru": "+3 Ходов"
+                },
+                {
+                    "-id": "GiveUpKey",
+                    "en": "Give up",
+                    "de": "Aufgeben",
+                    "es": "Rendirse",
+                    "fr": "Abandonner",
+                    "it": "Rinuncia",
+                    "br": "Desistir",
+                    "ru": "СДАТЬСЯ"
+                },
+                {
+                    "-id": "ContinueKey",
+                    "en": "Continue",
+                    "de": "Weiter",
+                    "es": "Continuar",
+                    "fr": "Continuer",
+                    "it": "Continua",
+                    "br": "Continuar",
+                    "ru": "Продолжить"
+                },
+                {
+                    "-id": "youwinKey",
+                    "en": "You win!",
+                    "de": "Sie haben gewonnen!",
+                    "es": "¡Tú ganas!",
+                    "fr": "Vous avez gagné !",
+                    "it": "Hai vinto!",
+                    "br": "Você venceu!",
+                    "ru": "ВЫ ПОЛУЧИЛИ!"
+                },
+                {
+                    "-id": "ChallengeKey",
+                    "en": "Challenge",
+                    "de": "Herausforderung",
+                    "es": "Desafío",
+                    "fr": "Défi",
+                    "it": "Sfida",
+                    "br": "Desafio",
+                    "ru": "Задача"
+                },
+                {
+                    "-id": "Challenge2Key",
+                    "en": "Complete levels to collect Gems and earn rewards",
+                    "de": "Schließe Level ab, um Edelsteine zu sammeln und Belohnungen zu erhalten",
+                    "es": "Completa niveles para recoger Gemas y ganar recompensas",
+                    "fr": "Terminez les niveaux pour collecter des gemmes et gagner des récompenses.",
+                    "it": "Completa i livelli per raccogliere gemme e guadagnare ricompense",
+                    "br": "Níveis completos para coletar Gemas e ganhar recompensas",
+                    "ru": "Проходите уровни, чтобы собирать драгоценные камни и получать награды"
+                },
+                {
+                    "-id": "ClaimKey",
+                    "en": "Claim",
+                    "de": "Abholen",
+                    "es": "Canjear",
+                    "fr": "Réclamer",
+                    "it": "Riscuoti",
+                    "br": "Reivindicar",
+                    "ru": "Получить"
+                },
+                {
+                    "-id": "BoxesKey",
+                    "en": "Boxes",
+                    "de": "Kisten",
+                    "es": "Cajas",
+                    "fr": "Boîtes",
+                    "it": "Scatole",
+                    "br": "Caixas",
+                    "ru": "Коробки"
+                },
+                {
+                    "-id": "OpenBoxWithKey",
+                    "en": "Open box for",
+                    "de": "Öffne die Kiste für",
+                    "es": "Abre la caja para",
+                    "fr": "Ouvrez la boîte pour obtenir",
+                    "it": "Aprire la scatola per",
+                    "br": "Caixa aberta para",
+                    "ru": "Откройте коробку, чтобы получить"
+                },
+                {
+                    "-id": "WheelKey",
+                    "en": "Wheel",
+                    "de": "Rad",
+                    "es": "Rueda",
+                    "fr": "Roue",
+                    "it": "Ruota",
+                    "br": "Roda",
+                    "ru": "Колесо"
+                },
+                {
+                    "-id": "SpinKey",
+                    "en": "Spin",
+                    "de": "Drehen",
+                    "es": "Girar",
+                    "fr": "Tourner",
+                    "it": "Gira",
+                    "br": "Girar",
+                    "ru": "ВРАЩАТЬ"
+                },
+                {
+                    "-id": "NextSpinKey",
+                    "en": "Next spin in: [X]",
+                    "de": "Nächste Drehung in: [X]",
+                    "es": "Próxima tirada en: [X]",
+                    "fr": "Prochain tour dans : [X]",
+                    "it": "Prossimo giro in: [X]",
+                    "br": "Próxima rodada: [X]",
+                    "ru": "Следующее вращение через: [X]"
+                },
+                {
+                    "-id": "KeyNextFreeSpin",
+                    "en": "Next Free Spin: [X] ",
+                    "de": "Nächster kostenloser Spin: [X]",
+                    "es": "Próxima tirada gratuita: [X]",
+                    "fr": "Prochain tour gratuit: [X]",
+                    "it": "Prossimo giro gratuito: [X]",
+                    "br": "Próxima Rodada Grátis: [X]",
+                    "ru": "Следующее бесплатное вращение: [X]"
+                },
+                {
+                    "-id": "PowerKey",
+                    "en": "Power",
+                    "de": "Macht",
+                    "es": "Poder",
+                    "fr": "Puissance",
+                    "it": "Potere",
+                    "br": "Energia",
+                    "ru": "Мощность"
+                },
+                {
+                    "-id": "PerkKey",
+                    "en": "Perk",
+                    "de": "Perk",
+                    "es": "Ventaja",
+                    "fr": "Perk",
+                    "it": "Perk",
+                    "br": "Perk",
+                    "ru": "Навык"
+                },
+                {
+                    "-id": "ChangeKey",
+                    "en": "Change",
+                    "de": "Ändern",
+                    "es": "Cambiar",
+                    "fr": "Changer",
+                    "it": "Cambiamento",
+                    "br": "Mudança",
+                    "ru": "Изменить"
+                },
+                {
+                    "-id": "UpgradeKey",
+                    "en": "Upgrade",
+                    "de": "Aktualisieren",
+                    "es": "Mejora",
+                    "fr": "Améliorer",
+                    "it": "Aggiornamento",
+                    "br": "Atualização",
+                    "ru": "Улучшить"
+                },
+                {
+                    "-id": "LevelAlreadyCompletedKey",
+                    "en": "You have already completed this level.",
+                    "de": "Du hast dieses Level bereits abgeschlossen.",
+                    "es": "Ya has completado este nivel.",
+                    "fr": "Vous avez déjà terminé ce niveau.",
+                    "it": "Hai già completato questo livello.",
+                    "br": "Você já completou este nível.",
+                    "ru": "Вы уже завершили этот уровень."
+                },
+                {
+                    "-id": "PlayAgainKey",
+                    "en": "Play again",
+                    "de": "Erneut spielen",
+                    "es": "Volver a jugar",
+                    "fr": "Rejouer",
+                    "it": "Gioca di nuovo",
+                    "br": "Jogue novamente",
+                    "ru": "Повторить уровень"
+                },
+                {
+                    "-id": "PlayLevelXKey",
+                    "en": "Play level [X]",
+                    "de": "Level [X] spielen",
+                    "es": "Juega al nivel [X]",
+                    "fr": "Rejouer le niveau [X]",
+                    "it": "Giocare il livello [X]",
+                    "br": "Nível de jogo [X]",
+                    "ru": "Играть уровень [X]"
+                },
+                {
+                    "-id": "Bomb_horizontal_S1_name",
+                    "en": "Row Bomb",
+                    "de": "Reihenbombe",
+                    "es": "Bomba de fila",
+                    "fr": "Bombe en rangée",
+                    "it": "Bomba di fila",
+                    "br": "Bomba de linha",
+                    "ru": "Строковая бомба"
+                },
+                {
+                    "-id": "Bomb_vertical_S1_name",
+                    "en": "Column Bomb",
+                    "de": "Säulenbombe",
+                    "es": "Bomba de columna",
+                    "fr": "Bombe Colonne",
+                    "it": "Bomba a colonna",
+                    "br": "Bomba de Coluna",
+                    "ru": "Столбиковая бомба"
+                },
+                {
+                    "-id": "Bomb_horizontal_E1_name",
+                    "en": "Rainbow Row Bomb",
+                    "de": "Regenbogen-Reihenbombe",
+                    "es": "Bomba de fila arco iris",
+                    "fr": "Bombe arc-en-ciel",
+                    "it": "Bomba a riga arcobaleno",
+                    "br": "Bomba de Arco-Íris",
+                    "ru": "Радужная строковая бомба"
+                },
+                {
+                    "-id": "Bomb_vertical_E1_name",
+                    "en": "Rainbow Column Bomb",
+                    "de": "Regenbogen-Säulenbombe",
+                    "es": "Columna bomba arco iris",
+                    "fr": "Bombe à colonnes arc-en-ciel",
+                    "it": "Bomba a colonna arcobaleno",
+                    "br": "Bomba de Coluna Arco-Íris",
+                    "ru": "Радужная столбцовая бомба"
+                },
+                {
+                    "-id": "Bomb_horizontal_S2_name",
+                    "en": "Double Row Bomb",
+                    "de": "Doppelte Reihenbombe",
+                    "es": "Bomba doble fila",
+                    "fr": "Bombe double rangée",
+                    "it": "Bomba a doppia fila",
+                    "br": "Bomba de Fila Dupla",
+                    "ru": "Двойная строковая бомба"
+                },
+                {
+                    "-id": "Bomb_vertical_S2_name",
+                    "en": "Double Column Bomb",
+                    "de": "Doppelspaltenbombe",
+                    "es": "Bomba Doble Columna",
+                    "fr": "Bombe double colonne",
+                    "it": "Bomba a doppia colonna",
+                    "br": "Bomba de Coluna Dupla",
+                    "ru": "Бомба с двойным столбцом"
+                },
+                {
+                    "-id": "Bomb_horizontal_E2_name",
+                    "en": "Rainbow Double Row Bomb",
+                    "de": "Rainbow-Doppelreihenbombe",
+                    "es": "Bomba doble fila arco iris",
+                    "fr": "Bombe double rangée arc-en-ciel",
+                    "it": "Bomba arcobaleno a doppia fila",
+                    "br": "Bomba Arco-íris de Fila Dupla",
+                    "ru": "Радужная бомба с двойной строкой"
+                },
+                {
+                    "-id": "Bomb_vertical_E2_name",
+                    "en": "Rainbow Double Column Bomb",
+                    "de": "Regenbogen-Doppelspaltenbombe",
+                    "es": "Bomba doble columna arco iris",
+                    "fr": "Bombe double colonne arc-en-ciel",
+                    "it": "Bomba a doppia colonna arcobaleno",
+                    "br": "Bomba de Coluna Dupla Arco-Íris",
+                    "ru": "Радужная бомба с двойным столбцом"
+                },
+                {
+                    "-id": "Bomb_converter_S1_R_name",
+                    "en": "Red Converter",
+                    "de": "Roter Konverter",
+                    "es": "Convertidor rojo",
+                    "fr": "Convertisseur rouge",
+                    "it": "Convertitore rosso",
+                    "br": "Conversor Vermelho",
+                    "ru": "Красный конвертер"
+                },
+                {
+                    "-id": "Bomb_converter_S1_B_name",
+                    "en": "Blue Converter",
+                    "de": "Blauer Konverter",
+                    "es": "Convertidor azul",
+                    "fr": "Convertisseur bleu",
+                    "it": "Convertitore blu",
+                    "br": "Conversor Azul",
+                    "ru": "Синий конвертер"
+                },
+                {
+                    "-id": "Bomb_converter_S1_G_name",
+                    "en": "Green Converter",
+                    "de": "Grüner Konverter",
+                    "es": "Convertidor verde",
+                    "fr": "Convertisseur vert",
+                    "it": "Convertitore verde",
+                    "br": "Conversor Verde",
+                    "ru": "Зеленый конвертер"
+                },
+                {
+                    "-id": "Bomb_converter_S1_Y_name",
+                    "en": "Yellow Converter",
+                    "de": "Gelber Konverter",
+                    "es": "Convertidor amarillo",
+                    "fr": "Convertisseur jaune",
+                    "it": "Convertitore giallo",
+                    "br": "Conversor Amarelo",
+                    "ru": "Жёлтый конвертер"
+                },
+                {
+                    "-id": "Bomb_converter_S1_P_name",
+                    "en": "Purple Converter",
+                    "de": "Lila Konverter",
+                    "es": "Convertidor Púrpura",
+                    "fr": "Convertisseur violet",
+                    "it": "Convertitore viola",
+                    "br": "Conversor roxo",
+                    "ru": "Фиолетовый конвертер"
+                },
+                {
+                    "-id": "Bomb_converter_S2_R_name",
+                    "en": "Double Red Converter",
+                    "de": "Doppelter Rot-Konverter",
+                    "es": "Doble convertidor rojo",
+                    "fr": "Double convertisseur rouge",
+                    "it": "Doppio convertitore rosso",
+                    "br": "Conversor Vermelho Duplo",
+                    "ru": "Двойной красный конвертер"
+                },
+                {
+                    "-id": "Bomb_converter_S2_B_name",
+                    "en": "Double Blue Converter",
+                    "de": "Doppelter Blau-Konverter",
+                    "es": "Doble Convertidor Azul",
+                    "fr": "Double conversion en bleu",
+                    "it": "Convertitore doppio blu",
+                    "br": "Conversor Azul Duplo",
+                    "ru": "Двойной синий конвертер"
+                },
+                {
+                    "-id": "Bomb_converter_S2_G_name",
+                    "en": "Double Green Converter",
+                    "de": "Doppelter Grün-Konverter",
+                    "es": "Doble Convertidor Verde",
+                    "fr": "Double conversion en vert",
+                    "it": "Convertitore doppio verde",
+                    "br": "Conversor verde duplo",
+                    "ru": "Двойной зеленый конвертер"
+                },
+                {
+                    "-id": "Bomb_converter_S2_Y_name",
+                    "en": "Double Yellow Converter",
+                    "de": "Doppelter Gelb-Konverter",
+                    "es": "Doble Convertidor Amarillo",
+                    "fr": "Double conversion en jaune",
+                    "it": "Convertitore doppio giallo",
+                    "br": "Conversor amarelo duplo",
+                    "ru": "Двойной Жёлтый конвертер"
+                },
+                {
+                    "-id": "Bomb_converter_S2_P_name",
+                    "en": "Double Purple Converter",
+                    "de": "Doppelter Violett-Konverter",
+                    "es": "Doble convertidor púrpura",
+                    "fr": "Double convertisseur violet",
+                    "it": "Convertitore doppio viola",
+                    "br": "Conversor duplo púrpura",
+                    "ru": "Двойной фиолетовый конвертер"
+                },
+                {
+                    "-id": "Bomb_converter_E1_name",
+                    "en": "Rainbow Converter",
+                    "de": "Regenbogen Konverter",
+                    "es": "Convertidor Arco Iris",
+                    "fr": "Convertisseur Arc-en-ciel",
+                    "it": "Convertitore Arcobaleno",
+                    "br": "Conversor de Arco-Íris",
+                    "ru": "Радужный конвертер"
+                },
+                {
+                    "-id": "Bomb_converter_E2_name",
+                    "en": "Double Rainbow Converter",
+                    "de": "Doppelter Regenbogen-Konverter",
+                    "es": "Doble convertidor arco iris",
+                    "fr": "Double convertisseur arc-en-ciel",
+                    "it": "Convertitore doppio arcobaleno",
+                    "br": "Duplo Conversor de Arco-Íris",
+                    "ru": "Двойной радужный конвертер"
+                },
+                {
+                    "-id": "Bomb_X_S1_name",
+                    "en": "Diagonal Bomb",
+                    "de": "Diagonale Bombe",
+                    "es": "Bomba Diagonal",
+                    "fr": "Bombe Diagonale",
+                    "it": "Bomba diagonale",
+                    "br": "Bomba diagonal",
+                    "ru": "Диагональная бомба"
+                },
+                {
+                    "-id": "Bomb_cross_S1_name",
+                    "en": "Cross Bomb",
+                    "de": "Kreuz-Bombe",
+                    "es": "Bomba en cruz",
+                    "fr": "Bombe en croix",
+                    "it": "Bomba trasversale",
+                    "br": "Bomba Cruzada",
+                    "ru": "Крестовая бомба"
+                },
+                {
+                    "-id": "Bomb_area_S1_name",
+                    "en": "Area Bomb",
+                    "de": "Flächenbombe",
+                    "es": "Bomba de área",
+                    "fr": "Bombe à aire",
+                    "it": "Bomba ad area",
+                    "br": "Bomba de área",
+                    "ru": "Площадная бомба"
+                },
+                {
+                    "-id": "Bomb_X_E1_name",
+                    "en": "Rainbow Diagonal Bomb",
+                    "de": "Regenbogen-Diagonal-Bombe",
+                    "es": "Bomba diagonal arco iris",
+                    "fr": "Bombe diagonale arc-en-ciel",
+                    "it": "Bomba Diagonale Arcobaleno",
+                    "br": "Bomba Diagonal Arco-Íris",
+                    "ru": "Радужная диагональная бомба"
+                },
+                {
+                    "-id": "Bomb_cross_E1_name",
+                    "en": "Rainbow Cross Bomb",
+                    "de": "Regenbogen-Kreuzbombe",
+                    "es": "Bomba en cruz Rainbow",
+                    "fr": "Bombe arc-en-ciel en croix",
+                    "it": "Bomba a croce arcobaleno",
+                    "br": "Bomba Arco-Íris Cruzada",
+                    "ru": "Радужная поперечная бомба"
+                },
+                {
+                    "-id": "Bomb_area_E1_name",
+                    "en": "Rainbow Area Bomb",
+                    "de": "Regenbogen-Flächenbombe",
+                    "es": "Bomba de área arco iris",
+                    "fr": "Bombe de surface arc-en-ciel",
+                    "it": "Bomba ad area arcobaleno",
+                    "br": "Bomba de Área Arco-íris",
+                    "ru": "Радужная площадная бомба"
+                },
+                {
+                    "-id": "Bomb_rainbow_addition",
+                    "en": "Can connect with any colour.",
+                    "de": "Kann mit jeder Farbe verbunden werden.",
+                    "es": "Puede conectarse con cualquier color.",
+                    "fr": "Peut être connectée avec n'importe quelle couleur.",
+                    "it": "Può essere collegata a qualsiasi colore.",
+                    "br": "Pode se conectar com qualquer cor.",
+                    "ru": "Может соединяться с любым цветом."
+                },
+                {
+                    "-id": "Bomb_horizontal_S1_desc",
+                    "en": "Blows up [X] Blocks in a row.",
+                    "de": "Sprengt [X] Blöcke in einer Reihe in die Luft.",
+                    "es": "Explota [X] bloques en una fila.",
+                    "fr": "Fait exploser [X] blocs en ligne.",
+                    "it": "Fa esplodere [X] blocchi in fila.",
+                    "br": "Rebenta [X] Blocos em fila.",
+                    "ru": "Взрывает [X] блоков в ряду."
+                },
+                {
+                    "-id": "Bomb_vertical_S1_desc",
+                    "en": "Blows up [X] Blocks in a column.",
+                    "de": "Sprengt [X] Blöcke in einer Spalte in die Luft.",
+                    "es": "Explota [X] bloques en una columna.",
+                    "fr": "Fait exploser [X] blocs dans une colonne.",
+                    "it": "Fa esplodere [X] blocchi in una colonna.",
+                    "br": "Sopra [X] Blocos em uma coluna.",
+                    "ru": "Взрывает [X] блоков в колонке."
+                },
+                {
+                    "-id": "Bomb_horizontal_S2_desc",
+                    "en": "Blows up [X] Blocks in two rows.",
+                    "de": "Sprengt [X] Blöcke in zwei Reihen in die Luft.",
+                    "es": "Explota [X] bloques en dos filas.",
+                    "fr": "Fait sauter [X] blocs sur deux rangées.",
+                    "it": "Fa esplodere [X] blocchi in due file.",
+                    "br": "Sopra [X] Blocos em duas fileiras.",
+                    "ru": "Взрывает [X] блоков в двух рядах."
+                },
+                {
+                    "-id": "Bomb_vertical_S2_desc",
+                    "en": "Blows up [X] Blocks in two columns.",
+                    "de": "Sprengt [X] Blöcke in zwei Spalten in die Luft.",
+                    "es": "Explota [X] bloques en dos columnas.",
+                    "fr": "Fait exploser [X] Blocs sur deux colonnes.",
+                    "it": "Fa esplodere [X] blocchi in due colonne.",
+                    "br": "Sopra [X] Blocos em duas colunas.",
+                    "ru": "Взрывает [X] блоки в двух колонках."
+                },
+                {
+                    "-id": "Bomb_converter_S1_R_desc",
+                    "en": "Converts [X] surrounding Blocks into red Acorns.",
+                    "de": "Verwandelt [X] umliegende Blöcke in rote Eicheln.",
+                    "es": "Convierte [X] bloques circundantes en bellotas rojas.",
+                    "fr": "Transforme [X] Blocs environnants en glands rouges.",
+                    "it": "Converte [X] blocchi circostanti in Ghiande rosse.",
+                    "br": "Converte [X] Blocos ao redor em bolotas vermelhas.",
+                    "ru": "Превращает [X] окружающие Блоки в красные Жёлуди."
+                },
+                {
+                    "-id": "Bomb_converter_S1_B_desc",
+                    "en": "Converts [X] surrounding Blocks into blue Drops.",
+                    "de": "Wandelt [X] umliegende Blöcke in blaue Tropfen um.",
+                    "es": "Convierte [X] bloques circundantes en gotas azules.",
+                    "fr": "Convertit [X] Blocs environnants en Gouttes bleues.",
+                    "it": "Converte [X] blocchi circostanti in Gocce blu.",
+                    "br": "Converte [X] Blocos ao redor em gotas azuis.",
+                    "ru": "Преобразует [X] окружающие Блоки в синие Капли."
+                },
+                {
+                    "-id": "Bomb_converter_S1_G_desc",
+                    "en": "Converts [X] surrounding Blocks into green Leaves.",
+                    "de": "Wandelt [X] umliegende Blöcke in grüne Blätter um.",
+                    "es": "Convierte [X] Bloques circundantes en Hojas verdes.",
+                    "fr": "Convertit [X] Blocs environnants en Feuilles vertes.",
+                    "it": "Converte [X] blocchi circostanti in Foglie verdi.",
+                    "br": "Converte [X] ao redor dos Blocos em folhas verdes.",
+                    "ru": "Преобразует [X] окружающие Блоки в зеленые Листья."
+                },
+                {
+                    "-id": "Bomb_converter_S1_Y_desc",
+                    "en": "Converts [X] surrounding Blocks into yellow Flowers.",
+                    "de": "Wandelt [X] umliegende Blöcke in gelbe Blumen um.",
+                    "es": "Convierte [X] Bloques circundantes en Flores amarillas.",
+                    "fr": "Convertit [X] Blocs environnants en Fleurs jaunes.",
+                    "it": "Converte [X] blocchi circostanti in Fiori gialli.",
+                    "br": "Converte [X] ao redor dos Blocos em Flores amarelas.",
+                    "ru": "Преобразует [X] окружающие Блоки в жёлтые Цветы."
+                },
+                {
+                    "-id": "Bomb_converter_S1_P_desc",
+                    "en": "Converts [X] surrounding Blocks into purple Bells.",
+                    "de": "Verwandelt [X] umliegende Blöcke in violette Glocken.",
+                    "es": "Convierte [X] Bloques circundantes en Campanas moradas.",
+                    "fr": "Convertit [X] Blocs environnants en Cloches violettes.",
+                    "it": "Converte [X] blocchi circostanti in Campane viola.",
+                    "br": "Converte [X] ao redor dos Blocos em Sinos roxos.",
+                    "ru": "Преобразует [X] окружающие Блоки в фиолетовые Колокольчики."
+                },
+                {
+                    "-id": "Bomb_converter_S2_R_desc",
+                    "en": "Converts [X] surrounding Blocks into double red Acorns.",
+                    "de": "Wandelt [X] umliegende Blöcke in doppelte rote Eicheln um.",
+                    "es": "Convierte [X] Bloques circundantes en Bellotas rojas dobles.",
+                    "fr": "Convertit [X] Blocs environnants en doubles Glands rouges.",
+                    "it": "Converte [X] blocchi circostanti in doppie Ghiande rosse.",
+                    "br": "Converte [X] ao redor dos Blocos em Bolotas vermelhas duplas.",
+                    "ru": "Преобразует [X] окружающие Блоки в двойные красные Жёлуди."
+                },
+                {
+                    "-id": "Bomb_converter_S2_B_desc",
+                    "en": "Converts [X] surrounding Blocks into double blue Drops.",
+                    "de": "Wandelt [X] umliegende Blöcke in doppelte blaue Tropfen um.",
+                    "es": "Convierte [X] Bloques circundantes en Gotas azules dobles.",
+                    "fr": "Convertit [X] Blocs environnants en doubles Gouttes bleues.",
+                    "it": "Converte [X] blocchi circostanti in doppie Gocce blu.",
+                    "br": "Converte [X] ao redor dos Blocos em gotas azuis duplas.",
+                    "ru": "Преобразует [X] окружающие Блоки в двойные синие Капли."
+                },
+                {
+                    "-id": "Bomb_converter_S2_G_desc",
+                    "en": "Converts [X] surrounding Blocks into double green Leaves.",
+                    "de": "Wandelt [X] umliegende Blöcke in doppelte grüne Blätter um.",
+                    "es": "Convierte [X] Bloques circundantes en Hojas verdes dobles.",
+                    "fr": "Convertit [X] Blocs environnants en doubles Feuilles vertes.",
+                    "it": "Converte [X] blocchi circostanti in doppie Foglie verdi.",
+                    "br": "Converte [X] ao redor dos Blocos em Folhas verdes duplas.",
+                    "ru": "Преобразует [X] окружающие Блоки в двойные зеленые Листья."
+                },
+                {
+                    "-id": "Bomb_converter_S2_Y_desc",
+                    "en": "Converts [X] surrounding Blocks into double yellow Flowers.",
+                    "de": "Wandelt [X] umliegende Blöcke in doppelte gelbe Blumen um.",
+                    "es": "Convierte [X] bloques circundantes en flores amarillas dobles.",
+                    "fr": "Convertit [X] Blocs environnants en doubles Fleurs jaunes.",
+                    "it": "Converte [X] blocchi circostanti in doppi Fiori gialli.",
+                    "br": "Converte [X] ao redor dos Blocos em Flores amarelas duplas.",
+                    "ru": "Преобразует [X] окружающие Блоки в двойные жёлтые Цветы."
+                },
+                {
+                    "-id": "Bomb_converter_S2_P_desc",
+                    "en": "Converts [X] surrounding Blocks into double purple Bells.",
+                    "de": "Wandelt [X] umliegende Blöcke in doppelte lila Glocken um.",
+                    "es": "Convierte [X] Bloques circundantes en Campanas moradas dobles.",
+                    "fr": "Convertit [X] Blocs environnants en doubles Cloches violettes.",
+                    "it": "Converte [X] blocchi circostanti in doppie Campane viola.",
+                    "br": "Converte [X] ao redor dos Blocos em Sinos duplamente roxos.",
+                    "ru": "Преобразует [X] окружающие Блоки в двойные фиолетовые Колокольчики."
+                },
+                {
+                    "-id": "Bomb_converter_E1_desc",
+                    "en": "Converts [X] surrounding Blocks into chosen colour.",
+                    "de": "Wandelt [X] umliegende Blöcke in die gewählte Farbe um.",
+                    "es": "Convierte [X] Bloques circundantes en el color elegido.",
+                    "fr": "Convertit [X] Blocs environnants en couleur choisie.",
+                    "it": "Converte [X] blocchi circostanti in un colore scelto.",
+                    "br": "Converte [X] ao redor dos Blocos em cor escolhida.",
+                    "ru": "Преобразует [X] окружающие Блоки в выбранный цвет."
+                },
+                {
+                    "-id": "Bomb_converter_E2_desc",
+                    "en": "Converts [X] surrounding Blocks into chosen colour doubles.",
+                    "de": "Verwandelt [X] umliegende Blöcke in Doppelgänger der gewählten Farbe.",
+                    "es": "Convierte [X] Bloques circundantes en dobles del color elegido.",
+                    "fr": "Convertit [X] Blocs environnants en doubles de la couleur choisie.",
+                    "it": "Converte [X] blocchi circostanti in doppi del colore scelto.",
+                    "br": "Converte [X] ao redor dos Blocos em duplas cores escolhidas.",
+                    "ru": "Преобразует [X] окружающие блоки в двойные блоки выбранного цвета."
+                },
+                {
+                    "-id": "Bomb_X_S1_desc",
+                    "en": "Blows up [X] Blocks diagonally.",
+                    "de": "Sprengt [X] Blöcke diagonal in die Luft.",
+                    "es": "Revienta [X] bloques en diagonal.",
+                    "fr": "Fait exploser [X] Blocs en diagonale.",
+                    "it": "Fa esplodere [X] Mattoni in diagonale.",
+                    "br": "Explode [X] Blocos em diagonal.",
+                    "ru": "Взрывает [X] Блоки по диагонали."
+                },
+                {
+                    "-id": "Bomb_cross_S1_desc",
+                    "en": "Blows up [X] Blocks in a cross shape.",
+                    "de": "Sprengt [X] Blöcke in einer Kreuzform.",
+                    "es": "Explota [X] bloques en forma de cruz.",
+                    "fr": "Souffle [X] Blocs en forme de croix.",
+                    "it": "Fa esplodere [X] Mattoni a forma di croce.",
+                    "br": "Sopra [X] Blocos em forma de cruz.",
+                    "ru": "Взрывает [X] Блоки в форме креста."
+                },
+                {
+                    "-id": "Bomb_area_S1_desc",
+                    "en": "Blows up [X] surrounding Blocks.",
+                    "de": "Sprengt [X] umliegende Blöcke auf.",
+                    "es": "Explota [X] bloques circundantes.",
+                    "fr": "Fait sauter [X] Blocs environnants.",
+                    "it": "Fa esplodere [X] blocchi circostanti.",
+                    "br": "Sopra para cima [X] ao redor dos Blocos.",
+                    "ru": "Взрывает [X] близлежащие Блоки."
+                },
+                {
+                    "-id": "Bomb_X_E1_desc",
+                    "en": "Blows up [X] Blocks diagonally.",
+                    "de": "Sprengt [X] Blöcke diagonal in die Höhe.",
+                    "es": "Explota [X] bloques en diagonal.",
+                    "fr": "Souffler [X] Blocs en diagonale.",
+                    "it": "Fa esplodere [X] Mattoni in diagonale.",
+                    "br": "Sopra para cima [X] Blocos na diagonal.",
+                    "ru": "Взрывает [X] Блоки по диагонали."
+                },
+                {
+                    "-id": "Bomb_cross_E1_desc",
+                    "en": "Blows up [X] Blocks in a cross shape.",
+                    "de": "Sprengt [X] Blöcke in einer Kreuzform hoch.",
+                    "es": "Explota [X] bloques en cruz.",
+                    "fr": "Souffle [X] Blocs en forme de croix.",
+                    "it": "Fa esplodere [X] blocchi a croce.",
+                    "br": "Sopra [X] Blocos em forma de cruz.",
+                    "ru": "Взрывает [X] Блоки в форме креста."
+                },
+                {
+                    "-id": "Bomb_area_E1_desc",
+                    "en": "Blows up [X] surrounding Blocks.",
+                    "de": "Sprengt [X] umliegende Blöcke in die Luft.",
+                    "es": "Explota [X] bloques circundantes.",
+                    "fr": "Fait exploser [X] Blocs environnants.",
+                    "it": "Fa esplodere [X] blocchi circostanti.",
+                    "br": "Sopra para cima [X] ao redor dos Blocos.",
+                    "ru": "Взрывает [X] окружающие блоки."
+                },
+                {
+                    "-id": "WarningKey",
+                    "en": "Warning!",
+                    "de": "Warnung!",
+                    "es": "¡Atención!",
+                    "fr": "Attention !",
+                    "it": "Attenzione!",
+                    "br": "Aviso!",
+                    "ru": "Внимание!"
+                },
+                {
+                    "-id": "ClaimRewardKey",
+                    "en": "Claim Reward",
+                    "de": "Belohnung anfordern",
+                    "es": "Reclamar recompensa",
+                    "fr": "Demander une récompense",
+                    "it": "Richiesta di ricompensa",
+                    "br": "Reivindicar prêmio",
+                    "ru": "Претендовать на награду"
+                },
+                {
+                    "-id": "ReturnKey",
+                    "en": "Return",
+                    "de": "Rückgabe",
+                    "es": "Devolver",
+                    "fr": "Retour",
+                    "it": "Ritorno",
+                    "br": "Retorno",
+                    "ru": "Возврат"
+                },
+                {
+                    "-id": "PotionKey",
+                    "en": "Potion",
+                    "de": "Zaubertrank",
+                    "es": "Poción",
+                    "fr": "Potion",
+                    "it": "Pozione",
+                    "br": "Poção",
+                    "ru": "Зелье"
+                },
+                {
+                    "-id": "CoinKey",
+                    "en": "Coin",
+                    "de": "Münze",
+                    "es": "Moneda",
+                    "fr": "Pièce",
+                    "it": "Moneta",
+                    "br": "Moeda",
+                    "ru": "Монета"
+                },
+                {
+                    "-id": "DiamondKey",
+                    "en": "Diamond",
+                    "de": "Diamanten",
+                    "es": "Diamante",
+                    "fr": "Diamant",
+                    "it": "Diamante",
+                    "br": "Diamante",
+                    "ru": "Бриллиант"
+                },
+                {
+                    "-id": "TutStartGameTapKey",
+                    "en": "Welcome Friend! Tap play to start our journey.",
+                    "de": "Willkommen, Freund! Tippen Sie auf Wiedergabe, um unsere Reise zu beginnen.",
+                    "es": "¡Bienvenido amigo! Toca para empezar nuestro viaje.",
+                    "fr": "Bienvenue ami ! Appuie sur lecture pour commencer notre voyage.",
+                    "it": "Benvenuto amico! Tocca play per iniziare il nostro viaggio.",
+                    "br": "Bem-vindo, amigo! Toque em reproduzir para começar nossa jornada.",
+                    "ru": "Добро пожаловать, друг! Нажмите воспроизведение, чтобы начать наше путешествие."
+                },
+                {
+                    "-id": "TutStartGameClickKey",
+                    "en": "Welcome Friend! Click play to start our journey.",
+                    "de": "Willkommen, Freund! Klicke auf Wiedergabe, um unsere Reise zu beginnen.",
+                    "es": "¡Bienvenido amigo! Haz clic en reproducir para comenzar nuestro viaje.",
+                    "fr": "Bienvenue ami ! Cliquez sur lecture pour commencer notre voyage.",
+                    "it": "Benvenuto amico! Clicca su play per iniziare il nostro viaggio.",
+                    "br": "Bem-vindo, amigo! Clique em reproduzir para começar nossa jornada.",
+                    "ru": "Добро пожаловать, друг! Нажмите воспроизведение, чтобы начать наше путешествие."
+                },
+                {
+                    "-id": "TutSwipeKey",
+                    "en": "Swipe to connect 3 or more objects of the same color in a chain.",
+                    "de": "Streichen Sie, um 3 oder mehr gleichfarbige Objekte in einer Kette zu verbinden.",
+                    "es": "Desliza el dedo para conectar 3 o más objetos del mismo color en una cadena.",
+                    "fr": "Balayez pour relier 3 objets ou plus de la même couleur en une chaîne.",
+                    "it": "Scorri il dito per collegare a catena 3 o più oggetti dello stesso colore.",
+                    "br": "Passe o dedo para conectar 3 ou mais objetos da mesma cor em uma corrente.",
+                    "ru": "Проведите пальцем, чтобы соединить в цепочку 3 или более объектов одного цвета."
+                },
+                {
+                    "-id": "TutRewardKey",
+                    "en": "Let’s get some goodies!",
+                    "de": "Holen wir uns ein paar Leckereien!",
+                    "es": "¡Vamos a por golosinas!",
+                    "fr": "Allons chercher des friandises !",
+                    "it": "Prendiamo qualche chicca!",
+                    "br": "Vamos pegar algumas guloseimas!",
+                    "ru": "Давайте соберем немного лакомств!"
+                },
+                {
+                    "-id": "TutBoxKey",
+                    "en": "Use your collected Coins to open Reward Boxes! Tap any to open.",
+                    "de": "Benutze deine gesammelten Münzen, um Belohnungsboxen zu öffnen! Tippen Sie auf eine, um sie zu öffnen.",
+                    "es": "Usa las monedas que recojas para abrir las cajas de recompensa. Toca cualquiera para abrirla.",
+                    "fr": "Utilisez les pièces que vous avez collectées pour ouvrir les boîtes de récompenses ! Touchez l'une d'entre elles pour l'ouvrir.",
+                    "it": "Usa le monete raccolte per aprire le scatole delle ricompense! Tocca una qualsiasi per aprirla.",
+                    "br": "Use suas Moedas coletadas para abrir as Caixas de Recompensa! Toque em qualquer uma para abrir.",
+                    "ru": "Используйте собранные монеты, чтобы открыть ящики с наградами! Нажмите на любую из них, чтобы открыть."
+                },
+                {
+                    "-id": "TutSpin1Key",
+                    "en": "Your first free spin is here!",
+                    "de": "Ihr erstes Freispiel ist da!",
+                    "es": "¡Tu primer giro gratis está aquí!",
+                    "fr": "Votre premier tour gratuit est arrivé !",
+                    "it": "Il tuo primo giro gratis è qui!",
+                    "br": "Sua primeira rodada grátis está aqui!",
+                    "ru": "Ваше первое бесплатное вращение здесь!"
+                },
+                {
+                    "-id": "TutSpin2Key",
+                    "en": "Spin to get your reward.",
+                    "de": "Drehen Sie, um Ihre Belohnung zu erhalten.",
+                    "es": "Gira para obtener tu recompensa.",
+                    "fr": "Tourne pour obtenir ta récompense.",
+                    "it": "Gira per ottenere la tua ricompensa.",
+                    "br": "Gire para receber sua recompensa.",
+                    "ru": " Вращайте, чтобы получить свою награду."
+                },
+                {
+                    "-id": "TutUpgradeKey",
+                    "en": "You have enough potions to upgrade a friend!",
+                    "de": "Du hast genug Tränke, um einen Freund zu verbessern!",
+                    "es": "Tienes suficientes pociones para mejorar a un amigo.",
+                    "fr": "Tu as assez de potions pour améliorer un ami !",
+                    "it": "Hai abbastanza pozioni per potenziare un amico!",
+                    "br": "Você tem poções suficientes para aprimorar um amigo!",
+                    "ru": "У вас достаточно зелий, чтобы улучшить друга!"
+                },
+                {
+                    "-id": "TutPerkKey",
+                    "en": "You can change your friends perks here!",
+                    "de": "Hier kannst du die Perks deiner Freunde ändern!",
+                    "es": "Aquí puedes cambiar las ventajas de tus amigos.",
+                    "fr": "Tu peux changer les avantages de ton ami ici !",
+                    "it": "Qui puoi cambiare i vantaggi dei tuoi amici!",
+                    "br": "Você pode alterar as vantagens de seus amigos aqui!",
+                    "ru": "Здесь вы можете изменить характеристики своего друга!"
+                },
+                {
+                    "-id": "TutNewLevelsKey",
+                    "en": "What an incredible journey! But rest assured, exciting new levels await!",
+                    "de": "Was für eine unglaubliche Reise! Aber keine Sorge, aufregende neue Level warten!",
+                    "es": "¡Qué viaje tan increíble! Pero no te preocupes, emocionantes nuevos niveles te esperan.",
+                    "fr": "Quel incroyable voyage ! Mais ne vous inquiétez pas, de nouveaux niveaux passionnants vous attendent !",
+                    "it": "Che viaggio incredibile! Ma non preoccuparti, ci sono nuovi livelli eccitanti in attesa!",
+                    "br": "Que jornada incrível! Mas não se preocupe, há novos níveis emocionantes à espera!",
+                    "ru": "Какое невероятное путешествие! Но не волнуйтесь, вас ждут захватывающие новые уровни!"
+                },
+                {
+                    "-id": "text_onb_lvl3",
+                    "en": "Birds are your enemies! Connect objects of the same color to attack them!",
+                    "de": "Vögel sind deine Feinde! Verbinde Objekte der gleichen Farbe, um sie anzugreifen!",
+                    "es": "¡Los pájaros son tus enemigos! ¡Conecta objetos del mismo color para atacarlos!",
+                    "fr": "Les oiseaux sont vos ennemis ! Connectez les objets de la même couleur pour les attaquer !",
+                    "it": "Gli uccelli sono i tuoi nemici! Collegate gli oggetti dello stesso colore per attaccarli!",
+                    "br": "Os pássaros são seus inimigos! Conecte objetos da mesma cor para atacá-los!",
+                    "ru": "Птицы - ваши враги! Соединяйте объекты одного цвета, чтобы атаковать их!"
+                },
+                {
+                    "-id": "text_onb_lvl4",
+                    "en": "This is a red Row Bomb. Use it by connecting it with red Acorns.",
+                    "de": "Dies ist eine rote Reihenbombe. Benutze sie, indem du sie mit roten Eicheln verbindest.",
+                    "es": "Esta es una Bomba de Fila roja. Úsala conectándola con bellotas rojas.",
+                    "fr": "Voici une bombe rouge. Utilisez-la en la connectant avec des glands rouges.",
+                    "it": "Questa è una bomba rossa. Utilizzala collegandola con le Ghiande rosse.",
+                    "br": "Esta é uma Row Bomb vermelha. Use-a conectando-a com bolotas vermelhas.",
+                    "ru": "Это красная рядовая бомба. Используйте ее, соединяя с красными желудями."
+                },
+                {
+                    "-id": "text_onb_lvl5",
+                    "en": "Collecting 12 objects of the same color activates a Perk.",
+                    "de": "Wenn du 12 Objekte derselben Farbe sammelst, wird ein Perk aktiviert.",
+                    "es": "Si recoges 12 objetos del mismo color, activarás una ventaja.",
+                    "fr": "Collecter 12 objets de la même couleur active une Perk.",
+                    "it": "Raccogliendo 12 oggetti dello stesso colore si attiva un Perk.",
+                    "br": "Coletar 12 objetos da mesma cor ativa uma Vantagem.",
+                    "ru": "Если собрать 12 предметов одного цвета, активируется перк."
+                },
+                {
+                    "-id": "text_onb_lvl6",
+                    "en": "Yellow Friend can spawn Color Converters. Use them to convert surrounding area into yellow Flowers.",
+                    "de": "Der gelbe Freund kann Farbumwandler hervorbringen. Verwende sie, um die Umgebung in gelbe Blumen zu verwandeln.",
+                    "es": "El Amigo Amarillo puede generar Convertidores de Color. Úsalos para convertir el área circundante en Flores amarillas.",
+                    "fr": "L'Ami jaune peut faire apparaître des Convertisseurs de couleur. Utilisez-les pour transformer la zone environnante en fleurs jaunes.",
+                    "it": "L'Amico giallo può generare Convertitori di colore. Usateli per trasformare l'area circostante in Fiori gialli.",
+                    "br": "O Yellow Friend pode gerar Color Converters. Use-os para converter a área ao redor em flores amarelas.",
+                    "ru": "Желтый друг может порождать преобразователи цвета. Используйте их, чтобы превратить окружающее пространство в желтые цветы."
+                },
+                {
+                    "-id": "text_onb_lvl7",
+                    "en": "Remove Tree Stumps by making matches near them. Collect Reward Bags the same way.",
+                    "de": "Entferne Baumstümpfe, indem du Streichhölzer in deren Nähe machst. Sammle Belohnungen Säcke auf die gleiche Weise.",
+                    "es": "Elimina los tocones de los árboles haciendo coincidencias cerca de ellos. Recoge las de la misma manera.",
+                    "fr": "Enlevez les souches d'arbre en faisant des allumettes près d'elles. Récupérez les sacs de récompenses de la même manière.",
+                    "it": "Rimuovere i ceppi d'albero facendo dei fiammiferi vicino ad essi. Raccogliere i sacchetti della ricompensa I sacchetti premio si raccolgono allo stesso modo.",
+                    "br": "Remova os tocos de árvores fazendo combinações perto deles. Colete os Reward Bags da mesma forma.",
+                    "ru": "Удаляйте пни, устанавливая спички рядом с ними. Соберите награду Собирайте мешочки тем же способом."
+                },
+                {
+                    "-id": "text_onb_lvl8",
+                    "en": "Collect Apples by connecting objects next to them.",
+                    "de": "Sammle Äpfel, indem du Objekte neben ihnen verbindest.",
+                    "es": "Recoge Manzanas conectando objetos cerca de ellas.",
+                    "fr": "Récupérez des pommes en connectant les objets à côté d'elles.",
+                    "it": "Raccogliere le mele collegando gli oggetti accanto ad esse.",
+                    "br": "Colete maçãs conectando objetos próximos a elas.",
+                    "ru": "Собирайте яблоки, соединяя объекты рядом с ними."
+                },
+                {
+                    "-id": "text_onb_lvl11",
+                    "en": "Break Branches by making matches near them.",
+                    "de": "Brich Äste ab, indem du Streichhölzer in ihrer Nähe machst.",
+                    "es": "Rompe las ramas haciendo cerillas cerca de ellas.",
+                    "fr": "Cassez les branches en faisant des allumettes près d'elles.",
+                    "it": "Rompere i rami facendo dei fiammiferi vicino ad essi.",
+                    "br": "Quebre os galhos fazendo fósforos perto deles.",
+                    "ru": "Ломайте ветки, соединяя их спичками."
+                },
+                {
+                    "-id": "text_onb_lvl13",
+                    "en": "Hit Boxes 3 times to collect the reward inside.",
+                    "de": "Triff Kisten 3 Mal, um die darin befindliche Belohnung einzusammeln.",
+                    "es": "Golpea las cajas 3 veces para recoger la recompensa que contienen.",
+                    "fr": "Frappez les boîtes 3 fois pour récupérer la récompense qu'elles contiennent.",
+                    "it": "Colpire le scatole 3 volte per raccogliere la ricompensa al loro interno.",
+                    "br": "Acerte as caixas 3 vezes para coletar a recompensa dentro delas.",
+                    "ru": "Ударьте по ящикам 3 раза, чтобы забрать находящееся в них вознаграждение."
+                },
+                {
+                    "-id": "text_onb_lvl18",
+                    "en": "Black Bombs can blow up the whole field when hit with another bomb.",
+                    "de": "Schwarze Bomben können das ganze Feld in die Luft jagen, wenn sie von einer anderen Bombe getroffen werden.",
+                    "es": "Las Bombas Negras pueden hacer explotar todo el campo al golpearlas con otra bomba.",
+                    "fr": "Les bombes noires peuvent faire exploser tout le champ lorsqu'elles sont touchées par une autre bombe.",
+                    "it": "Le bombe nere possono far esplodere l'intero campo quando vengono colpite da un'altra bomba.",
+                    "br": "As bombas pretas podem explodir o campo inteiro quando atingidas por outra bomba.",
+                    "ru": "Черные бомбы могут взорвать все поле при попадании в них другой бомбы."
+                },
+                {
+                    "-id": "text_onb_lvl31",
+                    "en": "Remove Bushes by making connections next to them, and reveal the object inside.",
+                    "de": "Entferne Büsche, indem du Verbindungen neben ihnen herstellst, und enthülle das Objekt darin.",
+                    "es": "Elimina Arbustos haciendo conexiones junto a ellos, y revela el objeto que hay dentro.",
+                    "fr": "Enlevez les buissons en faisant des connexions à côté d'eux, et révélez l'objet qui se trouve à l'intérieur.",
+                    "it": "Rimuovere i cespugli collegando gli oggetti accanto ad essi e rivelare l'oggetto al loro interno.",
+                    "br": "Remova os arbustos fazendo conexões próximas a eles e revele o objeto dentro deles.",
+                    "ru": "Уберите кусты, соединив рядом с ними предметы, и откройте находящийся внутри предмет."
+                },
+                {
+                    "-id": "text_onb_lvl41",
+                    "en": "Remove Vines by making items inside them.",
+                    "de": "Entferne Lianen, indem du Gegenstände in ihnen herstellst.",
+                    "es": "Elimina las Enredaderas creando objetos en su interior.",
+                    "fr": "Enlevez les lianes en créant des objets à l'intérieur.",
+                    "it": "Rimuovere le viti creando oggetti al loro interno.",
+                    "br": "Remova as Vinhas criando itens dentro delas.",
+                    "ru": "Уберите лианы, создав в них предметы."
+                },
+                {
+                    "-id": "text_onb_lvl51",
+                    "en": "Remove Slime by making connections above it. Remove all Slime to complete the level.",
+                    "de": "Entferne Schleim, indem du Verbindungen über ihm herstellst. Entferne alle Schleime, um das Level zu beenden.",
+                    "es": "Elimina el Slime haciendo conexiones sobre él. Elimina todo el Slime para completar el nivel.",
+                    "fr": "Éliminez le Slime en établissant des connexions au-dessus de lui. Éliminez tous les Slime pour terminer le niveau.",
+                    "it": "Rimuovere la melma creando connessioni sopra di essa. Eliminare tutti gli Slime per completare il livello.",
+                    "br": "Remova o Slime fazendo conexões acima dele. Remova todo o Slime para concluir o nível.",
+                    "ru": "Удалите слизь, создав соединения над ней. Удалите всю слизь, чтобы завершить уровень."
+                },
+                {
+                    "-id": "text_onb_lvl61",
+                    "en": "Drop the Cage to the bottom of the level to collect the reward inside.",
+                    "de": "Lass den Käfig auf den Boden des Levels fallen, um die darin befindliche Belohnung einzusammeln.",
+                    "es": "Deja caer la Jaula al fondo del nivel para recoger la recompensa que hay dentro.",
+                    "fr": "Faites tomber la cage au bas du niveau pour récupérer la récompense qu'elle contient.",
+                    "it": "Lasciate cadere la gabbia in fondo al livello per raccogliere la ricompensa al suo interno.",
+                    "br": "Solte a Gaiola na parte inferior do nível para coletar a recompensa que está dentro dela.",
+                    "ru": "Опустите клетку в нижнюю часть уровня, чтобы забрать находящееся в ней вознаграждение."
+                },
+                {
+                    "-id": "text_onb_lvl75",
+                    "en": "Germs jump and eat random colorful items, until hit.",
+                    "de": "Keime springen und fressen zufällige bunte Gegenstände, bis sie getroffen werden.",
+                    "es": "Los gérmenes saltan y comen objetos de colores al azar, hasta que son golpeados.",
+                    "fr": "Les germes sautent et mangent des objets colorés au hasard, jusqu'à ce qu'ils soient touchés.",
+                    "it": "I germi saltano e mangiano oggetti colorati a caso, finché non vengono colpiti.",
+                    "br": "Os germes pulam e comem itens coloridos aleatórios até serem atingidos.",
+                    "ru": "Микробы прыгают и поедают случайные разноцветные предметы, пока их не собьют."
+                },
+                {
+                    "-id": "MenuKey",
+                    "en": "Menu",
+                    "de": "Menü",
+                    "es": "Menú",
+                    "fr": "Menu",
+                    "it": "Menu",
+                    "br": "Menu",
+                    "ru": "Меню"
+                },
+                {
+                    "-id": "KeyContinueTap",
+                    "en": "Tap to continue!",
+                    "de": "Tippe, um fortzufahren!",
+                    "es": "Toque para continuar!",
+                    "fr": "Appuyez pour continuer !",
+                    "it": "Tocca per continuare!",
+                    "br": "Toque para continuar!",
+                    "ru": "Нажмите, чтобы продолжить!"
+                },
+                {
+                    "-id": "KeyContinueClick",
+                    "en": "Click to continue!",
+                    "de": "Klicken Sie, um fortzufahren!",
+                    "es": "Haz clic para continuar!",
+                    "fr": "Cliquez pour continuer !",
+                    "it": "Clicca per continuare!",
+                    "br": "Clique para continuar!",
+                    "ru": "Нажмите, чтобы продолжить!"
+                },
+                {
+                    "-id": "KeyWatchAd",
+                    "en": "Watch ad",
+                    "de": "Anzeige ansehen",
+                    "es": "Ver anuncio",
+                    "fr": "Regarder la publicité",
+                    "it": "Guarda l'annuncio",
+                    "br": "Assista ao anúncio",
+                    "ru": "Смотреть рекламу"
+                },
+                {
+                    "-id": "KeyMaxLevel",
+                    "en": "Maximum level!",
+                    "de": "Höchstlevel!",
+                    "es": "¡Nivel máximo!",
+                    "fr": "Niveau maximum !",
+                    "it": "Livello massimo!",
+                    "br": "Nível máximo!",
+                    "ru": "Максимальный уровень!"
+                },
+                {
+                    "-id": "KeyNewFriend",
+                    "en": "A new friend has joined our fight!",
+                    "de": "Ein neuer Freund hat sich unserem Kampf angeschlossen!",
+                    "es": "¡Un nuevo amigo se ha unido a nuestra lucha!",
+                    "fr": "Un nouvel ami s'est joint à notre combat !",
+                    "it": "Un nuovo amico si è unito alla nostra lotta!",
+                    "br": "Um novo amigo se juntou à nossa luta!",
+                    "ru": "Новый друг присоединился к нашей борьбе!"
+                },
+                {
+                    "-id": "KeyNewFriend2",
+                    "en": "Match your friend's colors to critically strike your enemies!",
+                    "de": "Verbinde die Farben deiner Freunde, um deine Feinde kritisch zu treffen!",
+                    "es": "¡Combina los colores de tus amigos para atacar críticamente a tus enemigos!",
+                    "fr": "Associez les couleurs de vos amis pour frapper vos ennemis de manière critique !",
+                    "it": "Abbina i colori dei tuoi amici per colpire i tuoi nemici!",
+                    "br": "Combine as cores de seus amigos para atacar criticamente seus inimigos!",
+                    "ru": "Соединяйте цвета друзей, чтобы нанести врагам критический удар!"
+                },
+                {
+                    "-id": "NewBoxesKey",
+                    "en": "New boxes in :",
+                    "de": "Neue Kisten in:",
+                    "es": "Nuevas cajas en:",
+                    "fr": "Nouvelles boîtes dans :",
+                    "it": "Nuove scatole in:",
+                    "br": "Novas caixas em:",
+                    "ru": "Новые коробки в: "
+                },
+                {
+                    "-id": "FreeKey",
+                    "en": "Free",
+                    "de": "Kostenlos",
+                    "es": "Gratis",
+                    "fr": "Gratuit",
+                    "it": "Gratis",
+                    "br": "Grátis",
+                    "ru": "Бесплатно"
+                },
+                {
+                    "-id": "AddXmovesKey",
+                    "en": "Add [X] moves to keep playing!",
+                    "de": "[X] Züge hinzufügen, um weiterzuspielen!",
+                    "es": "¡Añade [X] movimientos para seguir jugando!",
+                    "fr": "Ajoutez [X] coups pour continuer à jouer !",
+                    "it": "Aggiungi [X] mosse per continuare a giocare!",
+                    "br": "Adicione [X] movimentos para continuar jogando!",
+                    "ru": "Добавьте [X] ходов, чтобы продолжить игру!"
+                }
+            ]
+        }
+    }
+}

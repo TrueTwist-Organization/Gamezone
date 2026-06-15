@@ -1,0 +1,139 @@
+
+pajko_blue.png
+size: 754, 1033
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+clenok_P
+  rotate: false
+  xy: 113, 3
+  size: 54, 19
+  orig: 54, 19
+  offset: 0, 0
+  index: -1
+clenok_Z
+  rotate: false
+  xy: 113, 24
+  size: 55, 21
+  orig: 56, 21
+  offset: 1, 0
+  index: -1
+hlava_smutna
+  rotate: false
+  xy: 2, 245
+  size: 206, 196
+  orig: 215, 204
+  offset: 5, 4
+  index: -1
+hlava_vesela
+  rotate: false
+  xy: 2, 47
+  size: 206, 196
+  orig: 215, 204
+  offset: 5, 4
+  index: -1
+kridlo
+  rotate: false
+  xy: 579, 68
+  size: 111, 495
+  orig: 286, 602
+  offset: 96, 27
+  index: -1
+kridlo_z
+  rotate: false
+  xy: 455, 95
+  size: 122, 468
+  orig: 122, 468
+  offset: 0, 0
+  index: -1
+noha_P
+  rotate: false
+  xy: 722, 768
+  size: 30, 263
+  orig: 30, 263
+  offset: 0, 0
+  index: -1
+noha_Z
+  rotate: false
+  xy: 210, 180
+  size: 31, 261
+  orig: 31, 261
+  offset: 0, 0
+  index: -1
+oci
+  rotate: false
+  xy: 210, 103
+  size: 135, 75
+  orig: 135, 75
+  offset: 0, 0
+  index: -1
+ruka_P_dolna
+  rotate: false
+  xy: 243, 195
+  size: 92, 239
+  orig: 92, 239
+  offset: 0, 0
+  index: -1
+ruka_P_horna
+  rotate: false
+  xy: 337, 209
+  size: 95, 225
+  orig: 95, 225
+  offset: 0, 0
+  index: -1
+ruka_Z_dolna
+  rotate: false
+  xy: 692, 124
+  size: 32, 201
+  orig: 32, 201
+  offset: 0, 0
+  index: -1
+ruka_Z_horna
+  rotate: false
+  xy: 692, 327
+  size: 60, 236
+  orig: 60, 236
+  offset: 0, 0
+  index: -1
+telo
+  rotate: false
+  xy: 455, 565
+  size: 265, 466
+  orig: 295, 482
+  offset: 0, 16
+  index: -1
+tykadlo_P
+  rotate: false
+  xy: 2, 443
+  size: 259, 588
+  orig: 259, 588
+  offset: 0, 0
+  index: -1
+tykadlo_Z
+  rotate: false
+  xy: 263, 436
+  size: 190, 595
+  orig: 190, 595
+  offset: 0, 0
+  index: -1
+viecka
+  rotate: false
+  xy: 210, 27
+  size: 132, 74
+  orig: 132, 74
+  offset: 0, 0
+  index: -1
+viecka_smutne
+  rotate: false
+  xy: 344, 43
+  size: 132, 50
+  orig: 132, 50
+  offset: 0, 0
+  index: -1
+zrenicky
+  rotate: false
+  xy: 2, 2
+  size: 109, 43
+  orig: 109, 43
+  offset: 0, 0
+  index: -1

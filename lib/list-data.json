@@ -1,6 +1,182 @@
 {
   "all": [
     {
+      "id": "50022",
+      "title": "Twist Knots Challenge",
+      "image": "/img/game/50022-512x384.png",
+      "href": "/games/50022",
+      "category": "Puzzles",
+      "score": 7.5
+    },
+    {
+      "id": "50021",
+      "title": "Sweet Solve",
+      "image": "/img/game/50021-512x384.png",
+      "href": "/games/50021",
+      "category": "Puzzles",
+      "score": 7.5
+    },
+    {
+      "id": "50020",
+      "title": "Super Mario Card Match",
+      "image": "/img/game/50020-512x384.png",
+      "href": "/games/50020",
+      "category": "Puzzles",
+      "score": 7.5
+    },
+    {
+      "id": "50019",
+      "title": "Screw Puzzle Game 3d",
+      "image": "/img/game/50019-512x384.png",
+      "href": "/games/50019",
+      "category": "Puzzles",
+      "score": 7.5
+    },
+    {
+      "id": "50018",
+      "title": "Roly Santa Claus",
+      "image": "/img/game/50018-512x384.png",
+      "href": "/games/50018",
+      "category": "Puzzles",
+      "score": 7.5
+    },
+    {
+      "id": "50017",
+      "title": "Obby Minecraft Ultimate",
+      "image": "/img/game/50017-512x384.png",
+      "href": "/games/50017",
+      "category": "Puzzles",
+      "score": 7.5
+    },
+    {
+      "id": "50016",
+      "title": "Obby Firefighter",
+      "image": "/img/game/50016-512x384.png",
+      "href": "/games/50016",
+      "category": "Puzzles",
+      "score": 7.5
+    },
+    {
+      "id": "50015",
+      "title": "My Happy Farm",
+      "image": "/img/game/50015-512x384.png",
+      "href": "/games/50015",
+      "category": "Puzzles",
+      "score": 7.5
+    },
+    {
+      "id": "50014",
+      "title": "Monster Demolition - Giants 3D",
+      "image": "/img/game/50014-512x384.png",
+      "href": "/games/50014",
+      "category": "Puzzles",
+      "score": 7.5
+    },
+    {
+      "id": "50013",
+      "title": "Merge2048Cake",
+      "image": "/img/game/50013-512x384.png",
+      "href": "/games/50013",
+      "category": "Puzzles",
+      "score": 7.5
+    },
+    {
+      "id": "50012",
+      "title": "Block Matching",
+      "image": "/img/game/50012-512x384.png",
+      "href": "/games/50012",
+      "category": "Puzzles",
+      "score": 7.5
+    },
+    {
+      "id": "50011",
+      "title": "Hungry Crab",
+      "image": "/img/game/50011-512x384.png",
+      "href": "/games/50011",
+      "category": "Puzzles",
+      "score": 7.5
+    },
+    {
+      "id": "50010",
+      "title": "Go And Shoot",
+      "image": "/img/game/50010-512x384.png",
+      "href": "/games/50010",
+      "category": "Puzzles",
+      "score": 7.5
+    },
+    {
+      "id": "50009",
+      "title": "Candy Match",
+      "image": "/img/game/50009-512x384.png",
+      "href": "/games/50009",
+      "category": "Puzzles",
+      "score": 7.5
+    },
+    {
+      "id": "50008",
+      "title": "Letters popping",
+      "image": "/img/game/50008-512x384.png",
+      "href": "/games/50008",
+      "category": "Puzzles",
+      "score": 7.5
+    },
+    {
+      "id": "50007",
+      "title": "Baby Panda Kindergarten",
+      "image": "/img/game/50007-512x384.png",
+      "href": "/games/50007",
+      "category": "Puzzles",
+      "score": 7.5
+    },
+    {
+      "id": "50006",
+      "title": "Animerge",
+      "image": "/img/game/50006-512x384.png",
+      "href": "/games/50006",
+      "category": "Puzzles",
+      "score": 7.5
+    },
+    {
+      "id": "50005",
+      "title": "Goal Gang",
+      "image": "/img/game/50005-512x384.png",
+      "href": "/games/50005",
+      "category": "Puzzles",
+      "score": 7.5
+    },
+    {
+      "id": "50004",
+      "title": "Shape Shifting Race Challenge",
+      "image": "/img/game/50004-512x384.png",
+      "href": "/games/50004",
+      "category": "Puzzles",
+      "score": 7.5
+    },
+    {
+      "id": "50003",
+      "title": "Kids Supermarket Shopping Game",
+      "image": "/img/game/50003-512x384.png",
+      "href": "/games/50003",
+      "category": "Puzzles",
+      "score": 7.5
+    },
+    {
+      "id": "50002",
+      "title": "Best Friends Puzzle Adventure",
+      "image": "/img/game/50002-512x384.png",
+      "href": "/games/50002",
+      "category": "Puzzles",
+      "score": 7.5
+    },
+    {
+      "id": "50001",
+      "title": "Starving Lion Rope Cutting Puzzle",
+      "image": "/img/game/50001-512x384.png",
+      "href": "/games/50001",
+      "category": "Puzzles",
+      "score": 7.5
+    },
+    {
       "id": "40002",
       "title": "Weighted Seesaw",
       "image": "/img/game/40002-512x384.png",
@@ -274,7 +450,7 @@
     },
     {
       "id": "29095",
-      "title": "Save The Duck \u00e2\u0080\u0093 Bathtub Puzzle Challenge",
+      "title": "Save The Duck â Bathtub Puzzle Challenge",
       "image": "https://uvkfq.dailyjob24.com/img/game/vpww79g9ckxh0wag1k51biuk8fqx4u3t-512x384.webp",
       "href": "/games/29095",
       "category": "Puzzles",
@@ -570,7 +746,7 @@
     },
     {
       "id": "32972",
-      "title": "One Bullet To Sprunki \u00e2\u0080\u0093 Roguelike Bullet Hell",
+      "title": "One Bullet To Sprunki â Roguelike Bullet Hell",
       "image": "https://uvkfq.dailyjob24.com/img/game/tet2zkqsnx7kjnr5uc6zygfpw50vfxqe-512x384.webp",
       "href": "/games/32972",
       "category": "Shooting",
@@ -762,7 +938,7 @@
     },
     {
       "id": "28782",
-      "title": "Pixel Ball League \u00e2\u0080\u0093 Fast Football Duels",
+      "title": "Pixel Ball League â Fast Football Duels",
       "image": "https://uvkfq.dailyjob24.com/img/game/ea9sxvc1urr1rzjwj2ue449rcfgn7560-512x384.webp",
       "href": "/games/28782",
       "category": "Sports",
@@ -1018,7 +1194,7 @@
     },
     {
       "id": "32580",
-      "title": "Gift Glide: Santa\u00e2\u0080\u0099s Present Delivery",
+      "title": "Gift Glide: Santaâs Present Delivery",
       "image": "https://uvkfq.dailyjob24.com/img/game/prfb590rganon88i3v5tlznhn9jmbu0u-512x384.webp",
       "href": "/games/32580",
       "category": "Hypercasual",
@@ -1122,7 +1298,7 @@
     },
     {
       "id": "30710",
-      "title": "Color Ball Shoot \u00e2\u0080\u0093 Aim, Match & Solve",
+      "title": "Color Ball Shoot â Aim, Match & Solve",
       "image": "https://uvkfq.dailyjob24.com/img/game/dpxn1ewamiv97d6xrz19oma9ekb1k38b-512x384.webp",
       "href": "/games/30710",
       "category": "Hypercasual",
@@ -1130,7 +1306,7 @@
     },
     {
       "id": "35010",
-      "title": "Slime Farm \u00e2\u0080\u0093 Vacuum, Sell, and Expand",
+      "title": "Slime Farm â Vacuum, Sell, and Expand",
       "image": "https://uvkfq.dailyjob24.com/img/game/vewezuk2cd0nnr69m37fcl048alebpxo-512x384.webp",
       "href": "/games/35010",
       "category": "Hypercasual",
@@ -1827,7 +2003,7 @@
       },
       {
         "id": "32580",
-        "title": "Gift Glide: Santa\u00e2\u0080\u0099s Present Delivery",
+        "title": "Gift Glide: Santaâs Present Delivery",
         "image": "https://uvkfq.dailyjob24.com/img/game/prfb590rganon88i3v5tlznhn9jmbu0u-512x384.webp",
         "href": "/games/32580",
         "category": "Hypercasual",
@@ -1859,7 +2035,7 @@
       },
       {
         "id": "30710",
-        "title": "Color Ball Shoot \u00e2\u0080\u0093 Aim, Match & Solve",
+        "title": "Color Ball Shoot â Aim, Match & Solve",
         "image": "https://uvkfq.dailyjob24.com/img/game/dpxn1ewamiv97d6xrz19oma9ekb1k38b-512x384.webp",
         "href": "/games/30710",
         "category": "Hypercasual",
@@ -1867,7 +2043,7 @@
       },
       {
         "id": "35010",
-        "title": "Slime Farm \u00e2\u0080\u0093 Vacuum, Sell, and Expand",
+        "title": "Slime Farm â Vacuum, Sell, and Expand",
         "image": "https://uvkfq.dailyjob24.com/img/game/vewezuk2cd0nnr69m37fcl048alebpxo-512x384.webp",
         "href": "/games/35010",
         "category": "Hypercasual",
@@ -2013,7 +2189,7 @@
       },
       {
         "id": "29095",
-        "title": "Save The Duck \u00e2\u0080\u0093 Bathtub Puzzle Challenge",
+        "title": "Save The Duck â Bathtub Puzzle Challenge",
         "image": "https://uvkfq.dailyjob24.com/img/game/vpww79g9ckxh0wag1k51biuk8fqx4u3t-512x384.webp",
         "href": "/games/29095",
         "category": "Puzzles",
@@ -2369,7 +2545,7 @@
       },
       {
         "id": "32972",
-        "title": "One Bullet To Sprunki \u00e2\u0080\u0093 Roguelike Bullet Hell",
+        "title": "One Bullet To Sprunki â Roguelike Bullet Hell",
         "image": "https://uvkfq.dailyjob24.com/img/game/tet2zkqsnx7kjnr5uc6zygfpw50vfxqe-512x384.webp",
         "href": "/games/32972",
         "category": "Shooting",
@@ -2437,7 +2613,7 @@
       },
       {
         "id": "28782",
-        "title": "Pixel Ball League \u00e2\u0080\u0093 Fast Football Duels",
+        "title": "Pixel Ball League â Fast Football Duels",
         "image": "https://uvkfq.dailyjob24.com/img/game/ea9sxvc1urr1rzjwj2ue449rcfgn7560-512x384.webp",
         "href": "/games/28782",
         "category": "Sports",

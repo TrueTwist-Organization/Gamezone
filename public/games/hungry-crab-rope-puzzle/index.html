@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<title>Hungry Crab</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	
+	<!-- Made with Construct, the game and app creator :: https://www.construct.net -->
+	<meta name="generator" content="Scirra Construct">
+
+	<meta name="description" content="Game">
+
+	<link rel="manifest" href="appmanifest.json">
+	<link rel="apple-touch-icon" sizes="128x128" href="icons/icon-128.png">
+	<link rel="apple-touch-icon" sizes="256x256" href="icons/icon-256.png">
+	<link rel="apple-touch-icon" sizes="512x512" href="icons/icon-512.png">
+	<link rel="icon" type="image/png" href="icons/icon-512.png">
+
+	<link rel="stylesheet" href="style.css">
+
+
+
+</head> 
+ 
+<body>
+
+	
+
+<script>
+	// Intercept and bypass all remote script loading
+	const originalCreateElement = document.createElement;
+	document.createElement = function (tagName) {
+		const el = originalCreateElement.apply(this, arguments);
+		if (tagName.toLowerCase() === 'script') {
+			Object.defineProperty(el, 'src', {
+				set(value) {
+					if (value.includes('google') || value.includes('gamemonetize') || value.includes('gamepix')) {
+						console.log('Blocked remote script:', value);
+						value = 'data:text/javascript,console.log("Mocked remote script loaded")';
+					}
+					el.setAttribute('src', value);
+				},
+				get() {
+					return el.getAttribute('src');
+				}
+			});
+		}
+		return el;
+	};
+
+	// Mock GameMonetize SDK
+	let sdkOptions = null;
+	Object.defineProperty(window, 'SDK_OPTIONS', {
+		get() {
+			return sdkOptions;
+		},
+		set(val) {
+			sdkOptions = val;
+			if (val && typeof val.onEvent === 'function') {
+				setTimeout(() => {
+					console.log("Firing SDK_READY and SDK_GAME_START events");
+					val.onEvent({ name: "SDK_READY" });
+					val.onEvent({ name: "SDK_GAME_START" });
+				}, 50);
+			}
+		}
+	});
+
+	window.sdk = {
+		showBanner: function() {
+			console.log("Mocked showBanner called");
+			if (window.SDK_OPTIONS && typeof window.SDK_OPTIONS.onEvent === "function") {
+				window.SDK_OPTIONS.onEvent({ name: "SDK_GAME_START" });
+			}
+		}
+	};
+</script>
+
+<script>
+if (location.protocol.substr(0, 4) === "file")
+{
+	alert("Web exports won't work until you upload them. (When running on the file: protocol, browsers block many features from working for security reasons.)");
+}
+</script>
+	
+	<noscript>
+		<div id="notSupportedWrap">
+			<h2 id="notSupportedTitle">This content requires JavaScript</h2>
+			<p class="notSupportedMessage">JavaScript appears to be disabled. Please enable it to view this content.</p>
+		</div>
+	</noscript>
+	<script src="scripts/modernjscheck.js"></script>
+	<script src="scripts/supportcheck.js"></script>
+	<script src="scripts/offlineclient.js" type="module"></script>
+	<script src="scripts/main.js" type="module"></script>
+	<script src="scripts/register-sw.js" type="module"></script>
+
+</body> 
+</html>

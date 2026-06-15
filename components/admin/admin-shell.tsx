@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 
 const links = [
   { href: "/admin/", label: "Dashboard" },
+  { href: "/admin/games/", label: "Local Games" },
   { href: "/admin/ads/", label: "Ad Slots" },
   { href: "/admin/site/", label: "Site Info" },
   { href: "/admin/homepage/", label: "Homepage" },

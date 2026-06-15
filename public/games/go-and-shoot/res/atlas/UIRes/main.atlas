@@ -1,0 +1,111 @@
+{
+	"frames": {
+		
+		"Button_main_01.png": {
+			"frame": {
+				"h": 122,
+				"idx": 0,
+				"w": 111,
+				"x": 0,
+				"y": 69
+			},
+			"sourceSize": {
+				"h": 122,
+				"w": 111
+			},
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		"Button_main_02.png": {
+			"frame": {
+				"h": 110,
+				"idx": 0,
+				"w": 112,
+				"x": 0,
+				"y": 192
+			},
+			"sourceSize": {
+				"h": 110,
+				"w": 112
+			},
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		"Image_main_03.png": {
+			"frame": {
+				"h": 34,
+				"idx": 0,
+				"w": 44,
+				"x": 295,
+				"y": 332
+			},
+			"sourceSize": {
+				"h": 34,
+				"w": 44
+			},
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		"Image_main_05.png": {
+			"frame": {
+				"h": 68,
+				"idx": 0,
+				"w": 407,
+				"x": 0,
+				"y": 0
+			},
+			"sourceSize": {
+				"h": 68,
+				"w": 407
+			},
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		"Image_main_06.png": {
+			"frame": {
+				"h": 94,
+				"idx": 0,
+				"w": 86,
+				"x": 0,
+				"y": 303
+			},
+			"sourceSize": {
+				"h": 94,
+				"w": 86
+			},
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		"yuan.png": {
+			"frame": {
+				"h": 28,
+				"idx": 0,
+				"w": 28,
+				"x": 214,
+				"y": 352
+			},
+			"sourceSize": {
+				"h": 28,
+				"w": 28
+			},
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0
+			}
+		}
+	},
+	"meta": {
+		"image": "main.png",
+		"prefix": "UIRes/main/"
+	}
+}

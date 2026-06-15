@@ -1,0 +1,466 @@
+{
+	"type": "View",
+	"props": {
+		"width": 720,
+		"top": 0,
+		"runtime": "script/view/PanelGameRun.ts",
+		"right": 0,
+		"left": 0,
+		"height": 1280,
+		"bottom": 0
+	},
+	"compId": 2,
+	"child": [{
+		"type": "Image",
+		"props": {
+			"y": 166,
+			"x": 543,
+			"top": 166,
+			"skin": "UIRes/repeat/Image_repeat_05.png",
+			"right": 43
+		},
+		"compId": 607,
+		"child": [{
+			"type": "Label",
+			"props": {
+				"y": -5,
+				"x": 2,
+				"width": 237,
+				"var": "qian",
+				"valign": "middle",
+				"text": "99999",
+				"scaleY": 0.45,
+				"scaleX": 0.45,
+				"height": 94,
+				"font": "font01",
+				"align": "center"
+			},
+			"compId": 608
+		}, {
+			"type": "Image",
+			"props": {
+				"y": -12,
+				"x": 94.5,
+				"skin": "UIRes/repeat/Image_repeat_04.png"
+			},
+			"compId": 609
+		}]
+	}, {
+		"type": "Box",
+		"props": {
+			"var": "end",
+			"top": 0,
+			"right": 0,
+			"left": 0,
+			"bottom": 0
+		},
+		"compId": 300,
+		"child": [{
+			"type": "Label",
+			"props": {
+				"bold": 1,
+				"var": "lvQian",
+				"valign": "middle",
+				"top": 80,
+				"text": "10",
+				"color": "#ffffff",
+				"fontSize": 40,
+				"stroke": 4,
+				"centerX": 0,
+				"align": "center"
+			},
+			"compId": 258
+		}]
+	}, {
+		"type": "Box",
+		"props": {
+			"var": "youXiZhong",
+			"top": 0,
+			"right": 0,
+			"left": 0,
+			"bottom": 0
+		},
+		"compId": 276
+	}, {
+		"type": "Box",
+		"props": {
+			"var": "bg",
+			"top": 0,
+			"right": 0,
+			"name": "bg",
+			"left": 0,
+			"bottom": 0
+		},
+		"compId": 136
+	}, {
+		"type": "Box",
+		"props": {
+			"var": "anNiu",
+			"top": 0,
+			"right": 0,
+			"mouseThrough": true,
+			"left": 0,
+			"bottom": 0,
+			"alpha": 1
+		},
+		"compId": 35,
+		"child": [{
+			"type": "Box",
+			"props": {
+				"y": 734,
+				"x": 204,
+				"width": 312,
+				"var": "zhiYin1",
+				"height": 43,
+				"centerY": 115,
+				"centerX": 0
+			},
+			"compId": 627,
+			"child": [{
+				"type": "Image",
+				"props": {
+					"y": 44,
+					"x": -48,
+					"skin": "UIRes/main/Image_main_05.png"
+				},
+				"compId": 565
+			}, {
+				"type": "Image",
+				"props": {
+					"y": 72,
+					"x": 14,
+					"width": 93,
+					"skin": "UIRes/main/Image_main_06.png",
+					"pivotX": 35,
+					"height": 112
+				},
+				"compId": 461
+			}]
+		}, {
+			"type": "Button",
+			"props": {
+				"var": "shop",
+				"stateNum": 1,
+				"skin": "UIRes/main/Button_main_01.png",
+				"left": 35,
+				"centerY": -19
+			},
+			"compId": 351
+		}, {
+			"type": "Box",
+			"props": {
+				"width": 150,
+				"var": "addQianBtn",
+				"left": 15,
+				"height": 150,
+				"centerY": -207,
+				"anchorY": 0.5,
+				"anchorX": 0.5
+			},
+			"compId": 262,
+			"child": [{
+				"type": "Image",
+				"props": {
+					"y": 75,
+					"x": 75,
+					"skin": "UIRes/main/Button_main_02.png",
+					"anchorY": 0.5,
+					"anchorX": 0.5
+				},
+				"compId": 263
+			}, {
+				"type": "Image",
+				"props": {
+					"skin": "UIRes/main/Image_main_03.png",
+					"centerY": 3,
+					"centerX": 0
+				},
+				"compId": 260
+			}, {
+				"type": "Label",
+				"props": {
+					"width": 170,
+					"valign": "middle",
+					"text": "+2000",
+					"scaleY": 0.45,
+					"scaleX": 0.45,
+					"height": 52,
+					"font": "font01",
+					"centerY": 32,
+					"centerX": 0,
+					"align": "center"
+				},
+				"compId": 269
+			}]
+		}]
+	}, {
+		"type": "Image",
+		"props": {
+			"y": 409,
+			"x": 360,
+			"var": "zhunXing",
+			"skin": "UIRes/game/Image_game_02.png",
+			"anchorY": 0.5,
+			"anchorX": 0.5
+		},
+		"compId": 610
+	}, {
+		"type": "Box",
+		"props": {
+			"width": 720,
+			"var": "xueTiaoBox",
+			"top": 112,
+			"height": 50,
+			"centerX": 0
+		},
+		"compId": 612,
+		"child": [{
+			"type": "Image",
+			"props": {
+				"y": 25,
+				"x": 200,
+				"skin": "UIRes/game/Image_game_06.png",
+				"anchorY": 0.5,
+				"anchorX": 0.5
+			},
+			"compId": 613,
+			"child": [{
+				"type": "Image",
+				"props": {
+					"y": 5,
+					"x": 5.5,
+					"var": "playerXueTiao",
+					"skin": "UIRes/game/Image_game_05.png",
+					"sizeGrid": "4,50,6,48"
+				},
+				"compId": 614
+			}]
+		}, {
+			"type": "Image",
+			"props": {
+				"y": 25,
+				"x": 520,
+				"skin": "UIRes/game/Image_game_08.png",
+				"anchorY": 0.5,
+				"anchorX": 0.5
+			},
+			"compId": 616,
+			"child": [{
+				"type": "Image",
+				"props": {
+					"y": 5,
+					"x": 232,
+					"width": 227,
+					"var": "bossXueTiao",
+					"skin": "UIRes/game/Image_game_07.png",
+					"sizeGrid": "4,61,4,58",
+					"scaleX": -1,
+					"height": 14
+				},
+				"compId": 617
+			}]
+		}]
+	}, {
+		"type": "Box",
+		"props": {
+			"width": 466,
+			"var": "zhuXingZhiYin",
+			"height": 43,
+			"centerY": 170,
+			"centerX": 0
+		},
+		"compId": 626,
+		"child": [{
+			"type": "Image",
+			"props": {
+				"y": 75,
+				"x": 79,
+				"skin": "UIRes/game/Image_game_04.png"
+			},
+			"compId": 621
+		}, {
+			"type": "Image",
+			"props": {
+				"y": 148,
+				"x": 95,
+				"skin": "UIRes/main/Image_main_06.png"
+			},
+			"compId": 622
+		}]
+	}],
+	"animations": [{
+		"nodes": [{
+			"target": 461,
+			"keyframes": {
+				"x": [{
+					"value": 14,
+					"tweenMethod": "linearNone",
+					"tween": true,
+					"target": 461,
+					"key": "x",
+					"index": 0
+				}, {
+					"value": 343,
+					"tweenMethod": "linearNone",
+					"tween": true,
+					"target": 461,
+					"key": "x",
+					"index": 10
+				}, {
+					"value": 14,
+					"tweenMethod": "linearNone",
+					"tween": true,
+					"target": 461,
+					"key": "x",
+					"index": 20
+				}]
+			}
+		}],
+		"name": "ani1",
+		"id": 1,
+		"frameRate": 24,
+		"action": 2
+	}, {
+		"nodes": [{
+			"target": 622,
+			"keyframes": {
+				"y": [{
+					"value": 149.5,
+					"tweenMethod": "linearNone",
+					"tween": true,
+					"target": 622,
+					"key": "y",
+					"index": 0
+				}, {
+					"value": 86,
+					"tweenMethod": "linearNone",
+					"tween": true,
+					"target": 622,
+					"key": "y",
+					"index": 5
+				}, {
+					"value": 145.5,
+					"tweenMethod": "linearNone",
+					"tween": true,
+					"target": 622,
+					"key": "y",
+					"index": 10
+				}, {
+					"value": 200,
+					"tweenMethod": "linearNone",
+					"tween": true,
+					"target": 622,
+					"key": "y",
+					"index": 15
+				}, {
+					"value": 139,
+					"tweenMethod": "linearNone",
+					"tween": true,
+					"target": 622,
+					"key": "y",
+					"index": 20
+				}, {
+					"value": 87,
+					"tweenMethod": "linearNone",
+					"tween": true,
+					"target": 622,
+					"key": "y",
+					"index": 25
+				}, {
+					"value": 143.5,
+					"tweenMethod": "linearNone",
+					"tween": true,
+					"target": 622,
+					"key": "y",
+					"index": 30
+				}, {
+					"value": 196,
+					"tweenMethod": "linearNone",
+					"tween": true,
+					"target": 622,
+					"key": "y",
+					"index": 35
+				}, {
+					"value": 149.5,
+					"tweenMethod": "linearNone",
+					"tween": true,
+					"target": 622,
+					"label": null,
+					"key": "y",
+					"index": 40
+				}],
+				"x": [{
+					"value": 91,
+					"tweenMethod": "linearNone",
+					"tween": true,
+					"target": 622,
+					"key": "x",
+					"index": 0
+				}, {
+					"value": 139,
+					"tweenMethod": "linearNone",
+					"tween": true,
+					"target": 622,
+					"key": "x",
+					"index": 5
+				}, {
+					"value": 229,
+					"tweenMethod": "linearNone",
+					"tween": true,
+					"target": 622,
+					"key": "x",
+					"index": 10
+				}, {
+					"value": 310.5,
+					"tweenMethod": "linearNone",
+					"tween": true,
+					"target": 622,
+					"key": "x",
+					"index": 15
+				}, {
+					"value": 361,
+					"tweenMethod": "linearNone",
+					"tween": true,
+					"target": 622,
+					"key": "x",
+					"index": 20
+				}, {
+					"value": 304.5,
+					"tweenMethod": "linearNone",
+					"tween": true,
+					"target": 622,
+					"key": "x",
+					"index": 25
+				}, {
+					"value": 229,
+					"tweenMethod": "linearNone",
+					"tween": true,
+					"target": 622,
+					"key": "x",
+					"index": 30
+				}, {
+					"value": 144,
+					"tweenMethod": "linearNone",
+					"tween": true,
+					"target": 622,
+					"key": "x",
+					"index": 35
+				}, {
+					"value": 91,
+					"tweenMethod": "linearNone",
+					"tween": true,
+					"target": 622,
+					"label": null,
+					"key": "x",
+					"index": 40
+				}]
+			}
+		}],
+		"name": "ani2",
+		"id": 2,
+		"frameRate": 24,
+		"action": 2
+	}],
+	"loadList": ["UIRes/repeat/Image_repeat_05.png", "UIRes/repeat/Image_repeat_04.png", "UIRes/main/Image_main_05.png", "UIRes/main/Image_main_06.png", "UIRes/main/Button_main_01.png", "UIRes/main/Button_main_02.png", "UIRes/main/Image_main_03.png", "UIRes/game/Image_game_02.png", "UIRes/game/Image_game_06.png", "UIRes/game/Image_game_05.png", "UIRes/game/Image_game_08.png", "UIRes/game/Image_game_07.png", "UIRes/game/Image_game_04.png", "UIRes/main/soundon.png", "UIRes/main/1.png", "UIRes/main/yuan.png", "UIRes/main/2.png", "UIRes/main/12.png", "UIRes/main/5.png", "UIRes/main/7.png", "UIRes/main/14.png"],
+	"loadList3D": []
+}
