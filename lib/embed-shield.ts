@@ -171,6 +171,28 @@ export const embedGameplayAdHooks = `<script>
   document.addEventListener("pointerdown", markUserGesture, true);
   document.addEventListener("touchstart", markUserGesture, true);
 
+  window.addEventListener("message", function (event) {
+    if (event.data?.type !== "GM_STOP_GAME") return;
+    try {
+      if (self.C3Audio_DOMInterface) {
+        if (typeof self.C3Audio_DOMInterface._StopAll === "function") {
+          self.C3Audio_DOMInterface._StopAll();
+        }
+        if (typeof self.C3Audio_DOMInterface.SetSilent === "function") {
+          self.C3Audio_DOMInterface.SetSilent(true);
+        }
+      }
+    } catch (e) {}
+    try {
+      document.querySelectorAll("audio,video").forEach(function (media) {
+        media.pause();
+        media.currentTime = 0;
+        media.removeAttribute("src");
+        media.load();
+      });
+    } catch (e) {}
+  });
+
   function patchMethod(target, key) {
     if (!target || typeof target[key] !== "function" || target[key].__gzRelayInstalled) return;
     var original = target[key];
