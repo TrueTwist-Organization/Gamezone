@@ -20,6 +20,46 @@ export const embedGamemonetizeSdkBootstrap = `<script>
   if (window.__gdSdkBootstrap) return;
   window.__gdSdkBootstrap = true;
 
+  function relayShowBannerToParent() {
+    try {
+      if (window.parent && window.parent !== window) {
+        window.parent.postMessage({ type: "GM_SHOW_BANNER" }, "*");
+      }
+    } catch (e) {}
+  }
+
+  function wrapShowBannerMethod(obj) {
+    if (!obj || typeof obj !== "object") return obj;
+    var current = obj.showBanner;
+    if (typeof current !== "function" || current.__gzRelayInstalled) return obj;
+    obj.showBanner = function () {
+      relayShowBannerToParent();
+      return current.apply(this, arguments);
+    };
+    obj.showBanner.__gzRelayInstalled = true;
+    return obj;
+  }
+
+  function installSdkPropertyInterceptor(propName) {
+    var stored = window[propName];
+    if (stored) wrapShowBannerMethod(stored);
+    try {
+      Object.defineProperty(window, propName, {
+        configurable: true,
+        enumerable: true,
+        get: function () {
+          return stored;
+        },
+        set: function (value) {
+          stored = wrapShowBannerMethod(value);
+        },
+      });
+    } catch (e) {}
+  }
+
+  installSdkPropertyInterceptor("sdk");
+  installSdkPropertyInterceptor("gdApi");
+
   function fireSdkReady(options) {
     if (!options || !options.onEvent || window.__gdSdkReadyFired) return;
     window.__gdSdkReadyFired = true;
@@ -61,17 +101,14 @@ export const embedGamemonetizeSdkBootstrap = `<script>
     }
 
     GdApi.prototype.showBanner = function () {
-      try {
-        if (window.parent && window.parent !== window) {
-          window.parent.postMessage({ type: 'GM_SHOW_BANNER' }, '*');
-        }
-      } catch (e) {}
+      relayShowBannerToParent();
       var opts = this.options;
       if (!opts || !opts.onEvent) return;
       opts.onEvent({ name: "SDK_GAME_PAUSE" });
       opts.onEvent({ name: "COMPLETE" });
       opts.onEvent({ name: "SDK_GAME_START" });
     };
+    GdApi.prototype.showBanner.__gzRelayInstalled = true;
     GdApi.prototype.play = function () {};
     GdApi.prototype.onResumeGame = function (cb) {
       if (typeof cb === "function") cb();

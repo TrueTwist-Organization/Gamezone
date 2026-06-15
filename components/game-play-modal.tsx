@@ -12,7 +12,8 @@ const SKIP_DELAY_SECONDS = 5;
 const MID_GAME_AUTO_CLOSE_SECONDS = 30;
 const MID_GAME_SKIP_DELAY_SECONDS = 5;
 // Minimum milliseconds between mid-game ads (prevents double-fire)
-const MID_GAME_COOLDOWN_MS = 3_000;
+// Debounce duplicate showBanner calls from the same click (~100ms apart)
+const MID_GAME_COOLDOWN_MS = 800;
 
 type GamePlayModalProps = {
   open: boolean;
