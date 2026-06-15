@@ -4,6 +4,10 @@ import path from "path";
 const nextConfig: NextConfig = {
   devIndicators: false,
   trailingSlash: true,
+  outputFileTracingExcludes: {
+    "/api/admin/local-games": ["public/games/**/*"],
+    "/embed/[id]/[[...path]]": ["public/games/**/*"],
+  },
   turbopack: {
     root: path.resolve(__dirname),
   },
