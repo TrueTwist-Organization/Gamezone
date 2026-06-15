@@ -19,6 +19,10 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: sitePageTitle(settings.site),
     description: settings.site.description,
+    icons: {
+      icon: "/img/logo.png",
+      apple: "/img/logo.png",
+    },
   };
 }
 
