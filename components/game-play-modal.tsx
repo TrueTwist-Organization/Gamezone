@@ -136,10 +136,8 @@ export function GamePlayModal({ open, title, playSrc, onClose }: GamePlayModalPr
     return () => window.clearTimeout(timer);
   }, [showInterstitial, interstitial, ads]);
 
-  // ── Mid-game ad: trigger 1 — GameMonetize SDK showBanner() relay ──────────
-  // Works for games that use the GM SDK and call gdApi.showBanner() on state
-  // transitions (menu→play, game-over→replay). The embed-shield stub relays
-  // these calls to the parent via postMessage({ type: 'GM_SHOW_BANNER' }).
+  // Mid-game ad: only when the game calls gdApi.showBanner() (play / start /
+  // replay / home). Games relay this via postMessage({ type: 'GM_SHOW_BANNER' }).
   useEffect(() => {
     if (!open) return;
 
@@ -159,35 +157,6 @@ export function GamePlayModal({ open, title, playSrc, onClose }: GamePlayModalPr
 
     window.addEventListener("message", handleMessage);
     return () => window.removeEventListener("message", handleMessage);
-  }, [open]);
-
-  // ── Mid-game ad: trigger 2 — window.blur (user clicks into game iframe) ───
-  // When the parent window loses focus to the game iframe (i.e. user clicks
-  // any button inside the game), we show the mid-game ad.  After each ad
-  // closes we keep focus on the modal panel — not the iframe — so the next
-  // click inside the game fires window.blur again.
-  useEffect(() => {
-    if (!open) return;
-
-    const handleBlur = () => {
-      window.setTimeout(() => {
-        // Confirm focus actually moved to an iframe (our game iframe)
-        if (document.activeElement?.tagName !== "IFRAME") return;
-        if (!midGameBannerEnabledRef.current) return;
-        if (showInterstitialRef.current || showMidGameRef.current) return;
-
-        const now = Date.now();
-        if (now - midGameLastShownRef.current < MID_GAME_COOLDOWN_MS) return;
-        midGameLastShownRef.current = now;
-
-        setShowMidGame(true);
-        setMidGameAutoClose(MID_GAME_AUTO_CLOSE_SECONDS);
-        setMidGameSkipCountdown(MID_GAME_SKIP_DELAY_SECONDS);
-      }, 50);
-    };
-
-    window.addEventListener("blur", handleBlur);
-    return () => window.removeEventListener("blur", handleBlur);
   }, [open]);
 
   // Display the mid-game GPT slot when the overlay becomes visible
@@ -219,24 +188,17 @@ export function GamePlayModal({ open, title, playSrc, onClose }: GamePlayModalPr
     return () => window.clearInterval(timer);
   }, [showMidGame]);
 
-  // Auto-close mid-game banner; keep focus on parent so next game click
-  // triggers window.blur again.
+  // Auto-close mid-game banner
   useEffect(() => {
     if (showMidGame && midGameAutoClose === 0) {
       setShowMidGame(false);
-      window.setTimeout(() => closeButtonRef.current?.focus(), 0);
     }
   }, [showMidGame, midGameAutoClose]);
 
-  // Dismiss mid-game overlay and return focus to modal (not iframe)
   const dismissMidGame = useCallback(() => {
     setShowMidGame(false);
-    window.setTimeout(() => closeButtonRef.current?.focus(), 0);
   }, []);
 
-  // revealGame intentionally does NOT call focusGameFrame — keeping focus on
-  // the parent means the very next click into the game triggers window.blur
-  // and shows the mid-game ad.
   const revealGame = useCallback(() => {
     setShowInterstitial(false);
   }, []);
