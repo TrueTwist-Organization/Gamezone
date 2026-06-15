@@ -1,4 +1,8 @@
-import { embedAdBlockerScript, embedGamemonetizeSdkBootstrap } from "./embed-shield";
+import {
+  embedAdBlockerScript,
+  embedGamemonetizeSdkBootstrap,
+  embedGameplayAdHooks,
+} from "./embed-shield";
 
 function rewriteRelativeUrls(html: string, prefix: string): string {
   return html
@@ -36,6 +40,6 @@ export function prepareEmbeddedHtml(html: string, embedPrefix: string): string {
   const baseTag = `<base href="${embedPrefix}">`;
   return rewritten.replace(
     /<head>/i,
-    `<head>\n${baseTag}\n${embedGamemonetizeSdkBootstrap}\n${embedAdBlockerScript}`,
+    `<head>\n${baseTag}\n${embedGamemonetizeSdkBootstrap}\n${embedGameplayAdHooks}\n${embedAdBlockerScript}`,
   );
 }

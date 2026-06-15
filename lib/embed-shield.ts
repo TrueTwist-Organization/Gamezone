@@ -144,6 +144,92 @@ export const embedGamemonetizeSdkBootstrap = `<script>
 })();
 </script>`;
 
+export const embedGameplayAdHooks = `<script>
+(function () {
+  if (window.__gzGameplayAdHooks) return;
+  window.__gzGameplayAdHooks = true;
+
+  function relayShowBannerToParent() {
+    try {
+      if (window.parent && window.parent !== window) {
+        window.parent.postMessage({ type: "GM_SHOW_BANNER" }, "*");
+      }
+    } catch (e) {}
+  }
+
+  var AD_TRIGGER_OBJECTS = {
+    play_btn: true,
+    game_backtomenu: true,
+    winlose_restart_btn: true,
+    winlose_mainmenu_btn: true,
+    winlose_next_btn: true,
+  };
+
+  function getObjectClassName(objectClass) {
+    if (!objectClass) return "";
+    try {
+      if (typeof objectClass.GetName === "function") {
+        var name = objectClass.GetName();
+        if (name) return name;
+      }
+    } catch (e1) {}
+    try {
+      if (objectClass._name) return String(objectClass._name);
+    } catch (e2) {}
+    return "";
+  }
+
+  function patchMethod(target, key, before) {
+    if (!target || typeof target[key] !== "function" || target[key].__gzRelayInstalled) return;
+    var original = target[key];
+    target[key] = function () {
+      before.apply(this, arguments);
+      return original.apply(this, arguments);
+    };
+    target[key].__gzRelayInstalled = true;
+  }
+
+  function patchTouchCondition(C3, key) {
+    var cnds = C3 && C3.Plugins && C3.Plugins.Touch && C3.Plugins.Touch.Cnds;
+    if (!cnds || typeof cnds[key] !== "function" || cnds[key].__gzRelayInstalled) return;
+    var original = cnds[key];
+    cnds[key] = function (objectClass) {
+      var result = original.apply(this, arguments);
+      if (result && AD_TRIGGER_OBJECTS[getObjectClassName(objectClass)]) {
+        relayShowBannerToParent();
+      }
+      return result;
+    };
+    cnds[key].__gzRelayInstalled = true;
+  }
+
+  function tryPatchRuntime() {
+    var C3 = self.C3;
+    if (!C3 || !C3.Plugins || !C3.Plugins.System || !C3.Plugins.System.Acts) return false;
+
+    patchMethod(C3.Plugins.System.Acts, "GoToLayout", relayShowBannerToParent);
+    patchMethod(C3.Plugins.System.Acts, "GoToLayoutByName", relayShowBannerToParent);
+    patchMethod(C3.Plugins.System.Acts, "RestartLayout", relayShowBannerToParent);
+
+    if (C3.Plugins.GM_SDK && C3.Plugins.GM_SDK.Acts) {
+      patchMethod(C3.Plugins.GM_SDK.Acts, "ShowAd", relayShowBannerToParent);
+    }
+
+    if (C3.Plugins.Touch && C3.Plugins.Touch.Cnds) {
+      patchTouchCondition(C3, "OnTapGestureObject");
+      patchTouchCondition(C3, "OnTouchObject");
+    }
+
+    return true;
+  }
+
+  var attempts = 0;
+  var timer = setInterval(function () {
+    if (tryPatchRuntime() || ++attempts > 160) clearInterval(timer);
+  }, 250);
+})();
+</script>`;
+
 export const embedAdBlockerScript = `<script>
 (function () {
   var sdkStub = "${gamemonetizeSdkStubPath}";
