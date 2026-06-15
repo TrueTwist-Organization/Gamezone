@@ -269,7 +269,7 @@ export function GamePlayModal({ open, title, playSrc, onClose }: GamePlayModalPr
             src={playSrc}
             title={title}
             className={`game-play-modal__frame game-play-modal__frame--active${
-              showInterstitial || showMidGame ? " game-play-modal__frame--behind" : ""
+              showInterstitial ? " game-play-modal__frame--behind" : ""
             }`}
             allow="autoplay; fullscreen; gamepad *"
             allowFullScreen
