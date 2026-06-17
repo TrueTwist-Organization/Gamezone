@@ -3,6 +3,7 @@
 import { GameImage } from "@/components/game-image";
 import Link from "next/link";
 import { useGamePlay } from "@/components/game-play-provider";
+import { GoogleAdsGamePageConversion } from "@/components/google-ads-game-page-conversion";
 import { ScrollToTop, SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { DetailBannerAd } from "@/components/site-ads";
@@ -20,6 +21,7 @@ export function GameDetailView({ game }: GameDetailViewProps) {
 
   return (
     <div className="min-h-screen bg-white text-gray-900">
+      <GoogleAdsGamePageConversion />
       <SiteHeader
         hero={{ id: game.id, title: game.title, image: game.image, href: game.href }}
         heroBadge="NOW"
