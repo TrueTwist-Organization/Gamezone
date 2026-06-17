@@ -1,4 +1,4 @@
-const GOOGLE_ANALYTICS_ID = "G-2WKWWPEX36";
+const GOOGLE_ANALYTICS_ID = "G-SP3FZCVPN7";
 const GOOGLE_ADS_ID = "AW-18173439172";
 
 export function GoogleTag() {
